@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exotic Matter</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=familjen-grotesk@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.space-background');
+            const totalElements = 18;
+            let activeElements = 0;
+
+            function getRandomValue(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            function createSpaceElement() {
+                const element = document.createElement('img');
+                const elementNumber = Math.floor(Math.random() * totalElements) + 1;
+                element.src = `assets/images/element${elementNumber}.png`;
+                element.className = 'space-element';
+
+                // Random angle for direction (in radians)
+                const angle = Math.random() * Math.PI * 2;
+                // Random distance to travel (viewport diagonal)
+                const distance = Math.max(window.innerWidth, window.innerHeight) * 1.5;
+                // Calculate end position
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                // Random rotation between -180 and 180 degrees
+                const rotation = getRandomValue(-180, 180);
+                // Random duration between 6 and 8 seconds (slower travel)
+                const duration = getRandomValue(6000, 8000);
+
+                element.style.setProperty('--tx', `${tx}px`);
+                element.style.setProperty('--ty', `${ty}px`);
+                element.style.setProperty('--rotation', `${rotation}deg`);
+                element.style.animation = `moveOutward ${duration}ms cubic-bezier(0.34, 0.13, 0.71, 0.95) forwards`;
+
+                container.appendChild(element);
+                activeElements++;
+
+                element.addEventListener('animationend', () => {
+                    element.remove();
+                    activeElements--;
+                });
+            }
+
+            function createSpaceDust() {
+                const dust = document.createElement('div');
+                dust.className = 'space-dust';
+
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.max(window.innerWidth, window.innerHeight) * 1.5;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                const duration = getRandomValue(4000, 6000); // Dust moves faster than elements
+
+                dust.style.setProperty('--tx', `${tx}px`);
+                dust.style.setProperty('--ty', `${ty}px`);
+                dust.style.animation = `moveOutwardDust ${duration}ms cubic-bezier(0.34, 0.13, 0.71, 0.95) forwards`;
+
+                container.appendChild(dust);
+
+                dust.addEventListener('animationend', () => {
+                    dust.remove();
+                });
+            }
+
+            // Create new element every 200-300ms
+            function spawnElements() {
+                createSpaceElement();
+                const nextSpawn = getRandomValue(200, 300);
+                setTimeout(spawnElements, nextSpawn);
+            }
+
+            // Create new dust particles every 20-40ms (much more frequent)
+            function spawnDust() {
+                // Create multiple dust particles per spawn
+                for(let i = 0; i < 3; i++) {
+                    createSpaceDust();
+                }
+                const nextSpawn = getRandomValue(20, 40);
+                setTimeout(spawnDust, nextSpawn);
+            }
+
+            // Start spawning both elements and dust
+            spawnElements();
+            spawnDust();
+
+            // Smooth scroll enhancement
+            document.querySelectorAll('a[href^="#episode-"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Scroll to the target
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Add highlight effect
+                        setTimeout(() => {
+                            targetElement.style.transition = 'background-color 0.5s ease';
+                            targetElement.style.backgroundColor = 'rgba(230, 213, 184, 0.1)'; // Subtle accent color
+                            
+                            // Reset after animation
+                            setTimeout(() => {
+                                targetElement.style.backgroundColor = '';
+                                setTimeout(() => {
+                                    targetElement.style.transition = '';
+                                }, 500);
+                            }, 1000);
+                        }, 500); // Wait for scroll to complete
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper-app">
+        <div class="space-background"></div>
+        <div class="wrapper-content">
+            <div class="panel-intro">
+                <div class="form-space-intro-title form-space" data-section="intro" data-type="title">
+                    <div class="sub-wrapper-title"> 
+                        <h1 class="text-heading-primary text-center">Exotic<br>Matter</h1>
+                    </div>
+                </div>
+                <div class="sub-wrapper-intro-content">
+                    <div class="sub-wrapper-intro-observation">
+                        <div class="form-space-intro-observation-label form-space text-label" data-type="label" data-section="intro">
+                            Observation:
+                        </div>
+                        <div class="form-space-intro-observation form-space" data-section="intro" data-type="content">
+                            <h2 class="text-heading-primary">Knowledge Work has changed. <br> AI, global competition and a saturated market demand we investigate different approaches.</h2>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-intro-hypothesis">
+                        <div class="form-space-intro-hypothesis-label form-space text-label" data-type="label" data-section="intro">
+                            Hypothesis:
+                        </div>
+                        <div class="form-space-intro-hypothesis form-space" data-section="intro" data-type="content">
+                            <h2 class="text-heading-primary">Our current hypothesis is that to stand out, firms must turn to the intangible, to what is impossible to copy. <br>And impossible to ignore.</h2>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-intro-method">
+                        <div class="form-space-intro-method-label form-space text-label" data-type="label" data-section="intro">
+                            Methodology:
+                        </div>
+                        <div class="form-space-intro-method form-space" data-section="intro" data-type="content">
+                            <h2 class="text-heading-primary"><strong>Exotic Matter</strong> Podcast is where we will log our research into this.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-host">
+                <div class="sub-wrapper-host-content">
+                    <div class="sub-wrapper-host-details">
+                        <div class="form-space-host-details-label form-space text-label" data-type="label" data-section="host">
+                            About the Host:
+                        </div>
+                        <div class="form-space-host-details form-space" data-section="host" data-type="content">
+                            <p>Placeholder for host information. This section can include a brief bio, background, and any other relevant details about the host.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-guests">
+                <div class="sub-wrapper-guests-content">
+                    <div class="sub-wrapper-guests-details">
+                        <div class="form-space-guests-details-label form-space text-label" data-type="label" data-section="guests">
+                            The team:
+                        </div>
+                        <div class="form-space-guests-details form-space" data-section="guests" data-type="content">
+                            <p>For this first season of Exotic Matter, I've partnered with experts around the world. Together, we explored what is changing in Knowledge Work and how are are adapting.</p>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-guests-roster">
+                        <div id="roster" class="form-space-guests-roster-label form-space text-label" data-type="label" data-section="guests">
+                            Research Roster:
+                        </div>
+                        <div class="form-space-guests-roster form-space" data-section="guests" data-type="content">
+                            <div class="guests-grid">
+                                <div class="guests-grid-container">
+                                    <a href="#episode-1" class="guest-link">
+                                        <div class="sub-wrapper-guest-box">
+                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                                <p class="text-mono-small">Nick<br>Himowicz</p>
+                                            </div>
+                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                                <img src="assets/images/guest-pictures/NickH.png" alt="Nick Himowicz">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#episode-2" class="guest-link">
+                                        <div class="sub-wrapper-guest-box">
+                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                                <p class="text-mono-small">Spencer<br>Ayres</p>
+                                            </div>
+                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                                <img src="assets/images/guest-pictures/SpencerA.png" alt="Spencer Ayres">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#episode-3" class="guest-link">
+                                        <div class="sub-wrapper-guest-box">
+                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                                <p class="text-mono-small">Danilo<br>Kreimer</p>
+                                            </div>
+                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                                <img src="assets/images/guest-pictures/DaniloK.png" alt="Danilo Kreimer">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#episode-4" class="guest-link">
+                                        <div class="sub-wrapper-guest-box">
+                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                                <p class="text-mono-small">Florian<br>Heinrichs</p>
+                                            </div>
+                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                                <img src="assets/images/guest-pictures/FlorianH.png" alt="Florian Heinrichs">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#episode-5" class="guest-link">
+                                        <div class="sub-wrapper-guest-box">
+                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                                <p class="text-mono-small">Alex<br>James</p>
+                                            </div>
+                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                                <img src="assets/images/guest-pictures/AlexJ.png" alt="Alex James">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#episode-6" class="guest-link">
+                                        <div class="sub-wrapper-guest-box">
+                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                                <p class="text-mono-small">Dylan<br>Ciaccio</p>
+                                            </div>
+                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                                <img src="assets/images/guest-pictures/DylanC.png" alt="Dylan Ciaccio">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#episode-7" class="guest-link">
+                                        <div class="sub-wrapper-guest-box">
+                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                                <p class="text-mono-small">Patrick<br>Kizny</p>
+                                            </div>
+                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                                <img src="assets/images/guest-pictures/PatrickK.png" alt="Patrick Kizny">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#episode-8" class="guest-link">
+                                        <div class="sub-wrapper-guest-box">
+                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                                <p class="text-mono-small">Jay<br>Melone</p>
+                                            </div>
+                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                                <img src="assets/images/guest-pictures/JayM.png" alt="Jay Melone">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#episode-9" class="guest-link">
+                                        <div class="sub-wrapper-guest-box">
+                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                                <p class="text-mono-small">Kurt<br>Bostelaar</p>
+                                            </div>
+                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                                <img src="assets/images/guest-pictures/KurtB.png" alt="Kurt Bostelaar">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-wrapper-episode" id="episode-0">
+                <div class="episode-tab text-label">
+                    Status:<br>To be released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">0</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Podcast Introduction</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <p class="text-body">Topics Covered:<br>
+                                <span class="topic-line">▗ Introduction to Exotic Matter Podcast</span>
+                                <span class="topic-line">▚ The Changing Landscape of Knowledge Work</span>
+                                <span class="topic-line">▙ Our Research Methodology and Approach</span></p>
+                                <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+                                    <button class="listen-button" style="background-color: white; border: 1px solid #000; padding: 10px 20px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 16px; width: 80%;">Listen to Episode</button>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/joaolandeiro/" class="text-mono-small" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://joaolandeiro.substack.com/" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.mesozoic.co" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>João Landeiro</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/KurtB.png" alt="João Landeiro">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="#roster" class="tab-link">Back to Roster</a>
+                </div>
+            </div>
+            <div class="sub-wrapper-episode" id="episode-1">
+                <div class="episode-tab text-label">
+                    Status:<br>To be released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">1</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Nick's Theme</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <p class="text-body">Topics Covered:<br>
+                                <span class="topic-line">▗ Strategic Tools for Alignment and Clarity</span>
+                                <span class="topic-line">▚ Simplified Customer Interviews</span>
+                                <span class="topic-line">▙ Bridging the Knowing-Doing Gap</span></p>
+                                <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+                                    <button class="listen-button" style="background-color: white; border: 1px solid #000; padding: 10px 20px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 16px; width: 80%;">Listen to Episode</button>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/nickhimo/" class="text-mono-small" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.youtube.com/@NickHimo" target="_blank" rel="noopener noreferrer">Youtube</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.nickhimo.com/" target="_blank" rel="noopener noreferrer">Personal Website</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>Nick Himowicz</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/NickH.png" alt="Nick Himowicz">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="#roster" class="tab-link">Back to Roster</a>
+                </div>
+            </div>
+            <div class="sub-wrapper-episode" id="episode-2">
+                <div class="episode-tab text-label">
+                    Status:<br>To be released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">2</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Spencer's Theme</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <p class="text-body">Topics Covered:<br>
+                                <span class="topic-line">▗ Workshops as Productized Experiences</span>
+                                <span class="topic-line">▚ Core Principles of Effective Workshops</span>
+                                <span class="topic-line">▙ Future of Work and Facilitation</span></p>
+                                <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+                                    <button class="listen-button" style="background-color: white; border: 1px solid #000; padding: 10px 20px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 16px; width: 80%;">Listen to Episode</button>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/spencerayres/" class="text-mono-small" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.youtube.com/channel/UCd5kOQeGcxmyo5WncmNgAZQ" target="_blank" rel="noopener noreferrer">Youtube</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://jointly.work/" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>Spencer Ayres</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/SpencerA.png" alt="Spencer Ayres">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="#roster" class="tab-link">Back to Roster</a>
+                </div>
+            </div>
+            <div class="sub-wrapper-episode" id="episode-3">
+                <div class="episode-tab text-label">
+                    Status:<br>To be released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">3</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Danilo's Theme</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <p class="text-body">Topics Covered:<br>
+                                <span class="topic-line">▗ Challenges in Early-Stage Consulting Practices</span>
+                                <span class="topic-line">▚ Service Design: Balancing Productization and Flexibility</span>
+                                <span class="topic-line">▙ Collaborative Client Relationships</span></p>
+                                <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+                                    <button class="listen-button" style="background-color: white; border: 1px solid #000; padding: 10px 20px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 16px; width: 80%;">Listen to Episode</button>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/danilo-kreimer/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.boutiqueconsultingclub.com/" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.boutiqueconsultingclub.com/newsletter" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>Danilo Kreimer</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/DaniloK.png" alt="Danilo Kreimer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="#roster" class="tab-link">Back to Roster</a>
+                </div>
+            </div>
+            <div class="sub-wrapper-episode" id="episode-4">
+                <div class="episode-tab text-label">
+                    Status:<br>To be released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">4</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Florian's Theme</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <p class="text-body">Topics Covered:<br>
+                                <span class="topic-line">▗ Transition from Capability to Proposition-Based Consulting</span>
+                                <span class="topic-line">▚ Signature Methodology as a Trust Signal</span>
+                                <span class="topic-line">▙ Challenges in Methodology Development</span></p>
+                                <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+                                    <button class="listen-button" style="background-color: white; border: 1px solid #000; padding: 10px 20px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 16px; width: 80%;">Listen to Episode</button>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/fmheinrichs/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://unbillable-hrs.com/" target="_blank" rel="noopener noreferrer">Podcast</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.thevisibleauthority.com/" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>Florian Heinrichs</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/FlorianH.png" alt="Florian Heinrichs">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="#roster" class="tab-link">Back to Roster</a>
+                </div>
+            </div>
+            <div class="sub-wrapper-episode" id="episode-5">
+                <div class="episode-tab text-label">
+                    Status:<br>To be released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">5</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Alex's Theme</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <p class="text-body">Topics Covered:<br>
+                                <span class="topic-line">▗ Beyond Niching: The Rise of Perspective-Driven Positioning</span>
+                                <span class="topic-line">▚ Developing a Perspective: Collaboration Over Isolation</span>
+                                <span class="topic-line">▙ Operationalizing Perspective</span></p>
+                                <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+                                    <button class="listen-button" style="background-color: white; border: 1px solid #000; padding: 10px 20px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 16px; width: 80%;">Listen to Episode</button>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/alex-owen-james/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.minimalistmarketing.co/message-matters-most" target="_blank" rel="noopener noreferrer">Messaging Course</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.minimalistmarketing.co/" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>Alex James</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/AlexJ.png" alt="Alex James">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="#roster" class="tab-link">Back to Roster</a>
+                </div>
+            </div>
+            <div class="sub-wrapper-episode" id="episode-6">
+                <div class="episode-tab text-label">
+                    Status:<br>To be released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">6</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Dylan's Theme</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <p class="text-body">Topics Covered:<br>
+                                <span class="topic-line">▗ Declining Organic Reach on LinkedIn</span>
+                                <span class="topic-line">▚ Niche Content Boosting as a Strategic Solution</span>
+                                <span class="topic-line">▙ Category Creation and Strategic Languaging</span></p>
+                                <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+                                    <button class="listen-button" style="background-color: white; border: 1px solid #000; padding: 10px 20px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 16px; width: 80%;">Listen to Episode</button>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/dylan-ciaccio-766826146/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://focusthelens.carrd.co/" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.youtube.com/watch?v=ul1tMZy55Qc" target="_blank" rel="noopener noreferrer">Video Introduction</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>Dylan Ciaccio</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/DylanC.png" alt="Dylan Ciaccio">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="#roster" class="tab-link">Back to Roster</a>
+                </div>
+            </div>
+            <div class="sub-wrapper-episode" id="episode-7">
+                <div class="episode-tab text-label">
+                    Status:<br>To be released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">7</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Patrick's Theme</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <p class="text-body">Topics Covered:<br>
+                                <span class="topic-line">▗ Adaptability and Business Pivots</span>
+                                <span class="topic-line">▚ Critique of Social Media and Outbound Marketing</span>
+                                <span class="topic-line">▙ Localized, Community-Driven Projects</span></p>
+                                <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+                                    <button class="listen-button" style="background-color: white; border: 1px solid #000; padding: 10px 20px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 16px; width: 80%;">Listen to Episode</button>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/kizny/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://kizny.com/" target="_blank" rel="noopener noreferrer">Personal Website</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.futurecrafting.express/" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>Patrick Kizny</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/PatrickK.png" alt="Patrick Kizny">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="#roster" class="tab-link">Back to Roster</a>
+                </div>
+            </div>
+            <div class="sub-wrapper-episode" id="episode-8">
+                <div class="episode-tab text-label">
+                    Status:<br>To be released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">8</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Jay's Theme</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <p class="text-body">Topics Covered:<br>
+                                <span class="topic-line">▗ Simplifying Expertise Through Packaging</span>
+                                <span class="topic-line">▚ Avoiding Overcomplication</span>
+                                <span class="topic-line">▙ Collaborative Problem-Solving</span></p>
+                                <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+                                    <button class="listen-button" style="background-color: white; border: 1px solid #000; padding: 10px 20px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 16px; width: 80%;">Listen to Episode</button>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/jaymelone/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://offer-development-masterclass.profitladder.net/" target="_blank" rel="noopener noreferrer">Offer Development Masterclass</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://newsletter.profitladder.net/" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>Jay Melone</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/JayM.png" alt="Jay Melone">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="#roster" class="tab-link">Back to Roster</a>
+                </div>
+            </div>
+            <div class="sub-wrapper-episode" id="episode-9">
+                <div class="episode-tab text-label">
+                    Status:<br>To be released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">9</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Kurt's Theme</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <p class="text-body">Topics covered:<br>
+                                <span class="topic-line">▗ Methodology Design as a Discipline</span>
+                                <span class="topic-line">▚ Challenges of Productizing Expertise</span>
+                                <span class="topic-line">▙ Common Pitfalls in Expertise Productization</span></p>
+                                <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+                                    <button class="listen-button" style="background-color: white; border: 1px solid #000; padding: 10px 20px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 16px; width: 80%;">Listen to Episode</button>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/kurt-bostelaar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://leverlo.com/" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://leverlo.com/newsletter/" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>Kurt Bostelaar</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/KurtB.png" alt="Kurt Bostelaar">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="#roster" class="tab-link">Back to Roster</a>
+                </div>
+            </div>
+            
+            <!-- Invisible spacer div -->
+            <div class="spacer-bottom" style="height: 15rem; width: 100%; visibility: hidden;"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p class="text-body">Exotic Matter is a <a href="https://Mesozoic.co" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><span class="text-accent mesozoic">Mesozoic</span></a> Product. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

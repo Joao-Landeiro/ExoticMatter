@@ -1,0 +1,1535 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* Variables */
+:root {
+    /* Colors */
+    /* Base Colors */
+    --dark-primary: #121212;
+    --dark-primary-rgb: 18, 18, 18;
+    /* Removing dark secondary */
+    /*--dark-secondary: #191322;*/
+    /*--dark-secondary-rgb: 25, 19, 34;*/
+    --light-primary: #E8E8E8;
+    --light-primary-rgb: 232, 232, 232;
+    --light-secondary: #BBBBBB;
+    --light-secondary-rgb: 187, 187, 187;
+    --accent: #613AA0;
+    --accent-rgb: 97, 58, 160;
+
+    /* Semantic Colors */
+    --color-background: var(--dark-primary);
+    --color-surface: var(--dark-primary); /* Changed from dark-secondary to dark-primary */
+    --color-text: var(--light-primary);
+    --color-text-secondary: var(--light-secondary);
+    --color-accent: var(--accent);
+
+    /* Theme Colors */
+    --bg-primary: var(--color-background);
+    --bg-secondary: var(--color-surface);
+    --text-primary: var(--color-text);
+    --text-secondary: var(--color-text-secondary);
+    --accent: var(--color-accent);
+
+    /* Opacity */
+    --opacity-light: 0.3;
+    --opacity-medium: 0.6;
+    --opacity-high: 0.8;
+
+    /* Borders */
+    --border-width-large: 2px;
+    --border-width-small: 1px;
+    --border-color: var(--light-primary);
+    --border-style: solid;
+    --border-default: var(--border-width-large) var(--border-style) var(--border-color);
+    --border-inner: var(--border-width-small) var(--border-style) var(--border-color);
+
+    /* Effects */
+    --blur-background: blur(10px);
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    /* Layout */
+    --container-width: 70vw;
+    --container-height: 70vh;
+    --content-padding: 1.5rem;
+    --content-margin: 2rem;
+
+    /* Typography */
+    --font-primary: 'Instrument Serif', serif;
+    --font-secondary: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-accent: 'Familjen Grotesk', sans-serif;
+    --font-size-small: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-large: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.5rem;
+    --font-size-huge: 10.5rem;
+
+    /* Z-index */
+    --z-background: 0;
+    --z-content: 1;
+    --z-overlay: 2;
+    --z-modal: 3;
+    --z-top: 4;
+
+    /* Animation */
+    --duration-fast: 200ms;
+    --duration-normal: 400ms;
+    --duration-slow: 800ms;
+    --timing-function: cubic-bezier(0.34, 0.13, 0.71, 0.95);
+
+    /* Scroll Behavior */
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+
+    /* New variables for debugging cleanup */
+    --episode-theme-selector: .form-space-episode-theme;
+}
+
+/* Typography Styles */
+.text-label {
+    font-family: var(--font-mono);
+    font-size: calc(var(--font-size-small) * 0.8);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.text-mono-small {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-small);
+    line-height: 1;
+}
+
+.text-episode-number {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: var(--dark-primary);
+    margin: 0;
+}
+
+.text-heading-primary {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+.text-body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*[class*="form-space"],
+*[class*="panel"] {
+    background-clip: padding-box;
+}
+
+/* Noise Texture */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Make it non-clickable */
+    z-index: var(--z-overlay); /* Above content but below modals */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0' result='grayscale'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncG type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncB type='gamma' amplitude='1.5' exponent='0.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E");
+    opacity: 0.15; /* Reduced from 0.28 to be subtle on white backgrounds */
+    mix-blend-mode: normal; /* Changed from 'screen' to 'normal' to show on all backgrounds */
+}
+
+/* Additional noise overlay for dark backgrounds to maintain current effect */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: var(--z-overlay);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0' result='grayscale'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncG type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncB type='gamma' amplitude='1.5' exponent='0.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E");
+    opacity: 0.15;
+    mix-blend-mode: screen; /* Keeps the original screen effect for dark areas */
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-bottom: var(--spacing-large);
+}
+
+h1, h2 {
+    text-align: left;
+}
+
+/* Layout */
+.wrapper-app {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: var(--content-margin);
+}
+
+.wrapper-content {
+    display: grid;
+    gap: var(--content-margin);
+    width: var(--container-width);
+    max-width: 1400px;
+    /* Ensure it fits within parent's content box */
+    max-width: 100%; 
+}
+
+.space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: var(--z-background);
+    background-color: var(--bg-primary);
+}
+
+/* Panels */
+.panel-intro,
+.panel-guests,
+.panel-episode,
+.panel-host,
+.panel-spotify {
+    background: rgba(var(--dark-primary-rgb), 0.6); /* Changed from dark-secondary-rgb to dark-primary-rgb */
+    backdrop-filter: blur(10px);
+    border: var(--border-default);
+    padding: 0;
+}
+
+.panel-episode:last-child {
+    margin-bottom: 20vh;
+}
+
+/* Intro Section */
+.panel-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sub-wrapper-intro-content {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* Form Spaces */
+.form-space-intro-title,
+.form-space-intro-observation,
+.form-space-intro-hypothesis,
+.form-space-intro-method,
+.form-space-guests-details,
+.form-space-guests-roster,
+.form-space-episode-title,
+.form-space-episode-number,
+.form-space-episode-summary,
+.form-space-episode-meta,
+.form-space-episode-theme,
+.form-space-intro-observation-label,
+.form-space-guest-meta,
+.form-space-guest-name,
+.form-space-guest-number,
+.form-space-episode-links,
+.form-space-host-details {
+    border: var(--border-inner);
+    margin: 0;
+}
+
+/* Form Space Labels */
+[class*="form-space"][class*="-label"],
+.form-space[data-type="label"],
+.episode-tab {
+    height: auto;
+    padding: calc(var(--content-padding) * 0.25) calc(var(--content-padding) * 0.5);
+    display: flex;
+    align-items: center;
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
+    border: none;
+}
+
+/* Form Spaces - Standard Padding */
+.form-space-intro-title,
+.form-space-intro-observation,
+.form-space-intro-hypothesis,
+.form-space-intro-method,
+.form-space-guests-details,
+.form-space-episode-title,
+.form-space-episode-theme,
+.form-space-episode-summary,
+.form-space-episode-meta,
+.form-space-episode-links,
+.form-space-guest-name,
+.form-space-guest-meta,
+.form-space-host-details {
+    padding: calc(var(--content-padding) * 0.5);
+}
+
+/* --------------------------------
+   Component: Episode Theme
+   Context: All viewports
+   States: normal
+   Dependencies: --content-padding, --border-inner
+   Purpose: Displays episode theme information with special bottom border treatment
+-------------------------------- */
+.form-space-episode-theme {
+    grid-area: unset !important;
+    padding: calc(var(--content-padding) * 0.5);
+    border: none;
+    border-bottom: var(--border-inner);
+    margin: 0;
+    min-width: 0;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    overflow: visible;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Typography for theme heading */
+.form-space-episode-theme h2 {
+    font-size: var(--font-size-large);
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    white-space: normal; /* Allow text wrapping */
+    overflow: visible;
+    text-overflow: clip;
+    color: var(--text-primary);
+    background-color: transparent;
+    border: none;
+    max-width: none;
+    word-wrap: break-word; /* Break long words if needed */
+}
+
+/* Intro Section */
+.form-space-intro-title {
+    display: grid;
+    place-items: center;
+}
+
+.form-space-intro-observation,
+.form-space-intro-hypothesis,
+.form-space-intro-method {
+    display: grid;
+    place-content: start;
+}
+
+/* Typography Styles */
+h1 {
+    font-size: var(--font-size-huge);
+    font-family: var(--font-primary);
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+h2 {
+    font-size: var(--font-size-large);
+    font-family: var(--font-primary);
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+p {
+    font-family: var(--font-secondary);
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Episode Card */
+.panel-episode {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background: rgba(var(--dark-primary-rgb), 0.6); /* Changed from dark-secondary-rgb to dark-primary-rgb */
+    backdrop-filter: blur(10px);
+    border: var(--border-default);
+    padding: 0;
+    height: auto;
+    min-height: 0;
+}
+
+.sub-wrapper-episode-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+}
+
+.sub-wrapper-episode-title,
+.sub-wrapper-episode-theme {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-width: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure theme section has label above content in all views */
+.sub-wrapper-episode-theme {
+    grid-column: 1 / -1 !important;
+    /* Make sure it's a vertical stack with label above content */
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+}
+
+/* Ensure both the label and content have identical width */
+.form-space-episode-theme-label,
+.form-space-episode-theme {
+    width: 100%;
+    min-width: 0;
+}
+
+.form-space-episode-title,
+.form-space-episode-theme {
+    margin: 0;
+    min-width: 0;
+}
+
+.form-space-episode-title h2,
+.form-space-episode-theme h2 {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Number squares */
+.form-space-episode-number,
+.form-space-guest-number {
+    aspect-ratio: 1;
+    border: var(--border-inner);
+    background-color: var(--light-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Guest number text */
+.form-space-guest-number h3 {
+    color: var(--dark-primary);
+}
+
+/* Episode number text */
+.form-space-episode-number h3 {
+    margin: 0;
+}
+
+.sub-wrapper-episode-body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin: 0;
+    padding: 0;
+    min-height: 0;
+    height: auto;
+    gap: 0;
+}
+
+.sub-wrapper-episode-content {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 0;
+}
+
+.form-space-episode-summary,
+.form-space-episode-meta {
+    padding: calc(var(--content-padding) * 0.5);
+}
+
+/* --------------------------------
+   Component: Episode Summary
+   Context: All viewports
+   States: normal
+   Dependencies: --content-padding, --border-inner
+   Purpose: Shows episode summary with only right border
+-------------------------------- */
+.form-space-episode-summary {
+    border: none;
+    padding: calc(var(--content-padding) * 0.5);
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: calc(var(--content-padding) * 0.5);
+    text-align: center;
+    z-index: var(--z-overlay);
+    background-color: var(--bg-primary);
+    border-top: var(--border-default);
+}
+
+.footer p {
+    font-family: var(--font-primary);
+    font-size: calc(var(--font-size-base) * 0.875);
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1;
+}
+
+.footer .mesozoic {
+    font-family: var(--font-accent);
+    font-weight: 700;
+}
+
+/* Space Elements Animation */
+.space-element {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.05);
+    opacity: var(--opacity-light);
+    pointer-events: none;
+    width: 50%;
+    height: auto;
+}
+
+.space-dust {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, var(--opacity-medium));
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: var(--opacity-light);
+    pointer-events: none;
+}
+
+@keyframes moveOutward {
+    0% {
+        transform: translate(-50%, -50%) scale(0.05) rotate(0deg);
+        opacity: var(--opacity-light);
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0.75) rotate(var(--rotation));
+        opacity: var(--opacity-high);
+    }
+}
+
+@keyframes moveOutwardDust {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: var(--opacity-light);
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1);
+        opacity: var(--opacity-medium);
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 1200px) {
+    .wrapper-content {
+        width: 90vw;
+    }
+
+    .panel-intro {
+        grid-template-columns: 1fr;
+    }
+
+    .sub-wrapper-episode-header {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .form-space-episode-number {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .sub-wrapper-episode-title {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .sub-wrapper-episode-theme {
+        grid-row: 2;
+        grid-column: 1 / -1;
+        width: 100%;
+        border-top: var(--border-inner); /* Add a border to visually separate it from content above */
+        margin-top: 0;
+        display: flex; /* Change to flexbox for better alignment on mobile */
+        flex-direction: column; /* Stack items vertically */
+        min-height: auto; /* Allow height to adjust to content */
+    }
+
+    /* Adjust the theme label and content for better mobile layout */
+    .form-space-episode-theme-label,
+    .form-space-episode-theme {
+        width: 100%; /* Make both elements full width */
+    }
+    
+    .form-space-episode-theme-label {
+        min-width: 0; /* Remove the minimum width */
+    }
+    
+    .form-space-episode-theme {
+        flex: 0 0 auto; /* Don't grow or shrink */
+    }
+
+    .sub-wrapper-episode-body {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .sub-wrapper-guests-content {
+        grid-template-columns: 1fr;
+    }
+
+    .guests-grid {
+        width: 100%;
+    }
+}
+
+/* --------------------------------
+   Component: Card Stack (Mobile)
+   Context: Mobile view (max-width: 768px)
+   States: hover, normal
+   Dependencies: --offset, --scale, --duration-normal, --duration-slow, --timing-function
+   Purpose: Creates a 3D staggered stack of guest cards for mobile display
+-------------------------------- */
+@media screen and (max-width: 768px) {
+    /* Container for the card stack system */
+    .panel-guests {
+        display: grid;
+        grid-template-rows: auto;
+        height: auto;
+        margin: 0 0 4rem 0;
+        position: relative;
+        min-height: 66rem; 
+    }
+
+    /* Container styles with 3D properties */
+    .sub-wrapper-guests-content,
+    .sub-wrapper-guests-roster,
+    .form-space-guests-roster,
+    .guests-grid,
+    .guests-grid-container {
+        height: auto;
+        position: relative;
+    }
+
+    .guests-grid {
+        perspective: 1000px;
+        overflow: visible;
+        height: auto;
+        position: relative;
+        /* Override base min-height for mobile with increased specificity */
+        .form-space-guests-roster & {
+             min-height: auto;
+        }
+    }
+
+    .guests-grid-container {
+        padding: 4rem 0 1rem 0; 
+        position: relative;
+        /* Explicitly target within panel-guests for higher specificity */
+        .panel-guests & { 
+            min-height: 52rem; 
+        }
+        transform-style: preserve-3d;
+        transform: translateZ(0);
+        width: min(500px, calc(100% - 4rem));
+        margin: 0 auto;
+    }
+
+    /* Base positioning for cards */
+    .sub-wrapper-guest-box {
+        --hover-offset-y: -30px; /* Variable for hover state */
+        position: absolute;
+        width: 100%;
+        left: 0;
+        transform: translateY(var(--offset)) scale(var(--scale));
+        transition: transform var(--duration-normal) var(--timing-function);
+        transform-origin: top center;
+        will-change: transform;
+    }
+
+    /* Hover effect for cards */
+    .sub-wrapper-guest-box:hover {
+        transform: translateY(calc(var(--offset) + var(--hover-offset-y))) scale(var(--scale));
+        transition: transform var(--duration-slow) var(--timing-function);
+    }
+
+    /* Individual card positioning with scale and z-index values */
+    .guests-grid-container > a:nth-child(1) .sub-wrapper-guest-box { --offset: 0rem; --scale: 0.56; z-index: 1; }
+    .guests-grid-container > a:nth-child(2) .sub-wrapper-guest-box { --offset: 3.0rem; --scale: 0.59; z-index: 2; }
+    .guests-grid-container > a:nth-child(3) .sub-wrapper-guest-box { --offset: 6.0rem; --scale: 0.62; z-index: 3; }
+    .guests-grid-container > a:nth-child(4) .sub-wrapper-guest-box { --offset: 9.0rem; --scale: 0.65; z-index: 4; }
+    .guests-grid-container > a:nth-child(5) .sub-wrapper-guest-box { --offset: 12.0rem; --scale: 0.68; z-index: 5; }
+    .guests-grid-container > a:nth-child(6) .sub-wrapper-guest-box { --offset: 15.0rem; --scale: 0.71; z-index: 6; }
+    .guests-grid-container > a:nth-child(7) .sub-wrapper-guest-box { --offset: 18.0rem; --scale: 0.74; z-index: 7; }
+    .guests-grid-container > a:nth-child(8) .sub-wrapper-guest-box { --offset: 21.0rem; --scale: 0.77; z-index: 8; }
+    .guests-grid-container > a:nth-child(9) .sub-wrapper-guest-box { --offset: 24.0rem; --scale: 0.80; z-index: 9; }
+
+    /* Ensure guest box link is clickable */
+    .guest-box-link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        pointer-events: auto;
+    }
+    
+    /* Mobile episode links style */
+    .form-space-episode-links {
+        border-left: none;
+        border-right: none;
+    }
+}
+
+/* Guests Panel - Basic structure */
+.panel-guests {
+    overflow: visible;
+    display: grid;
+    grid-template-rows: auto;
+    min-height: 0;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+}
+
+.sub-wrapper-guests-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: 0;
+    height: auto;
+}
+
+.sub-wrapper-guests-roster {
+    height: auto;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.form-space-guests-roster {
+    display: grid;
+    grid-template-rows: auto;
+    height: auto;
+    min-height: 0;
+}
+
+/* Universal Sub-wrapper Rule - NO PADDING OR GAPS */
+[class*="sub-wrapper"] {
+    margin: 0;
+    padding: 0;
+}
+
+/* Sub-wrappers - Only layout properties */
+.sub-wrapper-title {
+    width: 100%;
+    height: 100%;
+}
+
+.sub-wrapper-intro-observation,
+.sub-wrapper-intro-hypothesis,
+.sub-wrapper-intro-method,
+.sub-wrapper-episode-meta,
+.sub-wrapper-guests-details-extra {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+/* Guest Panel - Clean structure */
+.sub-wrapper-guests-details {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.form-space-guests-details {
+    border: var(--border-inner);
+    margin: 0;
+    padding: var(--content-padding);
+}
+
+/* Guest Status - setting to display:none as these elements don't exist in the current HTML structure */
+.sub-wrapper-guest-status {
+    display: none; /* Hidden since this element doesn't exist in the current HTML */
+}
+
+/* Guests Grid - Mobile First */
+.guests-grid,
+.guests-grid-container {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+}
+
+.guests-grid {
+    perspective: 1000px;
+    min-height: 85rem;
+}
+
+.guests-grid-container {
+    transform-style: preserve-3d;
+    min-height: 85rem;
+    width: min(500px, calc(100% - 4rem));
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+/* Desktop Grid Layout */
+@media screen and (min-width: 769px) {
+    .guests-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--content-margin);
+        min-height: 0;
+    }
+
+    .guests-grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--content-margin);
+        padding: var(--content-padding);
+        width: 100%;
+        min-height: 0;
+    }
+}
+
+/* Guest Card Base Styles */
+.sub-wrapper-guest-box {
+    border: var(--border-default);
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    padding: 0;
+    min-width: 200px;
+    transition: transform var(--duration-normal) var(--timing-function);
+    transform-origin: top center;
+    will-change: transform;
+    cursor: pointer;
+}
+
+/* Guest Link - Remove transform transition */
+.guest-box-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: outline var(--duration-fast) ease;
+}
+
+.guest-box-link:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    /* Remove the redundant border style as we've already set border: none on the main selector */
+    /*.form-space-episode-links {
+        border-left: none;
+        border-right: none;
+    }*/
+    
+    /* Panel guests styles */
+    .panel-guests {
+        display: grid;
+        grid-template-rows: auto;
+        height: auto;
+        margin: 0 0 4rem 0;
+        position: relative;
+    }
+
+    .sub-wrapper-guests-content {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        height: auto;
+    }
+
+    .sub-wrapper-guests-roster {
+        height: auto;
+        position: relative;
+    }
+
+    .form-space-guests-roster {
+        height: auto;
+        position: relative;
+    }
+
+    .guests-grid {
+        height: auto;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    .guests-grid-container {
+        height: auto;
+        padding: 4rem 0 1rem 0;
+        position: relative;
+    }
+}
+
+/* Desktop-specific styles */
+@media screen and (min-width: 769px) {
+    .sub-wrapper-guest-box {
+        position: relative;
+        transform: none;
+    }
+
+    .sub-wrapper-guest-box:hover {
+        transform: translateY(-10px);
+        transition: transform var(--duration-normal) var(--timing-function);
+    }
+}
+
+.form-space-guest-name {
+    flex: 1;
+    border: none;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-primary);
+}
+
+.form-space-guest-name p {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: calc(var(--font-size-small) * 1.5);
+    line-height: 1.2;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.form-space-guest-meta {
+    border: none;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-primary);
+}
+
+.form-space-guest-meta p {
+    margin: 0;
+    white-space: break-spaces;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    width: 100%;
+}
+
+.form-space-guest-photo {
+    width: 100% !important;
+    aspect-ratio: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+    border: none !important;
+    border-top: var(--border-inner) !important;
+    border-bottom: var(--border-inner) !important;
+    position: relative !important;
+}
+
+.form-space-guest-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+}
+
+.sub-wrapper-episode {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    margin: 0;
+    padding: 0;
+}
+
+/* Episode Tab */
+.episode-tab {
+    justify-self: start;
+    width: 33.333%;
+    margin-bottom: calc(var(--border-width-large) * -1);
+    position: relative;
+    z-index: 1;
+}
+
+.episode-tab-bottom {
+    margin-top: calc(var(--border-width-large) * -1);
+    margin-bottom: 0;
+    justify-self: end; /* Keep this one on the right */
+    z-index: 1;
+    border: var(--border-inner); /* Add a stroke/border */
+}
+
+/* Tab Navigation Link */
+.tab-link {
+    color: var(--dark-primary);
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    transition: text-decoration var(--duration-fast) ease;
+}
+
+.tab-link:hover {
+    text-decoration: underline;
+}
+
+/* Hide guest number in episode meta */
+.sub-wrapper-episode-meta .form-space-guest-number {
+    display: none;
+}
+
+.sub-wrapper-episode-meta .form-space-guest-name {
+    border-left: var(--border-inner);
+}
+
+/* Remove animations and hover effects for episode meta guest card */
+.sub-wrapper-episode-meta .sub-wrapper-guest-box {
+    position: static;
+    transform: none;
+    transition: none;
+    will-change: auto;
+    transform-box: content-box;
+    contain: none;
+    border: none; /* Remove the border/stroke from the guest box in episode panels */
+}
+
+.sub-wrapper-episode-meta .sub-wrapper-guest-box:hover {
+    transform: none;
+    transition: none;
+    z-index: auto;
+}
+
+.sub-wrapper-episode-meta .sub-wrapper-guest-box:not(:hover) {
+    transform: none;
+    transition: none;
+}
+
+.sub-wrapper-episode-meta .sub-wrapper-guest-box:hover ~ .sub-wrapper-guest-box {
+    transform: none;
+    transition: none;
+}
+
+/* Episode Links - Link styling */
+.form-space-episode-links a,
+.form-space-episode-links-1 a,
+.form-space-episode-links-2 a,
+.form-space-episode-links-3 a {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-small);
+    line-height: 1;
+    text-decoration: underline;
+    transition: background-color var(--duration-fast) ease;
+    display: inline-block;
+    overflow-wrap: normal;
+    color: var(--text-primary);
+    padding: 0 0.25em;
+}
+
+.form-space-episode-links a:hover,
+.form-space-episode-links-1 a:hover,
+.form-space-episode-links-2 a:hover,
+.form-space-episode-links-3 a:hover {
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
+}
+
+/* Episode Links - Grid Layout */
+.sub-wrapper-episode-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
+    grid-template-rows: auto auto;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+[class*="sub-wrapper-episode-links-"] {
+    display: contents;
+}
+
+.form-space-episode-links-1-label,
+.form-space-episode-links-2-label,
+.form-space-episode-links-3-label {
+    grid-row: 1;
+}
+
+/* Episode Links - Individual Addressable Classes */
+.form-space-episode-links-1 {
+    /* LinkedIn */
+    grid-column: 1;
+}
+
+.form-space-episode-links-2 {
+    /* YouTube */
+    grid-column: 2;
+    border-left: var(--border-inner);
+    border-right: var(--border-inner);
+}
+
+.form-space-episode-links-3 {
+    /* Personal Website */
+    grid-column: 3;
+    border-right: none; /* Remove right border from the last link */
+}
+
+/* General link styling - Keep for backwards compatibility */
+.form-space-episode-links {
+    grid-row: 2;
+    border: none;
+    margin: 0;
+    padding: calc(var(--content-padding) * 0.25) calc(var(--content-padding) * 0.5);
+    display: flex;
+    align-items: center;
+}
+
+/* Remove right border from the last link in each row - no longer needed */
+.form-space-episode-links:nth-child(6) {
+    /* removed border-right: none; as it's no longer needed */
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    /* Remove borders between links on mobile */
+    .form-space-episode-links {
+        border-left: none;
+        border-right: none;
+    }
+    
+    /* Panel guests styles */
+    .panel-guests {
+        display: grid;
+        grid-template-rows: auto;
+        height: auto;
+        margin: 0 0 4rem 0;
+        position: relative;
+    }
+
+    .sub-wrapper-guests-content {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        height: auto;
+    }
+
+    .sub-wrapper-guests-roster {
+        height: auto;
+        position: relative;
+    }
+
+    .form-space-guests-roster {
+        height: auto;
+        position: relative;
+    }
+
+    .guests-grid {
+        height: auto;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    .guests-grid-container {
+        height: auto;
+        padding: 4rem 0 1rem 0;
+        position: relative;
+    }
+}
+
+/* --------------------------------
+   Component: Host Panel
+   Context: All viewports
+   States: normal
+   Dependencies: --content-padding, --border-inner
+   Purpose: Displays information about the podcast host
+-------------------------------- */
+.panel-host {
+    min-height: 200px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.sub-wrapper-host-content {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.sub-wrapper-host-details {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.form-space-host-details {
+    padding: calc(var(--content-padding) * 0.5);
+    border: var(--border-inner);
+    margin: 0;
+}
+
+/* --------------------------------
+   Component: Episode Meta Guest Box
+   Context: Episode meta section
+   States: normal
+   Dependencies: --content-padding, --border-inner
+   Purpose: Displays guest information in episode panel without animation effects
+-------------------------------- */
+.sub-wrapper-episode-meta .sub-wrapper-guest-box > div:first-child {
+    height: auto;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--content-padding) * 0.5);
+    background-color: var(--dark-primary);
+}
+
+.sub-wrapper-episode-meta .sub-wrapper-guest-box > div:last-child {
+    padding: calc(var(--content-padding) * 0.5);
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-primary);
+}
+
+.sub-wrapper-episode-meta .sub-wrapper-guest-box p {
+    margin: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    width: 100%;
+}
+
+/* Add specific styling for the guest status text in episode meta */
+.sub-wrapper-episode-meta .sub-wrapper-guest-status p {
+    display: none; /* Hidden since this element doesn't exist in the current HTML */
+}
+
+/* Override text-mono-small class for guest names */
+.form-space-guest-name p.text-mono-small {
+    font-family: var(--font-primary);
+    font-size: calc(var(--font-size-small) * 1.5);
+    line-height: 1.2;
+}
+
+/* Also override in episode meta section - setting to display:none as these elements don't exist */
+.sub-wrapper-episode-meta .sub-wrapper-guest-status p.text-mono-small {
+    display: none; /* Hidden since this element doesn't exist in the current HTML */
+}
+
+/* Maintain existing episode-meta styling for guest-box */
+.sub-wrapper-episode-meta .sub-wrapper-guest-box {
+    position: static;
+    transform: none;
+    transition: none;
+    will-change: auto;
+    transform-box: content-box;
+    contain: none;
+    border: none; /* Remove the border/stroke from the guest box in episode panels */
+}
+
+/* Clean up the theme styles - Delete redundant media queries section and replace with ONE definitive set of rules */
+/* --------------------------------
+   Component: Theme Section Structure
+   Context: All viewports
+   States: normal
+   Dependencies: none
+   Purpose: Provides consistent layout structure for theme sections
+-------------------------------- */
+.sub-wrapper-episode-theme {
+    display: grid;
+    grid-template-rows: auto 1fr; /* One row for label, one for content */
+    grid-template-columns: 1fr; /* Force single column layout */
+    align-items: start; /* Align items to the top */
+    width: 100%; /* Ensure it takes full width of its grid cell */
+    min-width: 0; /* Allow it to shrink if needed */
+    overflow: hidden; /* Prevent overflow */
+    grid-column: 1 / -1 !important;
+}
+
+/* Ensure theme label and content take full width of their container */
+.form-space-episode-theme-label,
+.form-space-episode-theme {
+    width: 100%; /* Make both elements full width */
+    min-width: 0; /* Allow shrinking if needed */
+}
+
+/* Override media query styles with this high-specificity rule */
+html body .sub-wrapper-episode-theme {
+    display: grid !important;
+    grid-template-rows: auto auto !important; 
+    grid-template-columns: 1fr !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    align-items: start !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: none !important;
+}
+
+/* Responsive adjustments for theme section */
+@media screen and (max-width: 1200px) {
+    .sub-wrapper-episode-theme {
+        grid-row: 2;
+        grid-column: 1 / -1;
+        width: 100%;
+        border-top: var(--border-inner); /* Add a border to visually separate it from content above */
+        margin-top: 0;
+        display: flex; /* Change to flexbox for better alignment on mobile */
+        flex-direction: column; /* Stack items vertically */
+        min-height: auto; /* Allow height to adjust to content */
+    }
+    
+    .form-space-episode-theme-label,
+    .form-space-episode-theme {
+        width: 100%; /* Make both elements full width */
+    }
+    
+    .form-space-episode-theme-label {
+        min-width: 0; /* Remove the minimum width */
+    }
+    
+    .form-space-episode-theme {
+        flex: 0 0 auto; /* Don't grow or shrink */
+    }
+}
+
+/* Instead, add proper documentation to the existing high-specificity selectors */
+/* --------------------------------
+   Component: Episode Layout Grid
+   Context: All viewports
+   States: normal
+   Dependencies: none
+   Purpose: Provides reliable grid layout even when CSS specificity conflicts arise
+   Note: High-specificity selectors are used to override conflicting styles
+-------------------------------- */
+html body .sub-wrapper-episode-header {
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    grid-template-rows: auto auto !important;
+    grid-template-areas: 
+        "number title"
+        "theme theme" !important;
+}
+
+/* Position each element in the grid */
+html body .form-space-episode-number {
+    grid-area: number !important;
+}
+
+html body .sub-wrapper-episode-title {
+    grid-area: title !important;
+}
+
+html body .sub-wrapper-episode-theme {
+    grid-area: theme !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Update the theme element documentation */
+/* --------------------------------
+   Component: Episode Theme Element
+   Context: All viewports
+   States: normal
+   Dependencies: --content-padding, --border-inner
+   Purpose: Ensures consistent styling for theme elements
+-------------------------------- */
+.form-space-episode-theme[data-section="episode"][data-type="content"] {
+    border: none;
+    border-bottom: var(--border-inner);
+    background-color: transparent;
+    padding: calc(var(--content-padding) * 0.5);
+    height: auto;
+}
+
+/* Note: Debug styles with yellow borders and red backgrounds have been removed */
+
+/* --------------------------------
+   Component: Episode Summary
+   Context: All viewports
+   States: normal
+   Dependencies: --content-padding, --border-inner
+   Purpose: Shows episode summary with only right border
+-------------------------------- */
+.form-space-episode-summary {
+    border: none;
+    padding: calc(var(--content-padding) * 0.5);
+}
+
+/* Also update the shared rule to be consistent */
+.form-space-episode-summary,
+.form-space-episode-meta {
+    padding: calc(var(--content-padding) * 0.5);
+}
+
+/* --------------------------------
+   Component: Episode Meta Guest Status
+   Context: Episode meta section
+   States: normal
+   Dependencies: --content-padding
+   Purpose: Provides specific styling for guest status in episode panels
+-------------------------------- */
+.sub-wrapper-episode-meta .sub-wrapper-guest-status {
+    display: none; /* Hidden since this element doesn't exist in the current HTML */
+}
+
+/* Existing styles for the first and last child already target the right elements */
+
+/* Add stroke to guest photo in episode meta - only top and bottom */
+.sub-wrapper-episode-meta .form-space-guest-photo {
+    border: none !important;
+    border-top: var(--border-inner) !important;
+    border-bottom: var(--border-inner) !important;
+    width: 100% !important;
+    aspect-ratio: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Ensure guest photos in episode meta fit their container perfectly */
+.sub-wrapper-episode-meta .form-space-guest-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+}
+
+/* Ensure the guest box in episode meta has no extra spacing */
+.sub-wrapper-episode-meta .sub-wrapper-guest-box {
+    position: static;
+    transform: none;
+    transition: none;
+    will-change: auto;
+    transform-box: content-box;
+    contain: none;
+    border: none; /* Remove the border/stroke from the guest box in episode panels */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Add comments indicating the removal of unused CSS */
+/* Note: CSS rules for sub-wrapper-guest-status have been set to display:none as these elements 
+   don't exist in the current HTML structure. This maintains compatibility if they're added later. */
+
+.sub-wrapper-episode-meta .sub-wrapper-guest-status p {
+    display: none; /* Hidden since this element doesn't exist in the current HTML */
+}
+
+.sub-wrapper-episode-meta {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-left: var(--border-inner);
+}
+
+.form-space-guest-name.form-space {
+    border: none !important;
+}
+
+/* Transcript Panel */
+.panel-transcript {
+    margin-top: 2rem;
+    border: var(--border-default);
+    background-color: rgba(var(--dark-primary-rgb), 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.form-space-transcript-title {
+    margin-bottom: 1rem;
+    color: var(--light-primary);
+    width: 100%;
+    display: block;
+}
+
+.form-space-transcript-content {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Resources Panel */
+.panel-resources {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: var(--border-default);
+    background-color: rgba(var(--dark-primary-rgb), 0.7);
+}
+
+.form-space-resources-title {
+    margin-bottom: 1rem;
+    color: var(--light-primary);
+}
+
+.form-space-resources-content {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.transcript-container {
+    padding: 1.5rem;
+}
+
+.panel-spotify {
+    margin-top: 2rem;
+    border: var(--border-default);
+    background-color: rgba(var(--dark-primary-rgb), 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.form-space-spotify-title {
+    margin-bottom: 1rem;
+    color: var(--light-primary);
+    width: 100%;
+    display: block;
+}
+
+.spotify-container {
+    padding: 1.5rem;
+}
+
+.topic-line {
+    display: block;
+    margin-bottom: 1.5em;
+}

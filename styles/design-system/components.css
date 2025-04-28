@@ -1,0 +1,21 @@
+/* Box Components */
+
+/* Main container boxes - the ones in the center of the page */
+.content-box.main-box,
+.content-box.episode-box {
+    border: var(--border-default);
+    background: rgba(var(--bg-secondary), var(--opacity-high));
+    backdrop-filter: var(--blur-background);
+    padding: var(--content-padding);
+}
+
+/* Any box that's inside main-box or episode-box */
+.main-box .content-box,
+.episode-box .content-box {
+    border: var(--border-inner);
+    background: rgba(var(--bg-secondary), var(--opacity-high));
+    padding: var(--content-padding);
+}
+
+/* Content structure */
+// ... existing code ...
