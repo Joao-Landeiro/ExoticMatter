@@ -145,7 +145,7 @@ body::before {
     height: 100vh;
     pointer-events: none; /* Make it non-clickable */
     z-index: var(--z-overlay); /* Above content but below modals */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0' result='grayscale'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncG type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncB type='gamma' amplitude='1.5' exponent='0.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.5' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0' result='grayscale'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncG type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncB type='gamma' amplitude='1.5' exponent='0.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E");
     opacity: 0.15; /* Reduced from 0.28 to be subtle on white backgrounds */
     mix-blend-mode: normal; /* Changed from 'screen' to 'normal' to show on all backgrounds */
 }
@@ -160,7 +160,7 @@ body::after {
     height: 100vh;
     pointer-events: none;
     z-index: var(--z-overlay);
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0' result='grayscale'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncG type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncB type='gamma' amplitude='1.5' exponent='0.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.5' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0' result='grayscale'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncG type='gamma' amplitude='1.5' exponent='0.5'/%3E%3CfeFuncB type='gamma' amplitude='1.5' exponent='0.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E");
     opacity: 0.15;
     mix-blend-mode: screen; /* Keeps the original screen effect for dark areas */
 }
@@ -460,7 +460,7 @@ p {
 
 .form-space-episode-summary,
 .form-space-episode-meta {
-    padding: calc(var(--content-padding) * 0.5);
+    padding: 0;
 }
 
 /* --------------------------------
@@ -471,8 +471,10 @@ p {
    Purpose: Shows episode summary with only right border
 -------------------------------- */
 .form-space-episode-summary {
-    border: none;
-    padding: calc(var(--content-padding) * 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
 }
 
 /* Footer */
@@ -1532,4 +1534,77 @@ html body .sub-wrapper-episode-theme {
 .topic-line {
     display: block;
     margin-bottom: 1.5em;
+}
+
+.colored-bars-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.colored-bar-top,
+.colored-bar-middle,
+.colored-bar-bottom {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 12px; 12px; 12 px; 12px; 
+    width: 100%;
+    margin: 0;
+}
+
+.colored-bar-middle {
+    border-top: var(--border-inner);
+    border-bottom: var(--border-inner);
+}
+
+.episode-player-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    max-width: 800px;
+}
+
+/* Hide episode player in all episodes except episode zero */
+#episode-1 .episode-player-wrapper,
+#episode-2 .episode-player-wrapper,
+#episode-3 .episode-player-wrapper,
+#episode-4 .episode-player-wrapper,
+#episode-5 .episode-player-wrapper,
+#episode-6 .episode-player-wrapper,
+#episode-7 .episode-player-wrapper,
+#episode-8 .episode-player-wrapper,
+#episode-9 .episode-player-wrapper {
+    display: none;
+}
+
+.system-status {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-primary);
+    white-space: pre;
+    padding: 2rem;
+    margin: 2rem 0;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Add blinking animation for system status */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.system-status-blink {
+    animation: blink 1.5s infinite;
+    display: inline-block;
 }
