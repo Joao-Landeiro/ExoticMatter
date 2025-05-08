@@ -4,3 +4,9 @@ node_modules/
 *.log
 .vscode/
 .idea/ 
+create-new-episode-page.MD
+design-system.css
+transcript_parts.md
+episode-page.html
+public/
+visual references/ 

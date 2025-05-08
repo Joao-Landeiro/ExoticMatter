@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 0 - Welcome to Exotic Matter</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=familjen-grotesk@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        .sticky-topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 1rem 2rem;
+            z-index: var(--z-top);
+            border-bottom: 1px solid var(--light-secondary);
+        }
+        .sticky-topbar a {
+            color: var(--dark-primary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: var(--font-size-small);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .sticky-topbar a:hover {
+            color: var(--accent);
+        }
+        /* Add padding to body to account for fixed header */
+        body {
+            padding-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="sticky-topbar">
+        <a href="index.html">Go back to Exotic Matter</a>
+    </div>
+    <div class="wrapper-app">
+        <div class="space-background"></div>
+        <div class="wrapper-content">
+            <!-- Episode Panel -->
+            <div class="sub-wrapper-episode" id="episode-0">
+                <div class="episode-tab text-label">
+                    Status:<br>Released
+                </div>
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">0</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                                Theme:
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Welcome to Exotic Matter</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <div class="episode-player-wrapper">
+                                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/4UK2AfEHON0qkYxxwILIvR/video?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
+                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.linkedin.com/in/joaolandeiro/" class="text-mono-small" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
+                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
+                                        <a href="https://joaolandeiro.substack.com/" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                    </div>
+                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
+                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
+                                        <a href="https://www.mesozoic.co" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-wrapper-episode-meta" style="display: flex; flex-direction: column; height: 100%;">
+                            <div class="sub-wrapper-guest-box" style="display: flex; flex-direction: column; height: 100%;">
+                                <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
+                                    <h2>João Landeiro</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/JoaoL.png" alt="João Landeiro">
+                                </div>
+                                <div class="colored-bars-container">
+                                    <div class="colored-bar-top">
+                                        <span class="text-body">What is happening to Knowledge Work</span>
+                                    </div>
+                                    <div class="colored-bar-middle">
+                                        <span class="text-body">What do we want to know</span>
+                                    </div>
+                                    <div class="colored-bar-bottom">
+                                        <span class="text-body">How we will find it out</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-tab text-label episode-tab-bottom">
+                    <a href="index.html#roster" class="tab-link">Back to<br>Roster</a>
+                </div>
+            </div>
+            
+            <!-- Spotify Player Panel -->
+            <div class="panel-spotify">
+                <div class="form-space-spotify-title form-space text-label" data-type="label" data-section="spotify">
+                    Listen:
+                </div>
+                <div class="spotify-container">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/4UK2AfEHON0qkYxxwILIvR?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+            
+            <!-- Transcript Section -->
+            <div class="panel-transcript">
+                <div class="form-space-transcript-title form-space text-label" data-type="label" data-section="transcript">
+                    Transcript:
+                </div>
+                <div class="transcript-container">
+                    <div class="form-space-transcript-content form-space" data-section="transcript" data-type="content">
+                        <!-- Transcript will be added later -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- About Section -->
+            <div class="panel-about">
+                <div class="form-space-about-title form-space text-label" data-type="label" data-section="about">
+                    About Exotic Matter:
+                </div>
+                <div class="form-space-about-content form-space" data-section="about" data-type="content">
+                    <p class="text-body">Exotic Matter is a podcast that explores the changing landscape of knowledge work. Through conversations with experts and practitioners, we investigate how AI, global competition, and market saturation are reshaping the way we work and create value.</p>
+                </div>
+            </div>
+            
+            <!-- Resources Panel -->
+            <div class="panel-resources">
+                <div class="form-space-resources-title form-space text-label" data-type="label" data-section="resources">
+                    Resources:
+                </div>
+                <div class="form-space-resources-content form-space" data-section="resources" data-type="content">
+                    <!-- Resources will be added later -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p class="text-mono-small">Exotic Matter is a product of Mesozoic</p>
+    </footer>
+</body>
+</html> 
