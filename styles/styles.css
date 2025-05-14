@@ -10,8 +10,6 @@
     --dark-primary: #121212;
     --dark-primary-rgb: 18, 18, 18;
     /* Removing dark secondary */
-    /*--dark-secondary: #191322;*/
-    /*--dark-secondary-rgb: 25, 19, 34;*/
     --light-primary: #E8E8E8;
     --light-primary-rgb: 232, 232, 232;
     --light-secondary: #BBBBBB;
@@ -85,8 +83,6 @@
     scroll-behavior: smooth;
     scroll-padding-top: 2rem;
 
-    /* New variables for debugging cleanup */
-    --episode-theme-selector: .form-space-episode-theme;
 }
 
 /* Typography Styles */
@@ -179,7 +175,6 @@ h1, h2 {
 .panel-intro,
 .panel-guests,
 .panel-episode,
-.panel-host,
 .panel-spotify,
 .panel-mesozoic {
     background: rgba(var(--dark-primary-rgb), 0.6);
@@ -215,12 +210,8 @@ h1, h2 {
 .form-space-episode-title,
 .form-space-episode-number,
 .form-space-episode-summary,
-.form-space-episode-meta,
-.form-space-episode-theme,
-.form-space-intro-observation-label,
-.form-space-guest-meta,
+.form-space-intro-observation-label
 .form-space-guest-name,
-.form-space-guest-number,
 .form-space-episode-links,
 .form-space-host-details {
     border: var(--border-inner);
@@ -247,54 +238,16 @@ h1, h2 {
 .form-space-intro-method,
 .form-space-guests-details,
 .form-space-episode-title,
-.form-space-episode-theme,
 .form-space-episode-summary,
-.form-space-episode-meta,
 .form-space-episode-links,
 .form-space-guest-name,
-.form-space-guest-meta,
 .form-space-host-details {
     padding: calc(var(--content-padding) * 0.5);
 }
 
-/* --------------------------------
-   Component: Episode Theme
-   Context: All viewports
-   States: normal
-   Dependencies: --content-padding, --border-inner
-   Purpose: Displays episode theme information with special bottom border treatment
--------------------------------- */
-.form-space-episode-theme {
-    grid-area: unset !important;
-    padding: calc(var(--content-padding) * 0.5);
-    border: none;
-    border-bottom: var(--border-inner);
-    margin: 0;
-    min-width: 0;
-    height: auto;
-    min-height: auto;
-    max-height: none;
-    overflow: visible;
-    display: block;
-    visibility: visible;
-    opacity: 1;
-}
 
-/* Typography for theme heading */
-.form-space-episode-theme h2 {
-    font-size: var(--font-size-large);
-    margin: 0;
-    padding: 0;
-    line-height: 1.2;
-    white-space: normal; /* Allow text wrapping */
-    overflow: visible;
-    text-overflow: clip;
-    color: var(--text-primary);
-    background-color: transparent;
-    border: none;
-    max-width: none;
-    word-wrap: break-word; /* Break long words if needed */
-}
+
+
 
 /* Intro Section */
 .form-space-intro-title {
@@ -372,20 +325,19 @@ p {
 }
 
 /* Ensure both the label and content have identical width */
-.form-space-episode-theme-label,
-.form-space-episode-theme {
+.form-space-episode-theme-label
+{
     width: 100%;
     min-width: 0;
 }
 
-.form-space-episode-title,
-.form-space-episode-theme {
+.form-space-episode-title
+{
     margin: 0;
     min-width: 0;
 }
 
-.form-space-episode-title h2,
-.form-space-episode-theme h2 {
+.form-space-episode-title h2 {
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -430,7 +382,7 @@ p {
 }
 
 .form-space-episode-summary,
-.form-space-episode-meta {
+{
     padding: 0;
 }
 
@@ -520,76 +472,141 @@ p {
     }
 }
 
-/* Mobile Responsive */
-@media screen and (max-width: 1200px) {
-    .wrapper-content {
-        width: 90vw;
-    }
+/* Guests Panel - Basic structure */
+.panel-guests {
+    overflow: visible;
+    display: grid;
+    grid-template-rows: auto;
+    min-height: 0;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+}
 
-    .panel-intro {
-        grid-template-columns: 1fr;
-    }
+.sub-wrapper-guests-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: 0;
+    height: auto;
+}
 
-    .sub-wrapper-episode-header {
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto;
-    }
+.sub-wrapper-guests-roster {
+    height: auto;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: auto auto;
+}
 
-    .form-space-episode-number {
-        grid-row: 1;
-        grid-column: 1;
-    }
+.form-space-guests-roster {
+    display: grid;
+    grid-template-rows: auto;
+    height: auto;
+    min-height: 0;
+}
 
-    .sub-wrapper-episode-title {
-        grid-row: 1;
-        grid-column: 2;
-    }
+/* Universal Sub-wrapper Rule - NO PADDING OR GAPS */
+[class*="sub-wrapper"] {
+    margin: 0;
+    padding: 0;
+}
 
-    .sub-wrapper-episode-theme {
-        grid-row: 2;
-        grid-column: 1 / -1;
-        width: 100%;
-        border-top: var(--border-inner); /* Add a border to visually separate it from content above */
-        margin-top: 0;
-        display: flex; /* Change to flexbox for better alignment on mobile */
-        flex-direction: column; /* Stack items vertically */
-        min-height: auto; /* Allow height to adjust to content */
-    }
+/* Sub-wrappers - Only layout properties */
+.sub-wrapper-title {
+    width: 100%;
+    height: 100%;
+}
 
-    /* Adjust the theme label and content for better mobile layout */
-    .form-space-episode-theme-label,
-    .form-space-episode-theme {
-        width: 100%; /* Make both elements full width */
-    }
-    
-    .form-space-episode-theme-label {
-        min-width: 0; /* Remove the minimum width */
-    }
-    
-    .form-space-episode-theme {
-        flex: 0 0 auto; /* Don't grow or shrink */
-    }
+.sub-wrapper-intro-observation,
+.sub-wrapper-intro-hypothesis,
+.sub-wrapper-intro-method,
+.sub-wrapper-episode-meta,
+.sub-wrapper-guests-details-extra {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
 
-    .sub-wrapper-episode-body {
-        grid-template-columns: 2fr 1fr;
-    }
+/* Guest Panel - Clean structure */
+.sub-wrapper-guests-details {
+    border: var(--border-inner);
+    margin: 0;
+    padding: var(--content-padding);
+}
 
-    .sub-wrapper-guests-content {
-        grid-template-columns: 1fr;
-    }
+/* Guest Status - setting to display:none as these elements don't exist in the current HTML structure */
+/* .sub-wrapper-guest-status is removed as it's unused */
 
+/* Guests Grid - Mobile First */
+.guests-grid,
+.guests-grid-container {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+}
+
+.guests-grid {
+    perspective: 1000px;
+    min-height: 85rem;
+}
+
+.guests-grid-container {
+    transform-style: preserve-3d;
+    min-height: 85rem;
+    width: min(500px, calc(100% - 4rem));
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+/* Desktop Grid Layout */
+@media screen and (min-width: 769px) {
     .guests-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--content-margin);
+        min-height: 0;
+    }
+
+    .guests-grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--content-margin);
+        padding: var(--content-padding);
         width: 100%;
+        min-height: 0;
     }
 }
 
-/* --------------------------------
-   Component: Card Stack (Mobile)
-   Context: Mobile view (max-width: 768px)
-   States: hover, normal
-   Dependencies: --offset, --scale, --duration-normal, --duration-slow, --timing-function
-   Purpose: Creates a 3D staggered stack of guest cards for mobile display
--------------------------------- */
+/* Guest Card Base Styles */
+.sub-wrapper-guest-box {
+    border: var(--border-default);
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    padding: 0;
+    min-width: 200px;
+    transition: transform var(--duration-normal) var(--timing-function);
+    transform-origin: top center;
+    will-change: transform;
+    cursor: pointer;
+}
+
+/* Guest Link - Remove transform transition */
+.guest-box-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: outline var(--duration-fast) ease;
+}
+
+.guest-box-link:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+/* Mobile-specific styles */
 @media screen and (max-width: 768px) {
     /* Container for the card stack system */
     .panel-guests {
@@ -676,194 +693,6 @@ p {
     }
 }
 
-/* Guests Panel - Basic structure */
-.panel-guests {
-    overflow: visible;
-    display: grid;
-    grid-template-rows: auto;
-    min-height: 0;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    border-bottom: none;
-}
-
-.sub-wrapper-guests-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    min-height: 0;
-    height: auto;
-}
-
-.sub-wrapper-guests-roster {
-    height: auto;
-    min-height: 0;
-    display: grid;
-    grid-template-rows: auto auto;
-}
-
-.form-space-guests-roster {
-    display: grid;
-    grid-template-rows: auto;
-    height: auto;
-    min-height: 0;
-}
-
-/* Universal Sub-wrapper Rule - NO PADDING OR GAPS */
-[class*="sub-wrapper"] {
-    margin: 0;
-    padding: 0;
-}
-
-/* Sub-wrappers - Only layout properties */
-.sub-wrapper-title {
-    width: 100%;
-    height: 100%;
-}
-
-.sub-wrapper-intro-observation,
-.sub-wrapper-intro-hypothesis,
-.sub-wrapper-intro-method,
-.sub-wrapper-episode-meta,
-.sub-wrapper-guests-details-extra {
-    display: grid;
-    grid-template-rows: auto 1fr;
-}
-
-/* Guest Panel - Clean structure */
-.sub-wrapper-guests-details {
-    display: grid;
-    grid-template-rows: auto 1fr;
-}
-
-.form-space-guests-details {
-    border: var(--border-inner);
-    margin: 0;
-    padding: var(--content-padding);
-}
-
-/* Guest Status - setting to display:none as these elements don't exist in the current HTML structure */
-.sub-wrapper-guest-status {
-    display: none; /* Hidden since this element doesn't exist in the current HTML */
-}
-
-/* Guests Grid - Mobile First */
-.guests-grid,
-.guests-grid-container {
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    overflow: visible;
-}
-
-.guests-grid {
-    perspective: 1000px;
-    min-height: 85rem;
-}
-
-.guests-grid-container {
-    transform-style: preserve-3d;
-    min-height: 85rem;
-    width: min(500px, calc(100% - 4rem));
-    margin: 0 auto;
-    padding: 4rem 0;
-}
-
-/* Desktop Grid Layout */
-@media screen and (min-width: 769px) {
-    .guests-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: var(--content-margin);
-        min-height: 0;
-    }
-
-    .guests-grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: var(--content-margin);
-        padding: var(--content-padding);
-        width: 100%;
-        min-height: 0;
-    }
-}
-
-/* Guest Card Base Styles */
-.sub-wrapper-guest-box {
-    border: var(--border-default);
-    display: grid;
-    grid-template-rows: auto auto 1fr;
-    padding: 0;
-    min-width: 200px;
-    transition: transform var(--duration-normal) var(--timing-function);
-    transform-origin: top center;
-    will-change: transform;
-    cursor: pointer;
-}
-
-/* Guest Link - Remove transform transition */
-.guest-box-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: outline var(--duration-fast) ease;
-}
-
-.guest-box-link:focus {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 4px;
-}
-
-/* Mobile-specific styles */
-@media screen and (max-width: 768px) {
-    /* Remove the redundant border style as we've already set border: none on the main selector */
-    /*.form-space-episode-links {
-        border-left: none;
-        border-right: none;
-    }*/
-    
-    /* Panel guests styles */
-    .panel-guests {
-        display: grid;
-        grid-template-rows: auto;
-        height: auto;
-        margin: 0 0 4rem 0;
-        position: relative;
-    }
-
-    .sub-wrapper-guests-content {
-        display: grid;
-        grid-template-rows: auto 1fr;
-        height: auto;
-    }
-
-    .sub-wrapper-guests-roster {
-        height: auto;
-        position: relative;
-    }
-
-    .form-space-guests-roster {
-        height: auto;
-        position: relative;
-    }
-
-    .guests-grid {
-        height: auto;
-        margin: 0;
-        padding: 0;
-        position: relative;
-    }
-
-    .guests-grid-container {
-        height: auto;
-        padding: 4rem 0 1rem 0;
-        position: relative;
-    }
-}
-
 /* Desktop-specific styles */
 @media screen and (min-width: 769px) {
     .sub-wrapper-guest-box {
@@ -894,21 +723,6 @@ p {
     white-space: normal;
 }
 
-.form-space-guest-meta {
-    border: none;
-    display: flex;
-    align-items: center;
-    background-color: var(--dark-primary);
-}
-
-.form-space-guest-meta p {
-    margin: 0;
-    white-space: break-spaces;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    width: 100%;
-}
 
 .form-space-guest-photo {
     width: 100% !important;
@@ -978,10 +792,7 @@ p {
     text-decoration: underline;
 }
 
-/* Hide guest number in episode meta */
-.sub-wrapper-episode-meta .form-space-guest-number {
-    display: none;
-}
+
 
 .sub-wrapper-episode-meta .form-space-guest-name {
     border-left: var(--border-inner);
@@ -1147,11 +958,6 @@ p {
    Dependencies: --content-padding, --border-inner
    Purpose: Displays information about the podcast host
 -------------------------------- */
-.panel-host {
-    min-height: 200px;
-    display: grid;
-    grid-template-rows: auto 1fr;
-}
 
 .sub-wrapper-host-content {
     display: grid;
@@ -1248,8 +1054,7 @@ p {
 }
 
 /* Ensure theme label and content take full width of their container */
-.form-space-episode-theme-label,
-.form-space-episode-theme {
+.form-space-episode-theme-label {
     width: 100%; /* Make both elements full width */
     min-width: 0; /* Allow shrinking if needed */
 }
@@ -1282,8 +1087,7 @@ html body .sub-wrapper-episode-theme {
         min-height: auto; /* Allow height to adjust to content */
     }
     
-    .form-space-episode-theme-label,
-    .form-space-episode-theme {
+    .form-space-episode-theme-label{
         width: 100%; /* Make both elements full width */
     }
     
@@ -1291,9 +1095,6 @@ html body .sub-wrapper-episode-theme {
         min-width: 0; /* Remove the minimum width */
     }
     
-    .form-space-episode-theme {
-        flex: 0 0 auto; /* Don't grow or shrink */
-    }
 }
 
 /* Instead, add proper documentation to the existing high-specificity selectors */
@@ -1337,13 +1138,6 @@ html body .sub-wrapper-episode-theme {
    Dependencies: --content-padding, --border-inner
    Purpose: Ensures consistent styling for theme elements
 -------------------------------- */
-.form-space-episode-theme[data-section="episode"][data-type="content"] {
-    border: none;
-    border-bottom: var(--border-inner);
-    background-color: transparent;
-    padding: calc(var(--content-padding) * 0.5);
-    height: auto;
-}
 
 /* Note: Debug styles with yellow borders and red backgrounds have been removed */
 
@@ -1360,8 +1154,7 @@ html body .sub-wrapper-episode-theme {
 }
 
 /* Also update the shared rule to be consistent */
-.form-space-episode-summary,
-.form-space-episode-meta {
+.form-space-episode-summary,{
     padding: calc(var(--content-padding) * 0.5);
 }
 
@@ -1546,7 +1339,7 @@ html body .sub-wrapper-episode-theme {
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 12px; 12px; 12 px; 12px; 
+    padding: 12px;
     width: 100%;
     margin: 0;
 }
@@ -1678,4 +1471,284 @@ New General Styles for Episode Meta and Guest Box Layout
 
 .form-space-guest-name.form-space {
     border-bottom: none;
+}
+
+/* === Consolidated Media Queries === */
+@media screen and (max-width: 1200px) {
+    .wrapper-content {
+        width: 90vw;
+    }
+
+    .panel-intro {
+        grid-template-columns: 1fr;
+    }
+
+    .sub-wrapper-episode-header {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .form-space-episode-number {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .sub-wrapper-episode-title {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .sub-wrapper-episode-theme {
+        grid-row: 2;
+        grid-column: 1 / -1;
+        width: 100%;
+        border-top: var(--border-inner); /* Add a border to visually separate it from content above */
+        margin-top: 0;
+        display: flex; /* Change to flexbox for better alignment on mobile */
+        flex-direction: column; /* Stack items vertically */
+        min-height: auto; /* Allow height to adjust to content */
+    }
+
+    /* Adjust the theme label and content for better mobile layout */
+    .form-space-episode-theme-label {
+        width: 100%; /* Make both elements full width */
+    }
+
+    .form-space-episode-theme-label {
+        min-width: 0; /* Remove the minimum width */
+    }
+
+
+    .sub-wrapper-episode-body {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .sub-wrapper-guests-content {
+        grid-template-columns: 1fr;
+    }
+
+    .guests-grid {
+        width: 100%;
+    }
+}
+
+/* Guests Panel - Basic structure */
+.panel-guests {
+    overflow: visible;
+    display: grid;
+    grid-template-rows: auto;
+    min-height: 0;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+}
+
+.sub-wrapper-guests-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: 0;
+    height: auto;
+}
+
+.sub-wrapper-guests-roster {
+    height: auto;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.form-space-guests-roster {
+    display: grid;
+    grid-template-rows: auto;
+    height: auto;
+    min-height: 0;
+}
+
+/* Universal Sub-wrapper Rule - NO PADDING OR GAPS */
+[class*="sub-wrapper"] {
+    margin: 0;
+    padding: 0;
+}
+
+/* Sub-wrappers - Only layout properties */
+.sub-wrapper-title {
+    width: 100%;
+    height: 100%;
+}
+
+.sub-wrapper-intro-observation,
+.sub-wrapper-intro-hypothesis,
+.sub-wrapper-intro-method,
+.sub-wrapper-episode-meta,
+.sub-wrapper-guests-details-extra {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+/* Guest Panel - Clean structure */
+.sub-wrapper-guests-details {
+    border: var(--border-inner);
+    margin: 0;
+    padding: var(--content-padding);
+}
+
+/* Guest Status - setting to display:none as these elements don't exist in the current HTML structure */
+/* .sub-wrapper-guest-status is removed as it's unused */
+
+/* Guests Grid - Mobile First */
+.guests-grid,
+.guests-grid-container {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+}
+
+.guests-grid {
+    perspective: 1000px;
+    min-height: 85rem;
+}
+
+.guests-grid-container {
+    transform-style: preserve-3d;
+    min-height: 85rem;
+    width: min(500px, calc(100% - 4rem));
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+/* Desktop Grid Layout */
+@media screen and (min-width: 769px) {
+    .guests-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--content-margin);
+        min-height: 0;
+    }
+
+    .guests-grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--content-margin);
+        padding: var(--content-padding);
+        width: 100%;
+        min-height: 0;
+    }
+}
+
+/* Guest Card Base Styles */
+.sub-wrapper-guest-box {
+    border: var(--border-default);
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    padding: 0;
+    min-width: 200px;
+    transition: transform var(--duration-normal) var(--timing-function);
+    transform-origin: top center;
+    will-change: transform;
+    cursor: pointer;
+}
+
+/* Guest Link - Remove transform transition */
+.guest-box-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: outline var(--duration-fast) ease;
+}
+
+.guest-box-link:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    /* Container for the card stack system */
+    .panel-guests {
+        display: grid;
+        grid-template-rows: auto;
+        height: auto;
+        margin: 0 0 4rem 0;
+        position: relative;
+    }
+
+    /* Container styles with 3D properties */
+    .sub-wrapper-guests-content,
+    .sub-wrapper-guests-roster,
+    .form-space-guests-roster,
+    .guests-grid,
+    .guests-grid-container {
+        height: auto;
+        position: relative;
+    }
+
+    .guests-grid {
+        perspective: 1000px;
+        overflow: visible;
+        height: auto;
+        position: relative;
+    }
+
+    .guests-grid-container {
+        padding: 4rem 0 1rem 0; 
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(0);
+        width: min(500px, calc(100% - 4rem));
+        margin: 0 auto;
+    }
+
+    /* Base positioning for cards */
+    .sub-wrapper-guest-box {
+        position: relative;
+        margin-top: -5rem; /* Tighter overlap between cards */
+        width: 100%;
+        left: unset;
+    }
+    .sub-wrapper-guest-box:first-child {
+        margin-top: 0;
+    }
+    .sub-wrapper-guest-box:nth-child(1) {
+        transform: scale(0.75);
+    }
+    .sub-wrapper-guest-box:nth-child(2) {
+        transform: scale(0.85);
+    }
+    .sub-wrapper-guest-box:nth-child(3) {
+        transform: scale(0.95);
+    }
+    .sub-wrapper-guest-box:nth-child(n+4) {
+        transform: scale(1);
+    }
+
+    /* Individual card positioning with scale and z-index values */
+    .guests-grid-container > a:nth-child(1) .sub-wrapper-guest-box { --offset: 0rem; --scale: 0.56; z-index: 1; }
+    .guests-grid-container > a:nth-child(2) .sub-wrapper-guest-box { --offset: 3.0rem; --scale: 0.59; z-index: 2; }
+    .guests-grid-container > a:nth-child(3) .sub-wrapper-guest-box { --offset: 6.0rem; --scale: 0.62; z-index: 3; }
+    .guests-grid-container > a:nth-child(4) .sub-wrapper-guest-box { --offset: 9.0rem; --scale: 0.65; z-index: 4; }
+    .guests-grid-container > a:nth-child(5) .sub-wrapper-guest-box { --offset: 12.0rem; --scale: 0.68; z-index: 5; }
+    .guests-grid-container > a:nth-child(6) .sub-wrapper-guest-box { --offset: 15.0rem; --scale: 0.71; z-index: 6; }
+    .guests-grid-container > a:nth-child(7) .sub-wrapper-guest-box { --offset: 18.0rem; --scale: 0.74; z-index: 7; }
+    .guests-grid-container > a:nth-child(8) .sub-wrapper-guest-box { --offset: 21.0rem; --scale: 0.77; z-index: 8; }
+    .guests-grid-container > a:nth-child(9) .sub-wrapper-guest-box { --offset: 24.0rem; --scale: 0.80; z-index: 9; }
+
+    /* Ensure guest box link is clickable */
+    .guest-box-link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        pointer-events: auto;
+    }
+    
+    /* Mobile episode links style */
+    .form-space-episode-links {
+        border-left: none;
+        border-right: none;
+    }
 }
