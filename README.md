@@ -138,3 +138,21 @@
 - Successfully inserted the full transcript in stages.
 - Deleted temporary transcript file `temp_S1E5_transcript.md`.
 - Corrected a nested `panel-transcript` div issue in `S1E5_Alex.html` by replacing the content of the correct transcript `div` with only the clean `<p>` tags.
+
+## Style Enhancements (Session ending YYYY-MM-DD) <!-- Replace YYYY-MM-DD with current date -->
+
+This session focused on improving text readability and link consistency across the site through several CSS updates:
+
+1.  **Consistent Left Padding for Text:**
+    *   Introduced a CSS variable `--text-padding-left: 0.75rem;` in `:root`.
+    *   Applied this `padding-left` to general text elements (`h1`, `h2`, `p`) and key text utility classes (`.text-label`, `.text-mono-small`, `.text-heading-primary`, `.text-body`, `.system-status-blink`). This ensures a visually consistent alignment and spacing for most text content.
+
+2.  **Link Color Standardization:**
+    *   The default color for all `<a>` (anchor) tags is now set to `var(--accent)` (which is `#613AA0`, a purple shade), providing a consistent brand color for links.
+    *   The default text underline for links has been removed (`text-decoration: none;`).
+    *   Specific link classes like `.episode-link` and `.guest-box-link` were updated to explicitly use `color: var(--accent);` to ensure they also adhere to this color scheme, overriding previous or inherited styles.
+
+3.  **Vertical Padding for `.text-body`:**
+    *   Added `padding-top: 0.5rem;` and `padding-bottom: 0.5rem;` to the `.text-body` class. This gives paragraphs and other elements using this class more vertical spacing, improving readability.
+
+These changes contribute to a more polished and consistent visual experience on the website.

@@ -42,6 +42,7 @@
     --container-height: 70vh;
     --content-padding: 1.5rem;
     --content-margin: 2rem;
+    --text-padding-left: 0.75rem;
 
     --font-primary: 'Instrument Serif', serif;
     --font-secondary: 'Inter', sans-serif;
@@ -75,12 +76,14 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    padding-left: var(--text-padding-left);
 }
 
 .text-mono-small {
     font-family: var(--font-mono);
     font-size: var(--font-size-small);
     line-height: 1;
+    padding-left: var(--text-padding-left);
 }
 
 .text-episode-number {
@@ -93,12 +96,16 @@
     font-family: var(--font-primary);
     font-weight: 400;
     color: var(--text-primary);
+    padding-left: var(--text-padding-left);
 }
 
 .text-body {
     font-family: var(--font-secondary);
     font-size: var(--font-size-base);
     color: var(--text-primary);
+    padding-left: var(--text-padding-left);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 * {
@@ -225,6 +232,7 @@ h1 {
     font-family: var(--font-primary);
     color: var(--text-primary);
     font-weight: 400;
+    padding-left: var(--text-padding-left);
 }
 
 h2 {
@@ -232,12 +240,19 @@ h2 {
     font-family: var(--font-primary);
     color: var(--text-primary);
     font-weight: 400;
+    padding-left: var(--text-padding-left);
 }
 
 p {
     font-family: var(--font-secondary);
     color: var(--text-primary);
     font-size: var(--font-size-base);
+    padding-left: var(--text-padding-left);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
 }
 
 .panel-episode {
@@ -281,6 +296,13 @@ p {
 
 .form-space-episode-title h2 {
     overflow: hidden;
+}
+
+.form-space-episode-title.form-space {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: var(--border-inner);
 }
 
 .form-space-episode-number,
@@ -481,7 +503,7 @@ p {
 
 .guest-box-link {
     text-decoration: none;
-    color: inherit;
+    color: var(--accent);
     display: block;
     transition: outline var(--duration-fast) ease;
 }
@@ -511,6 +533,7 @@ p {
         overflow: visible;
         position: relative;
         padding: 0;
+        min-height: auto;
     }
 
     .guests-grid-container {
@@ -519,6 +542,7 @@ p {
         transform-style: preserve-3d;
         transform: translateZ(0);
         width: min(500px, calc(100% - 4rem));
+        min-height: auto;
     }
 
     .sub-wrapper-guest-box {
@@ -966,6 +990,8 @@ html body .sub-wrapper-episode-theme {
 .system-status-blink {
     animation: blink 1.5s infinite;
     display: inline-block;
+    font-family: var(--font-mono);
+    padding-left: var(--text-padding-left);
 }
 
 .panel-guests .sub-wrapper-guest-box:hover {
@@ -981,6 +1007,12 @@ html body .sub-wrapper-episode-theme {
 .footer-link {
     color: inherit;
     text-decoration: none;
+}
+
+.episode-link {
+    text-decoration: none;
+    color: var(--accent);
+    padding-left: var(--text-padding-left);
 }
 
 .sub-wrapper-episode-meta {
