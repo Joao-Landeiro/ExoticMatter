@@ -63,6 +63,72 @@
         └── element1.png through element18.png
 ```
 
+## Milestone 2: Static Site Generator Implementation
+
+### Overview
+Converting the project to use a static site generator approach while maintaining all current functionality and design. This allows for easier content management and template reuse.
+
+### Current Implementation Status
+**✅ Step 1 Completed: Basic Project Structure**
+- Created source/build separation with `src/` and `build/` directories
+- Implemented basic build script with asset copying
+- Set up development server for testing
+- Maintained 100% compatibility with existing site
+
+### New Project Structure
+```
+project/
+├── src/                          # Source files (templates, content)
+│   ├── templates/               # HTML templates
+│   │   ├── base.html           # Base template with common elements
+│   │   ├── index.html          # Landing page template
+│   │   └── episode.html        # Episode page template
+│   ├── content/                # Content data
+│   │   ├── episodes/           # Episode data files
+│   │   │   ├── S1E0.json      # Episode metadata & content
+│   │   │   ├── S1E1.json
+│   │   │   └── ...
+│   │   └── site.json          # Site-wide configuration
+│   └── assets/                 # Static assets (unchanged)
+├── build/                      # Generated static files (matches current structure)
+├── scripts/                    # Build scripts
+│   └── generate.js            # Main generator script
+└── package.json               # Dependencies (minimal - only fs-extra)
+```
+
+### Build System Features
+- **Asset Management**: Automatic copying of styles, images, and other assets
+- **Template Engine**: Simple string replacement system for dynamic content
+- **Development Server**: Built-in server for testing generated site
+- **Clean Builds**: Automatic cleanup and regeneration of build directory
+
+### Available Commands
+```bash
+npm run build    # Generate static site in build/ directory
+npm run dev      # Build and serve site on localhost:8000
+npm run clean    # Clean build directory
+```
+
+### Development Approach
+- **Branch-based Development**: Working on `feature/static-site-generator` branch
+- **Non-breaking Changes**: Current site continues to work during development
+- **Incremental Migration**: Converting templates and content step by step
+- **Backward Compatibility**: Generated output matches existing file structure
+
+### Next Steps (Planned)
+1. **Step 2**: Convert landing page to use template system
+2. **Step 3**: Extract episode data to JSON files
+3. **Step 4**: Create episode page templates
+4. **Step 5**: Add content management features
+5. **Step 6**: Optimize build process and add advanced features
+
+### Technical Notes
+- Uses vanilla Node.js with minimal dependencies (fs-extra only)
+- Simple template engine with {{variable}} syntax
+- Preserves all existing JavaScript animations and functionality
+- Maintains current CSS and asset structure
+- Compatible with existing deployment process
+
 ### Recent Updates
 - Enhanced space travel effect with full 360° rotation
 - Optimized particle spawn rates and sizes
