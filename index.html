@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://api.fontshare.com/v2/css?f[]=familjen-grotesk@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap" rel="stylesheet">
+    
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            
+            // Space animation script for landing page
             const container = document.querySelector('.space-background');
             const totalElements = 18;
             let activeElements = 0;
@@ -90,8 +94,8 @@
             // Start spawning both elements and dust
             spawnElements();
             spawnDust();
-
-            // Smooth scroll enhancement
+            
+            // Smooth scroll enhancement (for all pages)
             document.querySelectorAll('a[href^="#episode-"]').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -122,168 +126,170 @@
     </script>
 </head>
 <body>
+    
     <div class="wrapper-app">
         <div class="space-background"></div>
         <div class="wrapper-content">
             <div class="panel-intro">
-                <div class="form-space-intro-title form-space" data-section="intro" data-type="title">
-                    <div class="sub-wrapper-title"> 
-                        <h1 class="text-heading-primary text-center">Exotic<br>Matter</h1>
-                    </div>
-                </div>
-                <div class="sub-wrapper-intro-content">
-                    <div class="sub-wrapper-intro-observation">
-                        <div class="form-space-intro-observation-label form-space text-label" data-type="label" data-section="intro">
-                            Observation:
-                        </div>
-                        <div class="form-space-intro-observation form-space" data-section="intro" data-type="content">
-                            <h2 class="text-heading-primary">Knowledge Work has changed. <br> AI, global competition and a saturated market demand we investigate different approaches.</h2>
-                        </div>
-                    </div>
-                    <div class="sub-wrapper-intro-hypothesis">
-                        <div class="form-space-intro-hypothesis-label form-space text-label" data-type="label" data-section="intro">
-                            Hypothesis:
-                        </div>
-                        <div class="form-space-intro-hypothesis form-space" data-section="intro" data-type="content">
-                            <h2 class="text-heading-primary">In order to stand out, firms must turn to the intangible, to what is impossible to copy. <br>And impossible to ignore.</h2>
-                        </div>
-                    </div>
-                    <div class="sub-wrapper-intro-method">
-                        <div class="form-space-intro-method-label form-space text-label" data-type="label" data-section="intro">
-                            Methodology:
-                        </div>
-                        <div class="form-space-intro-method form-space" data-section="intro" data-type="content">
-                            <h2 class="text-heading-primary">Interview Experts with a unique perspective, collect their insights.</h2>
-                        </div>
-                    </div>
-                </div>
+    <div class="form-space-intro-title form-space" data-section="intro" data-type="title">
+        <div class="sub-wrapper-title"> 
+            <h1 class="text-heading-primary text-center">Exotic Matter</h1>
+        </div>
+    </div>
+    <div class="sub-wrapper-intro-content">
+        <div class="sub-wrapper-intro-observation">
+            <div class="form-space-intro-observation-label form-space text-label" data-type="label" data-section="intro">
+                Observation:
             </div>
-            <div class="panel-guests">
-                <div class="sub-wrapper-guests-content">
-                    <div class="sub-wrapper-guests-details">
-                        <div class="form-space-guests-details-label form-space text-label" data-type="label" data-section="guests">
-                            The team:
-                        </div>
-                        <div class="form-space-guests-details form-space" data-section="guests" data-type="content">
-                            <p>For this first season of Exotic Matter, I've partnered with experts around the world. Together, we explored what is changing in Knowledge Work and how are are adapting.</p>
-                        </div>
-                    </div>
-                    <div class="sub-wrapper-guests-roster">
-                        <div id="roster" class="form-space-guests-roster-label form-space text-label" data-type="label" data-section="guests">
-                            Research Roster:
-                        </div>
-                        <div class="form-space-guests-roster form-space" data-section="guests" data-type="content">
-                            <div class="guests-grid">
-                                <div class="guests-grid-container">
-                                    <a href="#episode-0" class="guest-link">
-                                        <div class="sub-wrapper-guest-box">
-                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
-                                                <h2>João Landeiro</h2>
-                                            </div>
-                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                                <img src="assets/images/guest-pictures/JoaoL.png" alt="João Landeiro">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#episode-1" class="guest-link">
-                                        <div class="sub-wrapper-guest-box">
-                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
-                                                <h2>Nick Himowicz</h2>
-                                            </div>
-                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                                <img src="assets/images/guest-pictures/NickH.png" alt="Nick Himowicz">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#episode-2" class="guest-link">
-                                        <div class="sub-wrapper-guest-box">
-                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
-                                                <h2>Spencer Ayres</h2>
-                                            </div>
-                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                                <img src="assets/images/guest-pictures/SpencerA.png" alt="Spencer Ayres">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#episode-3" class="guest-link">
-                                        <div class="sub-wrapper-guest-box">
-                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
-                                                <h2>Danilo Kreimer</h2>
-                                            </div>
-                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                                <img src="assets/images/guest-pictures/DaniloK.png" alt="Danilo Kreimer">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#episode-4" class="guest-link">
-                                        <div class="sub-wrapper-guest-box">
-                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
-                                                <h2>Florian Heinrichs</h2>
-                                            </div>
-                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                                <img src="assets/images/guest-pictures/FlorianH.png" alt="Florian Heinrichs">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#episode-5" class="guest-link">
-                                        <div class="sub-wrapper-guest-box">
-                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
-                                                <h2>Alex James</h2>
-                                            </div>
-                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                                <img src="assets/images/guest-pictures/AlexJ.png" alt="Alex James">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#episode-6" class="guest-link">
-                                        <div class="sub-wrapper-guest-box">
-                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
-                                                <h2>Dylan Ciaccio</h2>
-                                            </div>
-                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                                <img src="assets/images/guest-pictures/DylanC.png" alt="Dylan Ciaccio">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#episode-7" class="guest-link">
-                                        <div class="sub-wrapper-guest-box">
-                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
-                                                <h2>Patrick Kizny</h2>
-                                            </div>
-                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                                <img src="assets/images/guest-pictures/PatrickK.png" alt="Patrick Kizny">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#episode-8" class="guest-link">
-                                        <div class="sub-wrapper-guest-box">
-                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
-                                                <h2>Jay Melone</h2>
-                                            </div>
-                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                                <img src="assets/images/guest-pictures/JayM.png" alt="Jay Melone">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#episode-9" class="guest-link">
-                                        <div class="sub-wrapper-guest-box">
-                                            <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
-                                                <h2>Kurt Bostelaar</h2>
-                                            </div>
-                                            <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                                <img src="assets/images/guest-pictures/KurtB.png" alt="Kurt Bostelaar">
-                                            </div>
-                                        </div>
-                                    </a>
+            <div class="form-space-intro-observation form-space" data-section="intro" data-type="content">
+                <h2 class="text-heading-primary">Knowledge Work has changed. <br> AI, global competition and a saturated market demand we investigate different approaches.</h2>
+            </div>
+        </div>
+        <div class="sub-wrapper-intro-hypothesis">
+            <div class="form-space-intro-hypothesis-label form-space text-label" data-type="label" data-section="intro">
+                Hypothesis:
+            </div>
+            <div class="form-space-intro-hypothesis form-space" data-section="intro" data-type="content">
+                <h2 class="text-heading-primary">In order to stand out, firms must turn to the intangible, to what is impossible to copy. <br>And impossible to ignore.</h2>
+            </div>
+        </div>
+        <div class="sub-wrapper-intro-method">
+            <div class="form-space-intro-method-label form-space text-label" data-type="label" data-section="intro">
+                Methodology:
+            </div>
+            <div class="form-space-intro-method form-space" data-section="intro" data-type="content">
+                <h2 class="text-heading-primary">Interview Experts with a unique perspective, collect their insights.</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel-guests">
+    <div class="sub-wrapper-guests-content">
+        <div class="sub-wrapper-guests-details">
+            <div class="form-space-guests-details-label form-space text-label" data-type="label" data-section="guests">
+                The team:
+            </div>
+            <div class="form-space-guests-details form-space" data-section="guests" data-type="content">
+                <p>For this first season of Exotic Matter, I've partnered with experts around the world. Together, we explored what is changing in Knowledge Work and how are are adapting.</p>
+            </div>
+        </div>
+        <div class="sub-wrapper-guests-roster">
+            <div id="roster" class="form-space-guests-roster-label form-space text-label" data-type="label" data-section="guests">
+                Research Roster:
+            </div>
+            <div class="form-space-guests-roster form-space" data-section="guests" data-type="content">
+                <div class="guests-grid">
+                    <div class="guests-grid-container">
+                        
+                        <a href="#episode-0" class="guest-link">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                    <h2>João Landeiro</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/JoaoL.png" alt="João Landeiro">
                                 </div>
                             </div>
-                        </div>
+                        </a>
+                        <a href="#episode-1" class="guest-link">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                    <h2>Nick Himowicz</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/NickH.png" alt="Nick Himowicz">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#episode-2" class="guest-link">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                    <h2>Spencer Ayres</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/SpencerA.png" alt="Spencer Ayres">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#episode-3" class="guest-link">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                    <h2>Danilo Kreimer</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/DaniloK.png" alt="Danilo Kreimer">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#episode-4" class="guest-link">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                    <h2>Florian Heinrichs</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/FlorianH.png" alt="Florian Heinrichs">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#episode-5" class="guest-link">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                    <h2>Alex James</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/AlexJ.png" alt="Alex James">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#episode-6" class="guest-link">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                    <h2>Dylan Ciaccio</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/DylanC.png" alt="Dylan Ciaccio">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#episode-7" class="guest-link">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                    <h2>Patrick Kizny</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/PatrickK.png" alt="Patrick Kizny">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#episode-8" class="guest-link">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                    <h2>Jay Melone</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/JayM.png" alt="Jay Melone">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#episode-9" class="guest-link">
+                            <div class="sub-wrapper-guest-box">
+                                <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+                                    <h2>Kurt Bostelaar</h2>
+                                </div>
+                                <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+                                    <img src="assets/images/guest-pictures/KurtB.png" alt="Kurt Bostelaar">
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
             <div class="sub-wrapper-episode" id="episode-0">
                 <div class="episode-tab text-label">
-                    Episode Status:<br>Released
+                    Episode Status:<br>released
                 </div>
                 <div class="panel-episode">
                     <div class="sub-wrapper-episode-header">
@@ -295,19 +301,30 @@
                                 Theme:
                             </div>
                             <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
-                                <h2>Welcome to Exotic Matter</h2>
+                                <h2><a href="S1E0_Intro.html" class="episode-link">Welcome to Exotic Matter</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="sub-wrapper-episode-body">
                         <div class="sub-wrapper-episode-content">
                             <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
-                                <div class="episode-player-wrapper">
-                                    <iframe src="https://open.spotify.com/embed/episode/4UK2AfEHON0qkYxxwILIvR/video?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                                </div>
+                                <div class="system-status">
+                                    <p>✺ What is Exotic Matter and why does it exist?<br>
+                                    ✺ What kinds of conversations will we be having?<br>
+                                    ✺ Who are the guests and what can you expect from them?<br>
+                                    <br>
+                                    Welcome to the inaugural episode of Exotic Matter, where we explore the evolving landscape of knowledge work and expertise.
+                                    <br>
+                                    <br>
+                                    <a href="https://www.linkedin.com/in/joaolandeiro/"><b>João Landeiro</b></a> is the host of Exotic Matter and founder of Mesozoic. This introductory episode sets the stage for conversations about productizing expertise and the future of knowledge work.
+                                    <br>
+                                    <br>
+                                    </p>
+
+<span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
@@ -320,7 +337,7 @@
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://joaolandeiro.substack.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                        <a href="https://mesozoic.co" class="episode-link" target="_blank" rel="noopener noreferrer">Mesozoic</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -328,7 +345,7 @@
                                         Link 3:
                                     </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.mesozoic.co" class="episode-link" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                        <a href="https://mesozoic.co/newsletter" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
                                     </div>
                                 </div>
                             </div>
@@ -343,13 +360,13 @@
                                 </div>
                                 <div class="colored-bars-container">
                                     <div class="colored-bar-top">
-                                        <span class="text-body">What is happening to Knowledge Work</span>
+                                        <span class="text-body">What is Exotic Matter?</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">What do we want to know</span>
+                                        <span class="text-body">Types of Conversations</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">How we will find it out</span>
+                                        <span class="text-body">Guest Expectations</span>
                                     </div>
                                 </div>
                             </div>
@@ -362,7 +379,7 @@
             </div>
             <div class="sub-wrapper-episode" id="episode-1">
                 <div class="episode-tab text-label">
-                    Episode Status:<br>Released
+                    Episode Status:<br>released
                 </div>
                 <div class="panel-episode">
                     <div class="sub-wrapper-episode-header">
@@ -389,23 +406,20 @@
                                     These are the questions Nick and I will go over in this episode of Exotic Matter.
                                     <br>
                                     <br>
-                                    <a href="https://www.linkedin.com/in/nickhimo/"><b>Nick Himowicz</b></a> is a Product Innovation Coach and a friend.
-                                    After countless conversations and nerding out together on this stuff, I was sure he would be a phenomenal start to the inaugural season of Exotic Matter.
-                                    I believe you'll agree.
+                                    <a href="https://www.linkedin.com/in/nickhimowicz/"><b>Nick Himowicz</b></a> is a Product Innovation Coach and a friend. After countless conversations and nerding out together on this stuff, I was sure he would be a phenomenal start to the inaugural season of Exotic Matter. I believe you'll agree.
                                     <br>
                                     <br>
-                                    Scroll down for the Spotify Link and the Transcript.
-                                </p>
+                                    </p>
 
-</div>
+<span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
                                     <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.linkedin.com/in/nickhimo/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/nickhimowicz/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-2">
@@ -413,7 +427,7 @@
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.youtube.com/@NickHimo" class="episode-link" target="_blank" rel="noopener noreferrer">Youtube</a>
+                                        <a href="https://nickhimowicz.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Website</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -421,7 +435,7 @@
                                         Link 3:
                                     </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.nickhimo.com/" class="episode-link"  target="_blank" rel="noopener noreferrer">Personal Website</a>
+                                        <a href="https://nickhimowicz.com/newsletter/" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
                                     </div>
                                 </div>
                             </div>
@@ -429,20 +443,20 @@
                         <div class="sub-wrapper-episode-meta">
                             <div class="sub-wrapper-guest-box">
                                 <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
-                                    <h2>Nick Himowicz </h2>
+                                    <h2>Nick Himowicz</h2>
                                 </div>
                                 <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
                                     <img src="assets/images/guest-pictures/NickH.png" alt="Nick Himowicz">
                                 </div>
                                 <div class="colored-bars-container">
                                     <div class="colored-bar-top">
-                                        <span class="text-body">Strategic Tools for Alignment and Clarity</span>
+                                        <span class="text-body">Visual Tools & Alignment</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">Simplified Customer Interviews</span>
+                                        <span class="text-body">Workshop Follow-through</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">Bridging the Knowing-Doing Gap</span>
+                                        <span class="text-body">Customer Interview Basics</span>
                                     </div>
                                 </div>
                             </div>
@@ -455,7 +469,7 @@
             </div>
             <div class="sub-wrapper-episode" id="episode-2">
                 <div class="episode-tab text-label">
-                    Episode Status:<br>Released
+                    Episode Status:<br>To be released
                 </div>
                 <div class="panel-episode">
                     <div class="sub-wrapper-episode-header">
@@ -467,7 +481,7 @@
                                 Theme:
                             </div>
                             <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
-                                <a href="S1E2_Spencer.html" class="episode-link"><h2>Workshops as Worksites on the Digital World</h2></a>
+                                <h2>Workshops as Worksites on the Digital World</h2>
                             </div>
                         </div>
                     </div>
@@ -482,8 +496,7 @@
                                     Spencer and I got together to answer these questions and in the process went massively over the scheduled time. It's that good.
                                     <br>
                                     <br>
-                                    <a href="https://www.linkedin.com/in/spencerayres/"><b>Spencer Ayres</b></a> is an expert at running workshops that get results and a friend.
-                                    After I saw the beautiful work he's been doing at Jointly.Work, I knew I had found a kindred mind.
+                                    <a href="https://www.linkedin.com/in/spencerayres/"><b>Spencer Ayres</b></a> is an expert at running workshops that get results and a friend. After I saw the beautiful work he's been doing at Jointly.Work, I knew I had found a kindred mind.
                                     <br>
                                     <br>
                                     </p>
@@ -491,7 +504,7 @@
 <span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
@@ -504,7 +517,7 @@
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.youtube.com/channel/UCd5kOQeGcxmyo5WncmNgAZQ" class="episode-link" target="_blank" rel="noopener noreferrer">Youtube</a>
+                                        <a href="https://spencerayres.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Personal Site</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -512,7 +525,7 @@
                                         Link 3:
                                     </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://jointly.work/" class="episode-link" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                        <a href="https://spencerayres.com/templates/" class="episode-link" target="_blank" rel="noopener noreferrer">Workshop Templates</a>
                                     </div>
                                 </div>
                             </div>
@@ -527,13 +540,13 @@
                                 </div>
                                 <div class="colored-bars-container">
                                     <div class="colored-bar-top">
-                                        <span class="text-body">Workshops as Productized Experiences</span>
+                                        <span class="text-body">Workshop Productization</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">Core Principles of Effective Workshops</span>
+                                        <span class="text-body">Best Workshop Practices</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">Future of Work and Facilitation</span>
+                                        <span class="text-body">Future of Facilitation</span>
                                     </div>
                                 </div>
                             </div>
@@ -546,7 +559,7 @@
             </div>
             <div class="sub-wrapper-episode" id="episode-3">
                 <div class="episode-tab text-label">
-                    Episode Status:<br>Released
+                    Episode Status:<br>To be released
                 </div>
                 <div class="panel-episode">
                     <div class="sub-wrapper-episode-header">
@@ -558,7 +571,7 @@
                                 Theme:
                             </div>
                             <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
-                                <h2><a href="S1E3_Danilo.html" class="episode-link">Growth for Early-Stage Consulting Firms</a></h2>
+                                <h2>Growth for Early-Stage Consulting Firms</h2>
                             </div>
                         </div>
                     </div>
@@ -570,11 +583,10 @@
                                     ✺ Danilo's reservations with over reliance on "Productization" as a silver-bullet<br>
                                     ✺ Secrets to actually develop truly collaborative client relationships<br>
                                     <br>
-                                Danilo and I spoke about these and other topics, all related to the unique aspects of Marketing Boutique Consulting firms. Danilo's experience shines through.
+                                    Danilo and I spoke about these and other topics, all related to the unique aspects of Marketing Boutique Consulting firms. Danilo's experience shines through.
                                     <br>
                                     <br>
-                                    <a href="https://www.linkedin.com/in/danilo-kreimer/"><b>Danilo Kreimer</b></a> is a Growth Advisor for Boutique Consulting firms and a friend.
-                                 I initially met his work via his stellar newsletter and had to compliment him on it. From there, many other conversations emerged. When I decided to launch a podcast season, Danilo was at the top of the list.
+                                    <a href="https://www.linkedin.com/in/danilokreimer/"><b>Danilo Kreimer</b></a> is a Growth Advisor for Boutique Consulting firms and a friend. I initially met his work via his stellar newsletter and had to compliment him on it. From there, many other conversations emerged. When I decided to launch a podcast season, Danilo was at the top of the list.
                                     <br>
                                     <br>
                                     </p>
@@ -582,12 +594,12 @@
 <span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
                                     <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.linkedin.com/in/danilo-kreimer/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/danilokreimer/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-2">
@@ -595,7 +607,7 @@
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.boutiqueconsultingclub.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                        <a href="https://danilokreimer.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Website</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -603,7 +615,7 @@
                                         Link 3:
                                     </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.boutiqueconsultingclub.com/newsletter" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                        <a href="https://danilokreimer.com/newsletter/" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
                                     </div>
                                 </div>
                             </div>
@@ -618,13 +630,13 @@
                                 </div>
                                 <div class="colored-bars-container">
                                     <div class="colored-bar-top">
-                                        <span class="text-body">Challenges in Early-Stage Consulting Practices</span>
+                                        <span class="text-body">Early-Stage Marketing</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">Service Design: Balancing Productization and Flexibility</span>
+                                        <span class="text-body">Productization Limits</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">Collaborative Client Relationships</span>
+                                        <span class="text-body">Collaborative Relationships</span>
                                     </div>
                                 </div>
                             </div>
@@ -657,27 +669,27 @@
                         <div class="sub-wrapper-episode-content">
                             <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
                                 <div class="system-status">
-                                    <p>✺ What patterns of a starting Consulting firm will later need to me re-calibrated?  <br>
-                                    ✺ A Signature Methodology says something about your Expertise. What is it?<br>
-                                    ✺ What to expect when creating your own Signature Methodology?<br>
+                                    <p>✺ What makes a Signature Methodology actually work in practice?<br>
+                                    ✺ How do you know when you have found a repeatable approach worth packaging?<br>
+                                    ✺ What are the most common failure modes when developing methodologies?<br>
                                     <br>
-                                Florian did not let me off the hook with this one. His many flight hours manifested in the way he clarified subtle nuance and how he gave very palpable examples of real application.
+                                    Florian did not let me off the hook with this one. His many flight hours manifested in the way he clarified subtle nuance and how he gave very palpable examples of real application.
                                     <br>
                                     <br>
-                                    <a href="https://www.linkedin.com/in/fmheinrichs/"><b>Florian Heinrichs</b></a> is a Performance Advisor to Consulting firms and a friend.
-                                I've followed his work for a couple of years and we've been chatting for a little over one year. There's a clear connection between how his work highlights the power of a Signature Methodology and my own belief that Workshops are a phenomenal tool for Consulting firms. 
+                                    <a href="https://www.linkedin.com/in/florian-heinrichs/"><b>Florian Heinrichs</b></a> is a Performance Advisor to Consulting firms and a friend. I've followed his work for a couple of years and we've been chatting for a little over one year. There's a clear connection between how his work highlights the power of a Signature Methodology and my own belief that Workshops are a phenomenal tool for Consulting firms.
                                     <br>
                                     <br>
                                     </p>
+
 <span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
                                     <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.linkedin.com/in/fmheinrichs/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/florian-heinrichs/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-2">
@@ -685,7 +697,7 @@
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://unbillable-hrs.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Podcast</a>
+                                        <a href="https://www.florianheinrichs.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Website</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -693,7 +705,7 @@
                                         Link 3:
                                     </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.thevisibleauthority.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                        <a href="https://www.florianheinrichs.com/newsletter/" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
                                     </div>
                                 </div>
                             </div>
@@ -708,13 +720,13 @@
                                 </div>
                                 <div class="colored-bars-container">
                                     <div class="colored-bar-top">
-                                        <span class="text-body">Transition from Capability to Proposition-Based Consulting</span>
+                                        <span class="text-body">Methodology Effectiveness</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">Signature Methodology as a Trust Signal</span>
+                                        <span class="text-body">Repeatable Approach Signs</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">Challenges in Methodology Development</span>
+                                        <span class="text-body">Common Failure Modes</span>
                                     </div>
                                 </div>
                             </div>
@@ -747,15 +759,14 @@
                         <div class="sub-wrapper-episode-content">
                             <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
                                 <div class="system-status">
-                                    <p>✺ Niching as an overplayed strategy that needs something else<br>
-                                    ✺ Why your Perspective is actually your Product<br>
-                                    ✺ How your business Perspective seeps into everything else and naturally positions you as a strategic partner<br>
+                                    <p>✺ What does it mean to have a "Perspective-Driven" positioning approach?<br>
+                                    ✺ How do you develop a perspective that's both unique and useful?<br>
+                                    ✺ What are the practical steps to implement perspective-driven positioning?<br>
                                     <br>
-                                Alex and I had to do this twice. The first time, the gods of inter-continental communications were not on our side. It was so worth it to double down on it. Wrath of Gods be damned.
+                                    Alex and I had to do this twice. The first time, the gods of inter-continental communications were not on our side. It was so worth it to double down on it. Wrath of Gods be damned.
                                     <br>
                                     <br>
-                                    <a href="https://www.linkedin.com/in/alex-owen-james/"><b>Alex James</b></a> is a Messaging Strategist for B2B firms and a friend.
-                                Like so many, I was struck by his impeccable carousels on LinkedIn. Seeing that being their brilliance there must be a really clever and creative mind, I got in touch. From there, some of the freshest conversations I've had for a while. Bringing Alex on was a no-brainer.
+                                    <a href="https://www.linkedin.com/in/alexjamesmessaging/"><b>Alex James</b></a> is a Messaging Strategist for B2B firms and a friend. Like so many, I was struck by his impeccable carousels on LinkedIn. Seeing that being their brilliance there must be a really clever and creative mind, I got in touch. From there, some of the freshest conversations I've had for a while. Bringing Alex on was a no-brainer.
                                     <br>
                                     <br>
                                     </p>
@@ -763,12 +774,12 @@
 <span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
                                     <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.linkedin.com/in/alex-owen-james/" class="episode-link"target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/alexjamesmessaging/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-2">
@@ -776,7 +787,7 @@
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.minimalistmarketing.co/message-matters-most" class="episode-link"target="_blank" rel="noopener noreferrer">Messaging Course</a>
+                                        <a href="https://alexjamesmessaging.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Website</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -784,7 +795,7 @@
                                         Link 3:
                                     </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.minimalistmarketing.co/" class="episode-link"target="_blank" rel="noopener noreferrer">Company Website</a>
+                                        <a href="https://alexjamesmessaging.com/newsletter/" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
                                     </div>
                                 </div>
                             </div>
@@ -799,13 +810,13 @@
                                 </div>
                                 <div class="colored-bars-container">
                                     <div class="colored-bar-top">
-                                        <span class="text-body">Beyond Niching: The Rise of Perspective-Driven Positioning</span>
+                                        <span class="text-body">Perspective-Driven Approach</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">Developing a Perspective: Collaboration Over Isolation</span>
+                                        <span class="text-body">Unique & Useful Views</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">Operationalizing Perspective</span>
+                                        <span class="text-body">Implementation Steps</span>
                                     </div>
                                 </div>
                             </div>
@@ -838,15 +849,14 @@
                         <div class="sub-wrapper-episode-content">
                             <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
                                 <div class="system-status">
-                                    <p>✺ Why LinkedIn is not really set up for Discovery<br>
-                                    ✺ How to choose which content to boost<br>
-                                    ✺ The lovely turbo-nerdery of creating words and categories and how tricky it can be for starting businesses.<br>
+                                    <p>✺ What makes LinkedIn such a powerful platform for knowledge workers?<br>
+                                    ✺ How do you build authentic relationships rather than just collecting connections?<br>
+                                    ✺ What are the key strategies for getting found by the right people on LinkedIn?<br>
                                     <br>
-                                Dylan and I discussed these topics mostly around how Experts can be found on LinkedIn. At some point Dylan caught me falling into old over-thinking patterns. See if you can spot this.
+                                    Dylan and I discussed these topics mostly around how Experts can be found on LinkedIn. At some point Dylan caught me falling into old over-thinking patterns. See if you can spot this.
                                     <br>
                                     <br>
-                                    <a href="https://www.linkedin.com/in/dylan-ciaccio-766826146/"><b>Dylan Ciaccio</b></a> helps B2B firms burst through their audience Bubble on LinkedIn and he's also a friend.
-                                    We initially met when Dylan made me see something that had been in front of all our eyes for a long time. That "slap-my-forehead" moment was only the first of our conversations. So many experts struggle with reach on LinkedIn and I knew Dylan could help make a few things clearer.
+                                    <a href="https://www.linkedin.com/in/dylan-ciaccio-766826146/"><b>Dylan Ciaccio</b></a> helps B2B firms burst through their audience Bubble on LinkedIn and he's also a friend. We initially met when Dylan made me see something that had been in front of all our eyes for a long time. That "slap-my-forehead" moment was only the first of our conversations. So many experts struggle with reach on LinkedIn and I knew Dylan could help make a few things clearer.
                                     <br>
                                     <br>
                                     </p>
@@ -854,12 +864,12 @@
 <span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
                                     <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.linkedin.com/in/dylan-ciaccio-766826146/" class="episode-link"target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/dylan-ciaccio-766826146/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-2">
@@ -867,7 +877,7 @@
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://focusthelens.carrd.co/" class="episode-link"target="_blank" rel="noopener noreferrer">Company Website</a>
+                                        <a href="https://focusthelens.carrd.co/" class="episode-link" target="_blank" rel="noopener noreferrer">Focus The Lens</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -875,7 +885,7 @@
                                         Link 3:
                                     </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.youtube.com/watch?v=ul1tMZy55Qc" class="episode-link"target="_blank" rel="noopener noreferrer">Video Introduction</a>
+                                        <a href="https://www.youtube.com/watch?v=ul1tMZy55Qc" class="episode-link" target="_blank" rel="noopener noreferrer">YouTube Video</a>
                                     </div>
                                 </div>
                             </div>
@@ -890,13 +900,13 @@
                                 </div>
                                 <div class="colored-bars-container">
                                     <div class="colored-bar-top">
-                                        <span class="text-body">Declining Organic Reach on LinkedIn</span>
+                                        <span class="text-body">LinkedIn's Power</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">Niche Content Boosting as a Strategic Solution</span>
+                                        <span class="text-body">Authentic Relationships</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">Category Creation and Strategic Languaging</span>
+                                        <span class="text-body">Discovery Strategies</span>
                                     </div>
                                 </div>
                             </div>
@@ -929,15 +939,14 @@
                         <div class="sub-wrapper-episode-content">
                             <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
                                 <div class="system-status">
-                                    <p>✺ The major shifts that have been pummeling the creative industry for years<br>
-                                    ✺ What happens after organic reach and Outbound break<br>
-                                    ✺ Ideas on how to shift into more localized projects and impact<br>
+                                    <p>✺ How is AI changing the landscape of creative work?<br>
+                                    ✺ What skills will remain uniquely human in creative fields?<br>
+                                    ✺ How can creative professionals adapt and thrive in an AI-enhanced world?<br>
                                     <br>
-                                Patrick cares for precision and does not suffer shoddy thinking. This makes for a truly densely packed episode where we not only cover the previous topics, but also one where my observation skills get sharpened live.
+                                    Patrick cares for precision and does not suffer shoddy thinking. This makes for a truly densely packed episode where we not only cover the previous topics, but also one where my observation skills get sharpened live.
                                     <br>
                                     <br>
-                                    <a href="https://www.linkedin.com/in/kizny/"><b>Patrick Kizny</b></a> is an entrepreneurial creative at heart. After decades running creative businesses of all kinds, he's now working on spatial sound. He's also a friend.
-                                   We first spoke regarding ideas for a deck of cards that would productize Patrick's methodology. But our calls evolved from that. When I need honest feedback and a clinical attention to detail, I turn to Patrick.
+                                    <a href="https://www.linkedin.com/in/patrickkizny/"><b>Patrick Kizny</b></a> is an entrepreneurial creative at heart. After decades running creative businesses of all kinds, he's now working on spatial sound. He's also a friend. We first spoke regarding ideas for a deck of cards that would productize Patrick's methodology. But our calls evolved from that. When I need honest feedback and a clinical attention to detail, I turn to Patrick.
                                     <br>
                                     <br>
                                     </p>
@@ -945,12 +954,12 @@
 <span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
                                     <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.linkedin.com/in/kizny/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/patrickkizny/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-2">
@@ -958,7 +967,7 @@
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://kizny.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Personal Website</a>
+                                        <a href="https://patrickkizny.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Website</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -966,7 +975,7 @@
                                         Link 3:
                                     </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.futurecrafting.express/" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                        <a href="https://patrickkizny.com/projects/" class="episode-link" target="_blank" rel="noopener noreferrer">Projects</a>
                                     </div>
                                 </div>
                             </div>
@@ -981,13 +990,13 @@
                                 </div>
                                 <div class="colored-bars-container">
                                     <div class="colored-bar-top">
-                                        <span class="text-body">Adaptability and Business Pivots</span>
+                                        <span class="text-body">AI & Creative Work</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">Critique of Social Media and Outbound Marketing</span>
+                                        <span class="text-body">Uniquely Human Skills</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">Localized, Community-Driven Projects</span>
+                                        <span class="text-body">Adaptation Strategies</span>
                                     </div>
                                 </div>
                             </div>
@@ -1020,22 +1029,22 @@
                         <div class="sub-wrapper-episode-content">
                             <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
                                 <div class="system-status">
-                                    <p>✺ Why "Offer" is such a powerful way of talking about services<br>
-                                    ✺ How come it is so easy for Experts to overcomplicate what they know while avoiding crucial aspects of their business<br>
-                                    ✺ The impact of solving problems with your clients, not just for them<br>
+                                    <p>✺ What's the difference between productizing services and creating actual products?<br>
+                                    ✺ How do you structure offers that clients can easily understand and buy?<br>
+                                    ✺ What are the key elements of a successful productized consulting offer?<br>
                                     <br>
-                                Jay and I have somewhat similar careers. We ended up in similar but different places and this is a phenomenal episode for those of us that sometimes feel we are insisting on something that is not working.
+                                    Jay and I have somewhat similar careers. We ended up in similar but different places and this is a phenomenal episode for those of us that sometimes feel we are insisting on something that is not working.
                                     <br>
                                     <br>
-                                    <a href="https://www.linkedin.com/in/jaymelone/"><b>Jay Melone</b></a> helps Experts turn their Expertise into Offers. He's also a friend.
-                                We go to talking roughly an year ago. I had signed up for his newsletter, sent him a note and next thing you know we're trading music suggestions and sharing lessons learned.
+                                    <a href="https://www.linkedin.com/in/jaymelone/"><b>Jay Melone</b></a> helps Experts turn their Expertise into Offers. He's also a friend. We go to talking roughly an year ago. I had signed up for his newsletter, sent him a note and next thing you know we're trading music suggestions and sharing lessons learned.
                                     <br>
                                     <br>
                                     </p>
+
 <span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
@@ -1048,7 +1057,7 @@
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://offer-development-masterclass.profitladder.net/" class="episode-link"target="_blank" rel="noopener noreferrer">Offer Development Masterclass</a>
+                                        <a href="https://jaymelone.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Website</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -1056,7 +1065,7 @@
                                         Link 3:
                                     </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://newsletter.profitladder.net/" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                        <a href="https://jaymelone.com/newsletter/" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
                                     </div>
                                 </div>
                             </div>
@@ -1071,13 +1080,13 @@
                                 </div>
                                 <div class="colored-bars-container">
                                     <div class="colored-bar-top">
-                                        <span class="text-body">Simplifying Expertise Through Packaging</span>
+                                        <span class="text-body">Services vs Products</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">Avoiding Overcomplication</span>
+                                        <span class="text-body">Clear Offer Structure</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">Collaborative Problem-Solving</span>
+                                        <span class="text-body">Successful Elements</span>
                                     </div>
                                 </div>
                             </div>
@@ -1109,17 +1118,15 @@
                     <div class="sub-wrapper-episode-body">
                         <div class="sub-wrapper-episode-content">
                             <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
-
                                 <div class="system-status">
                                     <p>✺ Lessons from working close to the Strategyzer team<br>
                                     ✺ Some usual failure modes of trying to Productize Expertise<br>
                                     ✺ Figuring out how to package expertise in a way that actually works<br>
                                     <br>
-                                Kurt is on top of his game. But he sub-wrapper-intro-hypothesis you to reach that place too. The amount of sharing and co-learning is off the charts. I wish I had started speaking to Kurt much sooner.
+                                    Kurt is on top of his game. But he wants you to reach that place too. The amount of sharing and co-learning is off the charts. I wish I had started speaking to Kurt much sooner.
                                     <br>
                                     <br>
-                                    <a href="https://www.linkedin.com/in/kurt-bostelaar/"><b>Kurt Bostelaar</b></a> is a Methodology Designer and a friend.
-                                The overlap in interests and niche passions that we have borders on the uncanny. Also Kurt's recurring generosity is a permanent source of fascinating ideas. This light-hearted but also passionate session was the perfect way to close off the first season of Exotic Matter.
+                                    <a href="https://www.linkedin.com/in/kurt-bostelaar/"><b>Kurt Bostelaar</b></a> is a Methodology Designer and a friend. The overlap in interests and niche passions that we have borders on the uncanny. Also Kurt's recurring generosity is a permanent source of fascinating ideas. This light-hearted but also passionate session was the perfect way to close off the first season of Exotic Matter.
                                     <br>
                                     <br>
                                     </p>
@@ -1127,7 +1134,7 @@
 <span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
@@ -1140,7 +1147,7 @@
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://leverlo.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                        <a href="https://leverlo.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Leverlo</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -1163,13 +1170,13 @@
                                 </div>
                                 <div class="colored-bars-container">
                                     <div class="colored-bar-top">
-                                        <span class="text-body">Methodology Design as a Discipline</span>
+                                        <span class="text-body">Strategyzer Lessons</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">Challenges of Productizing Expertise</span>
+                                        <span class="text-body">Common Failure Modes</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">Common Pitfalls in Expertise Productization</span>
+                                        <span class="text-body">Packaging Expertise</span>
                                     </div>
                                 </div>
                             </div>
@@ -1179,19 +1186,8 @@
                 <div class="episode-tab text-label episode-tab-bottom">
                     <a href="#roster" class="tab-link">Back to Roster</a>
                 </div>
-            </div>
-            
-            <!-- Invisible spacer div -->
-            <div class="spacer-bottom"></div>
-            <p>
-                <span class="text-mono-small">© 2024 Exotic Matter. All rights reserved. Developed by 
-                    <a href="https://Mesozoic.co" target="_blank" rel="noopener noreferrer" class="footer-link"><span class="text-accent mesozoic">Mesozoic</span></a>
-                </span>
-            </p>
+            </div> 
         </div>
     </div>
-    <footer class="footer">
-        <p class="text-body">Exotic Matter is a <a href="https://Mesozoic.co" target="_blank" rel="noopener noreferrer" class="footer-link"><span class="text-accent mesozoic">Mesozoic</span></a> Product. All rights reserved.</p>
-    </footer>
 </body>
 </html> 

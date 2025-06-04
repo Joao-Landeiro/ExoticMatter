@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Episode 0 - João Landeiro - Exotic Matter</title>
+    <title>Episode {{episode.number}} - João Landeiro - Exotic Matter</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://api.fontshare.com/v2/css?f[]=familjen-grotesk@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap" rel="stylesheet">
@@ -34,6 +34,17 @@
         body {
             padding-top: 4rem;
         }
+        .sub-wrapper-episode-meta {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .sub-wrapper-guest-box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -44,52 +55,65 @@
         <div class="space-background"></div>
         <div class="wrapper-content">
             <!-- Episode Panel -->
-            <div class="sub-wrapper-episode" id="episode-0">
+            <div class="sub-wrapper-episode" id="episode-{{episode.number}}">
                 <div class="episode-tab text-label">
-                    Status:<br>Released
+                    Episode Status:<br>released
                 </div>
-            <div class="panel-episode">
-                <div class="sub-wrapper-episode-header">
-                    <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
-                        <h3 class="text-episode-number">0</h3>
-                    </div>
-                    <div class="sub-wrapper-episode-title">
-                        <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                <div class="panel-episode">
+                    <div class="sub-wrapper-episode-header">
+                        <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
+                            <h3 class="text-episode-number">{{episode.number}}</h3>
+                        </div>
+                        <div class="sub-wrapper-episode-title">
+                            <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
                                 Theme:
-                        </div>
-                        <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
-                                <h2>Introduction to Exotic Matter</h2>
+                            </div>
+                            <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                                <h2>Welcome to Exotic Matter</h2>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="sub-wrapper-episode-body">
-                    <div class="sub-wrapper-episode-content">
-                        <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
-                            <p class="text-body">In this introductory episode, João Landeiro shares the vision behind Exotic Matter and what listeners can expect from this exploration of knowledge work, business strategy, and the changing landscape of work.</p>
-                        </div>
-                        <div class="sub-wrapper-episode-links">
-                            <div class="sub-wrapper-episode-links-1">
-                                <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
-                                    Link 1:
+                    <div class="sub-wrapper-episode-body">
+                        <div class="sub-wrapper-episode-content">
+                            <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
+                                <div class="system-status">
+                                    <p>✺ What is Exotic Matter and why does it exist?<br>
+                                    ✺ What kinds of conversations will we be having?<br>
+                                    ✺ Who are the guests and what can you expect from them?
+                                    <br>
+                                    Welcome to the inaugural episode of Exotic Matter, where we explore the evolving landscape of knowledge work and expertise.
+                                    <br>
+                                    <br>
+                                    <a href="https://www.linkedin.com/in/joaolandeiro/"><b>João Landeiro</b></a> is the host of Exotic Matter and founder of Mesozoic. This introductory episode sets the stage for conversations about productizing expertise and the future of knowledge work.
+                                    <br>
+                                    <br>
+                                    Scroll down for the Spotify Link and the Transcript.
+                                </p>
                                 </div>
+                            </div>
+                            <div class="sub-wrapper-episode-links">
+                                                                <div class="sub-wrapper-episode-links-1">
+                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 1:
+                                    </div>
                                     <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
-                                    <a href="https://www.linkedin.com/in/joaolandeiro/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/joaolandeiro/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="sub-wrapper-episode-links-2">
-                                <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
-                                    Link 2:
-                                </div>
+                                <div class="sub-wrapper-episode-links-2">
+                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 2:
+                                    </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                    <a href="https://joaolandeiro.substack.com" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                        <a href="https://mesozoic.co" class="episode-link" target="_blank" rel="noopener noreferrer">Mesozoic</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="sub-wrapper-episode-links-3">
-                                <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
-                                    Link 3:
-                                </div>
+                                <div class="sub-wrapper-episode-links-3">
+                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
+                                        Link 3:
+                                    </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                    <a href="https://mesozoic.co" class="episode-link" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                        <a href="https://mesozoic.co/newsletter" class="episode-link" target="_blank" rel="noopener noreferrer">Newsletter</a>
                                     </div>
                                 </div>
                             </div>
@@ -103,14 +127,14 @@
                                     <img src="assets/images/guest-pictures/JoaoL.png" alt="João Landeiro">
                                 </div>
                                 <div class="colored-bars-container">
-                                    <div class="colored-bar-top">
-                                        <span class="text-body">What is happening to Knowledge Work</span>
+                                                                        <div class="colored-bar-top">
+                                        <span class="text-body">What is Exotic Matter?</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">What do we want to know</span>
+                                        <span class="text-body">Types of Conversations</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">How we will find it out</span>
+                                        <span class="text-body">Guest Expectations</span>
                                     </div>
                                 </div>
                             </div>
@@ -118,9 +142,10 @@
                     </div>
                 </div>
                 <div class="episode-tab text-label episode-tab-bottom">
-                    <a href="index.html#roster" class="tab-link">Back to<br>Roster</a>
+                    <a href="index.html#roster" class="tab-link">Back to Roster</a>
                 </div>
             </div>
+                
             
             <!-- Spotify Player Panel -->
             <div class="panel-spotify">
@@ -128,291 +153,98 @@
                     Listen:
                 </div>
                 <div class="spotify-container">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/4UK2AfEHON0qkYxxwILIvR/video?utm_source=generator" width="624" height="351" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
             </div>
+                
             
-            <!-- Transcript Section -->
-            <div class="panel-transcript">
-                <div class="form-space-transcript-title form-space text-label" data-type="label" data-section="transcript">
-                    Transcript:
-                </div>
-                <div class="transcript-container">
-                <div class="form-space-transcript-content form-space" data-section="transcript" data-type="content">
-                        <p class="text-body">
-                            <span class="transcript-meta">[00:00] João:</span><br>
-                            are here with Nick Himovic and Nick is a specialist at innovation and has become really known around LinkedIn for his nuanced takes on the business model canvas and the whole environment and ecosystem around that, not just the canvas, but the whole Strategyzer. I will struggle with this. It's going on the edit. Strategizer, know, suite of tools and methodologies. So Nick is really familiar with this idea of productized expertise and how to make it part of your way of working. So hi, Nick. Thank you. Thank you for being here.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[00:34] Nick:</span><br>
-                            No, think you've done a fantastic introduction. What I would like to add straight away is a bit of the why. Can I share a bit of my story as to why? Because I'm a complete fanatic of Strategyzer's tools, the business model canvas, the value proposition canvas, the environment map, the portfolio map, the culture map, all of it. I love it. And I use all of it together to help clients. And the more I go deeper into it, the more I realize it's even more useful than I thought it was. And it all started from one moment back in 2015.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[00:41] João:</span><br>
-                            Absolutely.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[01:02] Nick:</span><br>
-                            I went to a workshop with Alex Osterwalder and it was just after he'd released Value Proposition Design, the book. And after I was just blown away by that workshop, I've never experienced anything like it. It was better than all of my masters in management and business and anything else I'd ever done before that moment. It was just the best thing I'd ever seen. And so I went back to the agency that was working out kind of startup agency type thing and the chairman, he'd had two successful exits. So this is a guy that I really had a lot of respect for. And all I did was showed him the value proposition canvas. And I said, I want to ask you three questions, four questions, sorry, who are our customers? What jobs they're trying to get done in their work? What are their biggest pains and frustrations and what they're trying to achieve or what the outcomes or gains that they're trying to get as a result. And we had a 45 minute discussion with this guy who really knows business and he struggled.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[02:11] João:</span><br>
-                            ⁓ is not theoretical.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[02:21] Nick:</span><br>
-                            It's not theoretical and I made it my job to go out there and spread this stuff because imagine what world we could build if other people, if everybody knows this. So my dream one day I'm actually half Colombian. I was living in Colombia when I was 21, 22 and I saw this, it completely changed my life. Sorry, I didn't mean to jump into this story, but we were going up this river that felt like the Amazon, but it wasn't, it was up in the north of the country.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[02:41] João:</span><br>
-                            Go ahead, go ahead.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[02:47] Nick:</span><br>
-                            And it was like, felt like Amazon jungle, but it wasn't. It was just kind of like on the coast near, uh, uh, where was it? Um, I forget, I forget the name, but it was on the Caribbean coast. So we're going through and then like we're going up this river, up this rope, up this river, really into the middle of nowhere. And then we see this kind of shack like right by the riverside and, um, we see these kids playing in the water and having such a great time. But it's like, this is like the poorest environment. They've got nothing but they're making the most of their lives, right? And they're happy. And that made me go like, wow, if they're happy and they've got nothing, I need to be happy in my life. And so what I wanted to do from that moment was kind of, first of all, be happy in my own life. But I want to help people that also have like, that have nothing, right? But make the most of their opportunity. Imagine if we go and gave those kids tools like the value proposition canvas, business model canvas, all kids around the world had access to it and you had to build businesses with it. Like, I think that would be absolutely crazy. So I'm trying to help as many people as possible to find this stuff and also feel happy with whatever, like wherever they are in the world, also feel happy. So those are the two things that I'm really inspired by and, and, and trying to do.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[03:56] João:</span><br>
-                            What I like about this is that one of things I like about this is that we talk about the tools, but the tools are based on principles and these principles are human nature, right? The way we look at problems, the way we understand what we're trying to address in our lives or what's missing, what we have at our disposal, stuff like that, So when you started telling that story of going through the river and you mentioned the shack, I didn't know where it would end the story, right? But then you mentioned the tools. Part of me was a little bit, huh. But then I was like, yeah, sure. Because every time, and we talk to people all over the place, Every time you look at successful businesses of people that have not read this stuff, they have like this innate understanding of these kind of things. But sometimes they can't express it, they have, know, do you know the effectuation theory?
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[04:21] Nick:</span><br>
-                            You
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[04:45] João:</span><br>
-                            It's, I've heard about it somewhat recently, but apparently somebody ran a series research on this. Like they interviewed a lot of people from the real entrepreneurship, not the Silicon Valley incubator accelerator kind of thing, like laundromats and restaurants and stuff like that. And one of the things they've realized is that it's a different way of running a business from what, you know, the more tech centric, methodologies propose, which is a lot based on opportunity. Like what's ahead of you that you can use, both as an asset that you have or as a market that you can serve, right? But then you see in the research that these people, think in these terms, they think in terms of addressing a pain point, trying to solve a problem that is relevant enough, being clear on what they do, being adaptable, all of these things. So it's really interesting as a counterpoint that ends up reinforcing many of the same principles, right?
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[06:11] Nick:</span><br>
-                            Yeah, they say that a picture is worth a thousand words. Okay. And they also say that a business model canvas is worth a thousand meetings because, when we have a conversation, right, say we're trying to talk strategy for our business that we're doing together now, whatever it is, hypothetically, you've got an idea in your mind and I've got an idea in my mind and they're probably not the same thing. They're probably actually quite different, but we think we're aligned except we're not. So what these tools do is they help you avoid blah, blah, blah, blah, blah, which is just talking, but not being aligned in what you're actually saying and thinking. And then putting it onto creating a physical artifact that therefore makes you realize, actually it's that and helps you see it much, much better and much more clearly. Cause the brain can process pictures much quicker and also in a better way than just words.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[08:05] João:</span><br>
-                            Mm-hmm. Yes. Hahaha
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[08:19] Nick:</span><br>
-                            helps me pin down to make sure that the person actually goes, yes, what's in my head is what they had in their head because I don't want to move on until we've got alignment that what I'm saying is what they're thinking or sorry, what they're saying is what I'm thinking and have written down it's correct. And so that works well with customer interviews, but it also works well with the business model because the business model is the most like confusing, complicated thing. There's no way like that. If you have a conversation about a business model, it's typically blah, blah, blah, blah, blah. Everyone's just talking, but no one has a clue what anyone else is saying. Because as soon as you pin them down, that they all of a sudden realize they need to start defining their terms of like, but what do you mean by double-sided marketplace? but what do you mean by subscription model? what do you mean by software as a service? Like, like, what do you like, you pin them down and then you realize everyone in the five people around the room that when they said, we're going to do this Uber model and everyone's like, yeah, yeah, cause Uber, yeah, I know Uber. So yeah, yeah, we're going to do that. Cool. But then when you actually break, yeah, but what part of it? Cause actually Uber is quite complicated and like which bit, and they've changed models quite a lot now. So, so what, no one had a clue what the hell was going on. And so when we physically write it down or do it on a digital whiteboard, everyone's on the literally on the same page. And it goes back to that point about the customer interviews.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[09:23] João:</span><br>
-                            You
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[09:40] Nick:</span><br>
-                            is that you've pinned people down to slow down the conversation to speed you up because people think that they can go faster by just going, yeah, you say something and then you get it. Yeah, yeah, fine. Let's keep going. Let's keep going. But you've actually slowed the whole thing down because you haven't understood the fundamentals of what you're actually talking about. That's one reason why the tools are so powerful.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[10:00] João:</span><br>
-                            And I found that sometimes there's like this illusion of progress by having a lot of conversations, but the conversations keep repeating themselves or just branching out from one meeting to the next one. And it feels like you're moving fast, but you're really staying in place. So, smooth, smoothly fast, right? That kind of thing.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[10:20] Nick:</span><br>
-                            That's it. I love that. Yeah.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[10:22] João:</span><br>
-                            And yeah, can, when you said that, like you slow down to go faster, immediately I could think of a couple situations in my professional life where that was exactly what was happening. Like, no, no guys, we don't have time to spend on this alignment thing. Let's just get the work done, as if the alignment is not the work. So, and these things tend to end up the way one expects.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[10:42] Nick:</span><br>
-                            And when I was younger, I was more reticent to push more senior people on that. But now I call bullshit on it. And I'm like, no, like, I won't let it continue. put, I think Tendai calls it like a diplomatic hand grenade down. And I'll just stop everything until like we've actually got that alignment. Because as you said, you got to go, what was the expression that you said? It was perfect.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[10:47] João:</span><br>
-                            Mm-hmm. Mm-hmm. Yeah. Slow is smooth, smooth is fast, I think. Yeah. It's one of those like Navy Seal quotes on YouTube kind of thing.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[11:07] Nick:</span><br>
-                            There you go. Yeah. I love it. Now, I first heard it from the creative director at that agency startup that I was working at years ago. Yeah, so I'm a big fan of that one. Yeah.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[11:17] João:</span><br>
-                            yeah? Yeah. And one of the things, okay, so this is a good segue because one of the things we had kind of planned to touch on was customer interviews. And this come up a lot as in that category of things like I know I should be doing them. The few times I've done them, they were really useful and valuable. The ROI was amazing, but I'm not doing as many as I should or as well as I should. Why do think that happens?
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[11:48] Nick:</span><br>
-                            thing is because it's too complicated. Every single book that you hear about it, it doesn't give a 101 version of what you do. Because I love Bob Mosta and I love all of his books. They're great, but it's still a little bit too complicated. Like he's a master of it and he's really good at breaking it down. But I still feel like I don't have the most balled down version of what he does because he's the master. I also look at like Rob Fitzpatrick and the mum test stuff. I love that stuff. That is perfect. But it's still, it's almost like, it still doesn't give me the one page checklist, right? To just get things started. And I feel like with customer interviews,
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[12:15] João:</span><br>
-                            I was going to ask about his book. Mm-hmm.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[12:30] Nick:</span><br>
-                            The methodology I use is strategize this version, you know, based off of it's probably more closely aligned to Tony Orwick's approach, his version of jobs to be done. And what I find is that it's just so basic and so simple. And I love that because it's just, it's just three questions. It's four questions. Similar to what I was saying before, what are you trying to get done in your work and in your life? And then you write that down and then I've adapted it slightly because I like to make it fun. feel like if you can get people laughing a little bit in a customer interview and it opens them up. I actually say now, what gives you nightmares? What's keeping you up at night? And that will give me their pains, their difficulties, their frustrations. OK, so I can get there. And then I ask them, OK, I'm a genie in a lamp. You get three wishes. Or sometimes I say I'm Harry Potter and I've got a magic wand. You got three wishes, right? I've got the British accent so sometimes I'll say I'm Harry Potter and that's great because it's just a very simple customer interview and then I'll ask them to prioritize three. There's loads of ways you could criticize this approach but as a basic 101 customer interviews and you can do it in seven minutes you could get that done but equally you can also take two hours depending on the person that you're speaking with and how deep that you go. I love how it can just expand or contract based off of the amount of time that you've got with the person and how much they open up. But this is the best approach that I've found to teach people. Because as you said, like people don't want to do it. They want to do everything to not do it. I live in Moldova and there's loads of engineers that sell their development services to companies abroad. So they know how to build and they want to build their own businesses as well and build their own products. But they just want to build. so I keep it's like Groundhog Day. They'll say to me, I'm building this thing. I'll say, how long is it going to take? They say it's going to take three months and 10 grand. And I say, have you spoken to a customer yet? No. Are you going to do it in that three months? No. Just leave it to me. Three months come back. So I come back in three months. I know what I'm doing. Three months later.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[14:23] João:</span><br>
-                            I know what I'm doing.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[14:26] Nick:</span><br>
-                            Have you finished? Have you spoken to any customers yet? No and no. I just need another month and 10,000 more dollars and then it will be done. Come back another month. You'd never believe what happened, but we didn't quite finish it. We just need another three months. And so it's basically a year will go by, the product is not finished and they still have not spoken to customers. as an independent innovation coach, the main part of what I do is not sell people that they're going to be doing customer interviews, I sell them that they're going to be creating products that people actually want to use. And then I need to get them who actually often developers are not the most, not the people that want to speak to other people straight away. They want to actually focus on the doing on the building rather than the kind of empathy side of things and having the conversations to really understand what they're building, like, and making sure that it's the right it they're not so focused on that. And so I help Like my job is to evangelize the customer interview process. And so why I like strategize this approach with using the customer profile, showing it them and then writing it down as you go. And it's only three questions plus prioritizing each of the three aspects of that customer profile. It's just so simple and people can get it. what I love is that I'll do a session. I'll explain what I've explained on this, on this podcast. And then they'll be like, yeah, of course I get it. No worries. Got it. Right. Easy. And then they'll go away and I'll even now record a loom and on the loom be like, just want to make sure you know what you're doing for that. Cause they've scheduled a customer interview. And I know when they've, they'll tell me when it's scheduled and I say, just want to make sure that you know what you're doing. So here's a loom specifically for you. Just reminding you of like what you need to do here. And this is like the simplest version of a customer interview and they'll go away and then they'll come back and they'll still put like pain marketing, like, right. And it's like, okay, right. And then I need to explain to them actually, even though I've already explained the difference between a job to be done and a pain in the game. And they know it, right. I'll explain it to them again, because they needed to do it themselves. They needed to have that experience. And then once they've got that, then they're like,
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[16:14] João:</span><br>
-                            Hahaha
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[16:36] Nick:</span><br>
-                            we get it. And then the next time is way better. And then the next time is way better. So what I love is it's just a very rigid process for customer interviews that is as basic as I think it can be. then on top, then later on, you can teach them more complicated processes or more freestyle stuff or broaden their expertise with the mum test with Bob Mosta stuff. I like the stuff from Eka. totally forgotten his surname, but he created the Wheel of Progress, which he's been inspired by a lot of Strategyzer's tools. His one's great. He's also been inspired by Bob Moster and all the people that develop jobs to be done. So later on we can go into that stuff. But I'm trying to make it super basic so we get started. And that's why I love that approach.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[17:20] João:</span><br>
-                            an aspect of what you just described because you told us like an actual story of how this goes, Based on unreal situations. And just before this conversation I was chatting with a common friend, Tim, and he was telling me about the book Knowing Doing Gap. I have not read the book, but the book apparently addresses this this idea that people sometimes know what to do, but they don't do it for many reasons, right? And there are sets of reasons for that. There's like families, a taxonomy of reasons for people not doing what they know they should be doing, right? And I think in this whole, you know, evolving consulting, evolving agency work where you need to work much more with clients, not just for clients, you need to be, it's much more of a partnership. There's a non... trivial aspect of it, which is kind of this shifting mindset, which if you base a relationship on just telling people what they need to do, but then they don't do it, like three months on the line, they think about working with you as like, yeah, good guy, but I got nothing out of it. They got the knowledge. mean, you transfer the formal knowledge, but they didn't get through the experience of applying that thing. And this example you gave of the small touch of sending the loom and, you know, knowing when they are scheduling a conversation. I think it's a very good example of this kind of immersion into their reality. Like, because in the past, maybe five, 10 years ago, this would be a course, right? Just get a course from Nick and learn how to interview customers. And maybe 0.3 % of people will finish that course. From those, maybe 1 % will actually run customer interviews. But I think the market has changed and people are a little bit more criterias with how they make these decisions. But, now, another thing about customer interviews... Yes.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[18:59] Nick:</span><br>
-                            Can I just jump in on that point? Because I got invited to do a talk at the technical university here in Moldova and I did it for free. And I thought, okay, I could see there were a lot of people. It was excellent students. They were all sat around desks and there's about eight of them, eight of them around each desk. And there was about five or six desks, maybe more, maybe more. And there was, Students that are coding, developing, there students studying game development, and were business students. But fewer business students, more developers. And so there was a lot of people on their computer like this. And so throughout the whole talk, I was trying to do my best to get their attention again. But at the end of the talk, what I did is I got off the stage. And I actually went right up to the tables and actually pointed almost not quite. I looked at like I went you, you, you. What I want you to do now is open up your calendar and actually book in the time to organize a customer interview. now, like, and then I went up to the, and I mean, I was like you and I pointed to people and went up to their faces. I went now open up your calendars because I've just done this. want you to actually take action. So I really like.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[19:45] João:</span><br>
-                            And you slapped three of them. No.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[20:11] Nick:</span><br>
-                            got in their faces and like really tried to create some of that energy to make stuff happen. Cause it only takes a few of them, handful of them to actually do it. They can make a massive impact, but if I can get a handful extra, even better. So that's what I was trying to do. And I'm not afraid to upset people to do that because I think the stakes are too high. it there in that room, there could have been someone with the next billion dollar business. Moldova has never had a billion dollar company, but those kids are really smart.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[20:20] João:</span><br>
-                            Yes.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[20:38] Nick:</span><br>
-                            All it takes is one of them that wasn't going to do it to do a customer interview, to learn something that they didn't realize. So that completely transforms the trajectory of what they were trying to build. And so I'm not afraid to upset them. And I did it in quite an angry, pushy way, but I think, and that's not my approach. That's not my personality, but I'm not afraid to do it because I think it's for a greater good. And I did, had another client as well who, at the beginning of the program, it was already session three and he was saying to me, like, We want like, I went like, I want to launch my product, but in one month and like he, he felt like I was slowing him down with like the customer interview process. And we were three weeks in and we'd met up once a week and he still hadn't done a customer interview. And I said to him, look, you're complaining that we're moving slow, but you have, I've never had a client not actually do the homework. You haven't done it yet. So I had to really get hard on, on him to like, it will be tough on him, sorry, to be able to say, look, you need to do this thing. He's done it. Now he's seen, my goodness, how good it is. And now he's doing regular customer. Like he's already finished the chunk that he'd planned and now he knows that it's how important it is to be consistently doing it. So he's using this approach, constantly doing it with clients now well beyond, and it's really put them in a good place. So I'm not afraid to be tough, to evangelize the process because it's so helpful when people actually apply it and it's better to get them started.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[21:44] João:</span><br>
-                            Mm-hmm.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[22:01] Nick:</span><br>
-                            And even if this approach, this specific customer interview isn't the right one, just getting them to start is a good thing.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[22:07] João:</span><br>
-                            For sure, for sure. And I think client inertia is a big deal for a lot of services companies. And I think the example you gave on the, just open your calendar and do it right now, it's very actionable, very actionable, very easy to replicate. It does take some gumption like you described, but. But I also tried to do a similar thing. We didn't speak about this before, but I also tried to do a similar thing when meeting with the client for the first time. Like, let's schedule this thing right now. And at the end of workshops also, I invite people to schedule the time to do the continuation of the workshop, not with me, but for themselves. Like, you guys will need an hour to process this thing we did. Schedule it right now. And not everybody does, but... the people who do.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[22:50] Nick:</span><br>
-                            I'm a big fan of the six six thinking hats by Edward de Bono and So each hat is a different color and You were a different hat to do a different to do a specific type of thinking But everybody in the room should wear the same hat at the same time except for the blue hat one person is the facilitator They're wearing the blue hat throughout they're like the policeman and they're making sure that we're on track and at the end We've got we're clear on our next steps, but then everybody can put their blue hat on at the end of the session to be able to work out what their specific next steps are. So yeah, I like that.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[23:22] João:</span><br>
-                            I knew about the approach, but I didn't know about this final step. So, yeah, perfect. So, I mean, we are standing on the shoulders of giants here, so it makes sense. These things have been discussed and discovered and described for a while. So, this is really interesting. Just to make a quick recap, we started talking about the ecosystem of tools that help you discuss, you know... strategy and customer discovery and positioning and all of these things, we've discussed how these tools change the kind of conversations you can have on several dimensions, both on depth and the kind of people you can bring in, the kind of duration you can have these discussions. They give you handles for these conversations, right? And they can move and manipulate this conversation. And then we kind of went into the... what's necessary to collect information that helps us fill in some of these blanks, right? And in this specific case, we've used the customer interviews aspect, there's others. And then we, again, like a fractal, we went back into the participatory aspect of working with people so that they actually do the things that they know they need to do, but they are kind of procrastinating on. So I think this is quite a full circle conversation. We're coming towards the tail end of our time and I think it's a good sign that I wish I had booked more time but anyway just not to make this too long of a conversation. Before you tell us a bit more on how to find your stuff, do you have any like parting thoughts that you would like to leave this episode with?
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[24:41] Nick:</span><br>
-                            Hahaha Ugh.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[24:53] João:</span><br>
-                            Easy question.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[24:54] Nick:</span><br>
-                            Chachi PT said something that was like absolutely, I thought it was absolutely brilliant yesterday on a post that I made. Innovation usually gets booed before it gets clapped.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[24:55] João:</span><br>
-                            my God. Mm-hmm.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[25:04] Nick:</span><br>
-                            So being an innovator is not an easy job. As Alex Osterwalder says, innovation is career suicide. Yeah, it's tough to be an innovator. Why? Because often you're changing the norm and there are people with interests in the way that things are right now. And so you're not going to be making, you're going to be making enemies of them. And so it's a tough thing to do. However, I was remember with Alex, we were interviewing Hubert Joly, the ex CEO and chairman of Best Buy. And he was, he actually promoted his head of basically innovation. He called it a different, he called it something different there, but it was basically his head of innovation followed up and actually became the CEO. So even though it can be tough, there's hope and we need to do it. We just need to go for it because if we don't, what's the risk if we don't, we've got to keep pushing. So innovation is tough. It's not easy. Some people might do at the beginning, but If we keep going, we're going to change the world for the better. And that's where the collapse will come.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[25:56] João:</span><br>
-                            Yeah, that's positive note and I appreciate that. So where can people find more of your stuff? I know that you have a YouTube channel as well, must...
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[26:06] Nick:</span><br>
-                            Yes, YouTube is my favorite place. I've put a lot of time and effort into the videos that I've got there. So I highly recommend that you check those out. I do a lot of tutorials around business model canvas, value proposition canvas. I also share case studies of companies that are doing really well, like Canonly and even companies that you might not have heard of like Sona in Moldova. And I've got a lot of great videos coming soon. So definitely subscribe to my YouTube channel and LinkedIn. I like to test a lot of content there, see how it does. And then that's where then I expand on it in YouTube videos. So LinkedIn is a great place to follow me as well. Those are the two best places.
-                        </p>
-                        
-                        <p class="text-body">
-                            <span class="transcript-meta">[26:40] João:</span><br>
-                            So you can't help but try to always do customer research. You do the customer research on LinkedIn for the content and then you convert that into the longer term thing. Perfect. Thank you so much, Nick. This was really a pleasure and I'll let you know, so I'm cutting off the recording bit.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- About Section -->
-            <div class="panel-mesozoic">
-                <div class="form-space-mesozoic-title form-space text-label" data-type="label" data-section="mesozoic">
-                    About Exotic Matter:
-                </div>
-                <div class="form-space-mesozoic-content form-space" data-section="mesozoic" data-type="content">
-                    <p class="text-body">Exotic Matter is a research project by Mesozoic, exploring the intersection of knowledge work and business strategy. Through conversations with experts and practitioners, we investigate how organizations can better adapt to the changing landscape of work and knowledge management.</p>
-                </div>
-            </div>
-            
-            <!-- Resources Panel -->
-            <div class="panel-resources">
-                <div class="form-space-resources-title form-space text-label" data-type="label" data-section="resources">
-                    Resources:
-                </div>
-                <div class="form-space-resources-content form-space" data-section="resources" data-type="content">
-                    <!-- Resources will be added later -->
-                </div>
-            </div>
-            
-            <!-- Invisible spacer div -->
-            <div class="spacer-bottom"></div>
         </div>
     </div>
-    <footer class="footer">
-        <p class="text-body">Exotic Matter is a <a href="https://Mesozoic.co" target="_blank" rel="noopener noreferrer" class="footer-link"><span class="text-accent mesozoic">Mesozoic</span></a> Product. All rights reserved.</p>
-    </footer>
+
+    <!-- Space Animation Script -->
+    <script>
+        // Space animation script for episode pages
+        const container = document.querySelector('.space-background');
+        const totalElements = 18;
+        let activeElements = 0;
+
+        function getRandomValue(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function createSpaceElement() {
+            const element = document.createElement('img');
+            const elementNumber = Math.floor(Math.random() * totalElements) + 1;
+            element.src = `assets/images/element${elementNumber}.png`;
+            element.className = 'space-element';
+
+            // Random angle for direction (in radians)
+            const angle = Math.random() * Math.PI * 2;
+            // Random distance to travel (viewport diagonal)
+            const distance = Math.max(window.innerWidth, window.innerHeight) * 1.5;
+            // Calculate end position
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+            // Random rotation between -180 and 180 degrees
+            const rotation = getRandomValue(-180, 180);
+            // Random duration between 6 and 8 seconds (slower travel)
+            const duration = getRandomValue(6000, 8000);
+
+            element.style.setProperty('--tx', `${tx}px`);
+            element.style.setProperty('--ty', `${ty}px`);
+            element.style.setProperty('--rotation', `${rotation}deg`);
+            element.style.animation = `moveOutward ${duration}ms cubic-bezier(0.34, 0.13, 0.71, 0.95) forwards`;
+
+            container.appendChild(element);
+            activeElements++;
+
+            element.addEventListener('animationend', () => {
+                element.remove();
+                activeElements--;
+            });
+        }
+
+        function createSpaceDust() {
+            const dust = document.createElement('div');
+            dust.className = 'space-dust';
+
+            const angle = Math.random() * Math.PI * 2;
+            const distance = Math.max(window.innerWidth, window.innerHeight) * 1.5;
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+            const duration = getRandomValue(4000, 6000); // Dust moves faster than elements
+
+            dust.style.setProperty('--tx', `${tx}px`);
+            dust.style.setProperty('--ty', `${ty}px`);
+            dust.style.animation = `moveOutwardDust ${duration}ms cubic-bezier(0.34, 0.13, 0.71, 0.95) forwards`;
+
+            container.appendChild(dust);
+
+            dust.addEventListener('animationend', () => {
+                dust.remove();
+            });
+        }
+
+        // Create new element every 200-300ms
+        function spawnElements() {
+            createSpaceElement();
+            const nextSpawn = getRandomValue(200, 300);
+            setTimeout(spawnElements, nextSpawn);
+        }
+
+        // Create new dust particles every 20-40ms (much more frequent)
+        function spawnDust() {
+            // Create multiple dust particles per spawn
+            for(let i = 0; i < 3; i++) {
+                createSpaceDust();
+            }
+            const nextSpawn = getRandomValue(20, 40);
+            setTimeout(spawnDust, nextSpawn);
+        }
+
+        // Start spawning both elements and dust
+        spawnElements();
+        spawnDust();
+    </script>
 </body>
 </html> 
