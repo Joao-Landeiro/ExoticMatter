@@ -5,7 +5,7 @@ const path = require('path');
 
 // Paths
 const SRC_DIR = path.join(__dirname, '../src');
-const BUILD_DIR = path.join(__dirname, '../build');
+const BUILD_DIR = path.join(__dirname, '..');  // Changed from '../build' to '..' (root directory)
 const TEMPLATES_DIR = path.join(SRC_DIR, 'templates');
 const CONTENT_DIR = path.join(SRC_DIR, 'content');
 const EPISODES_DIR = path.join(CONTENT_DIR, 'episodes');
@@ -393,6 +393,14 @@ function generateSpaceAnimationScript() {
 async function copyAssets() {
     console.log('📁 Copying assets...');
     
+    // Check if BUILD_DIR is the root directory (when generating directly to root)
+    const isRootBuild = path.resolve(BUILD_DIR) === path.resolve('.');
+    
+    if (isRootBuild) {
+        console.log('✅ Assets already in place (building to root directory)');
+        return;
+    }
+    
     // Copy styles directory
     if (await fs.pathExists('styles')) {
         await fs.copy('styles', path.join(BUILD_DIR, 'styles'));
@@ -770,8 +778,29 @@ async function build() {
     console.log('🚀 Starting static site generation...');
     
     try {
-        // Clean and create build directory
-        await fs.emptyDir(BUILD_DIR);
+        // Clean up only generated HTML files (not the entire directory since we're in root)
+        console.log('🧹 Cleaning up previous generated files...');
+        const filesToClean = [
+            'index.html',
+            'S1E0_Intro.html',
+            'S1E1_Nick.html', 
+            'S1E2_Spencer.html',
+            'S1E3_Danilo.html',
+            'S1E4_Florian.html',
+            'S1E5_Alex.html',
+            'S1E6_Dylan.html',
+            'S1E7_Patrick.html',
+            'S1E8_Jay.html',
+            'S1E9_Kurt.html'
+        ];
+        
+        for (const file of filesToClean) {
+            const filePath = path.join(BUILD_DIR, file);
+            if (await fs.pathExists(filePath)) {
+                await fs.remove(filePath);
+                console.log(`🗑️  Removed: ${file}`);
+            }
+        }
         
         // Copy assets
         await copyAssets();
