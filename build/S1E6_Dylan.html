@@ -34,6 +34,17 @@
         body {
             padding-top: 4rem;
         }
+        .sub-wrapper-episode-meta {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .sub-wrapper-guest-box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +57,7 @@
             <!-- Episode Panel -->
             <div class="sub-wrapper-episode" id="episode-6">
                 <div class="episode-tab text-label">
-                    Status:<br>To be released
+                    Episode Status:<br>To be released
                 </div>
                 <div class="panel-episode">
                     <div class="sub-wrapper-episode-header">
@@ -65,25 +76,23 @@
                     <div class="sub-wrapper-episode-body">
                         <div class="sub-wrapper-episode-content">
                             <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
-                                <div class="system-status">SYSTEM READY
-BOOT SEQ: [##########] 100%
-
-AUDIO SYSTEM INITIALIZED  
-CODEC: LPC-10 @ 2.4kbps  
-FREQ: 44.1kHz MONO  
-
-CURRENT STATUS:  
-EPISODE_06.FLAC  
-[ ENCRYPTION: AES-128 ]  
-[ APPROVAL: PENDING ]  
-
-DIGITIZED AUDIO FEED:  
-[###########-----] 68%  
-
-<span class="system-status-blink">STANDBY FOR TRANSMISSION</span></div>
+                                <div class="system-status">
+                                    <p>✺ What makes LinkedIn such a powerful platform for knowledge workers?<br>
+                                    ✺ How do you build authentic relationships rather than just collecting connections?<br>
+                                    ✺ What are the key strategies for getting found by the right people on LinkedIn?
+                                    <br>
+                                    Dylan and I discussed these topics mostly around how Experts can be found on LinkedIn. At some point Dylan caught me falling into old over-thinking patterns. See if you can spot this.
+                                    <br>
+                                    <br>
+                                    <a href="https://www.linkedin.com/in/dylan-ciaccio-766826146/"><b>Dylan Ciaccio</b></a> helps B2B firms burst through their audience Bubble on LinkedIn and he's also a friend. We initially met when Dylan made me see something that had been in front of all our eyes for a long time. That "slap-my-forehead" moment was only the first of our conversations. So many experts struggle with reach on LinkedIn and I knew Dylan could help make a few things clearer.
+                                    <br>
+                                    <br>
+                                    
+                                </p>
+                                </div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                <div class="sub-wrapper-episode-links-1">
+                                                                <div class="sub-wrapper-episode-links-1">
                                     <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
                                         Link 1:
                                     </div>
@@ -96,7 +105,7 @@ DIGITIZED AUDIO FEED:
                                         Link 2:
                                     </div>
                                     <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://focusthelens.carrd.co/" class="episode-link" target="_blank" rel="noopener noreferrer">Company Website</a>
+                                        <a href="https://focusthelens.carrd.co/" class="episode-link" target="_blank" rel="noopener noreferrer">Focus The Lens</a>
                                     </div>
                                 </div>
                                 <div class="sub-wrapper-episode-links-3">
@@ -104,13 +113,13 @@ DIGITIZED AUDIO FEED:
                                         Link 3:
                                     </div>
                                     <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.youtube.com/watch?v=ul1tMZy55Qc" class="episode-link" target="_blank" rel="noopener noreferrer">Video Introduction</a>
+                                        <a href="https://www.youtube.com/watch?v=ul1tMZy55Qc" class="episode-link" target="_blank" rel="noopener noreferrer">YouTube Video</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="sub-wrapper-episode-meta" style="display: flex; flex-direction: column; height: 100%;">
-                            <div class="sub-wrapper-guest-box" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="sub-wrapper-episode-meta">
+                            <div class="sub-wrapper-guest-box">
                                 <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
                                     <h2>Dylan Ciaccio</h2>
                                 </div>
@@ -118,14 +127,14 @@ DIGITIZED AUDIO FEED:
                                     <img src="assets/images/guest-pictures/DylanC.png" alt="Dylan Ciaccio">
                                 </div>
                                 <div class="colored-bars-container">
-                                    <div class="colored-bar-top">
-                                        <span class="text-body">Declining Organic Reach on LinkedIn</span>
+                                                                        <div class="colored-bar-top">
+                                        <span class="text-body">LinkedIn's Power</span>
                                     </div>
                                     <div class="colored-bar-middle">
-                                        <span class="text-body">Niche Content Boosting as a Strategic Solution</span>
+                                        <span class="text-body">Authentic Relationships</span>
                                     </div>
                                     <div class="colored-bar-bottom">
-                                        <span class="text-body">Category Creation and Strategic Languaging</span>
+                                        <span class="text-body">Discovery Strategies</span>
                                     </div>
                                 </div>
                             </div>
@@ -133,138 +142,100 @@ DIGITIZED AUDIO FEED:
                     </div>
                 </div>
                 <div class="episode-tab text-label episode-tab-bottom">
-                    <a href="index.html#roster" class="tab-link">Back to<br>Roster</a>
+                    <a href="index.html#roster" class="tab-link">Back to Roster</a>
                 </div>
             </div>
+                
             
-            <!-- Spotify Player Panel -->
-            <div class="panel-spotify">
-                <div class="form-space-spotify-title form-space text-label" data-type="label" data-section="spotify">
-                    Listen:
-                </div>
-                <div class="spotify-container">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </div>
+                
             
-            <!-- Transcript Section -->
-            <div class="panel-transcript">
-                <div class="form-space-transcript-title form-space text-label" data-type="label" data-section="transcript">
-                    Transcript:
-                </div>
-                <div class="transcript-container">
-                    <div class="form-space-transcript-content form-space" data-section="transcript" data-type="content">
-                        <p class="text-body"> <span class="transcript-meta">[00:16] João:</span><br> So welcome to Exotic Matter, which is my podcast where I'm interviewing some internet friends and specialists around what's changing in knowledge work and perhaps more specifically, agency work and consulting work. So people that know things and make a living from knowing those things. And when I first met Dylan, Dylan Ciaccio, what caught my attention was that he had this interesting idea on content boosting that I wasn't aware of and it made a lot of sense for the current stage of the whole social media environment, right? So let me not maim this too much and just give the stage to Dylan so he can introduce a little bit more of his work. </p>
-                        <p class="text-body"> <span class="transcript-meta">[01:01] Dylan Ciaccio:</span><br> Well, my name is Dylan. Nice to meet everyone. Happy to be here. I really appreciate this. And I'm excited to talk about niche content boosting and consultant work. I think we agree on a lot of things and this is gonna be fun. </p>
-                        <p class="text-body"> <span class="transcript-meta">[01:18] João:</span><br> So, thank you. And one of the things I saw that I think you nodded a little bit harder when I said the current social media environment. And a lot of people are complaining about this. I complain about this all the time, about the whole reach and nobody sees what you put out and there's this thing, ah, just produce really good content, but not a lot of people see it. What's your take on this? </p>
-                        <p class="text-body"> <span class="transcript-meta">[01:41] Dylan Ciaccio:</span><br> Yeah, I think in the past few years, LinkedIn content has become a way that a lot of consultants are trying to get clients. I've been on there for the past few years. And so people have kind of flocked to it and there's a good amount of people that have had a lot of success with it. And on LinkedIn, you know, on the LinkedIn feed, you always see the success. You don't really see the people failing because the...That's part of the way it works is you talk about, you know, this worked for me and here's how to do it. So lots of consultants have went to go do LinkedIn content, have tried. But in 2025, because there's so many people that are putting out content. You know, the number of creators have increased, the number of posts, and with AI, you know, it's so easy to post things. The share between everyone, you the percentage of attention that you have is naturally going to decrease when there's more people, but the same amount of viewers. And so organic is becoming a lot harder, and you can't just post whatever and get clients. It becomes a different game. </p>
-                        <p class="text-body"> <span class="transcript-meta">[02:36] João:</span><br> Mm-hmm, yep. Yeah, I wish I had started that so much sooner. And I feel like a lot of people might think in the same way. But then your take on it goes, it's not just about paying for traffic, right? You had a more nuanced view on this. </p>
-                        <p class="text-body"> <span class="transcript-meta">[03:05] Dylan Ciaccio:</span><br> Yeah. Yeah, much more nuanced. Should I go into that? Yeah. So for consultants, mean, I'll start with kind of the principles of how I think consultants agree on what a consultant is and how you get clients. A consultant, generally speaking, solves a non-obvious problem. So... </p>
-                        <p class="text-body"> <span class="transcript-meta">[03:19] João:</span><br> Yeah, please. Mm-hmm, yeah. </p>
-                        <p class="text-body"> <span class="transcript-meta">[03:45] Dylan Ciaccio:</span><br> ...people are doing something, I'll say marketing, in the marketing category, they're trying to get inbound both calls and it's not working and they don't know why. So the root cause of that is the non-obvious problem. It's not obvious to them, they're trying, they're not sure why. And so a consultant solves that non-obvious problem because they have such a deep and wide understanding of the category, they're able to see... </p>
-                        <p class="text-body"> <span class="transcript-meta">[03:56] João:</span><br> Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[04:13] Dylan Ciaccio:</span><br> ...what's wrong and why it's not working. And so in the past few years, putting out content, the best practices, know, talk about the things that you see in your industry, what's working, what's not working, trends and all this and get seen as an expert. And so people are putting out content about their thoughts on everything. And when you do that... And with the increased competition on LinkedIn, you're just seen as just another expert in your category, in your industry, just another marketing expert, just another SEO expert, whatever it is. And no one's dying to reach out to someone that is completely interchangeable in their mind. So you get seen as just one of the hundreds that people see all the time. And so the way you kind of pierce through this noise... </p>
-                        <p class="text-body"> <span class="transcript-meta">[05:02] João:</span><br> Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[05:12] Dylan Ciaccio:</span><br> ...is that you focus on one non-obvious problem as a consultant, you kind of niche down, and you focus on that non-obvious problem and you market that problem, make people aware of that problem, show that if they have it, they're gonna go down this path to their feared outcome. And you frame it in a way where you get seen as the only option, not just one of many others. And so that's kind of the thinking behind. how this works is that you really pierce through the noise focusing on one thing, on one problem. </p>
-                        <p class="text-body"> <span class="transcript-meta">[05:48] João:</span><br> And I think this whole era of just share your perspective on things. I did this a lot, especially at the start, which was I was creating content for my competitors, just things. I was just sharing my technical perspective, but not necessarily mixing it with the perspective of my clients. It was just like tech tips for workshops. And then next thing you know, it's like, ⁓ yeah, there's people following you, but they do the same thing that you do. They're not your clients. And that was a little bit worrying when I was made aware of that thing. And, but so you've used the word Pierce. Pierce makes me think of bubbles and so on. And I think like one, there was a time we were talking about LinkedIn and the fact that, Tell me more about that. What happens on LinkedIn and your audience? </p>
-                        <p class="text-body"> <span class="transcript-meta">[06:47] Dylan Ciaccio:</span><br> Yeah. Yeah. So I think LinkedIn is someone that isn't thinking about social media all the time. They kind of lump it together with everything else. TikTok, Instagram, YouTube, LinkedIn, it's all the same, but it's not. LinkedIn has a network based algorithm. It's not like TikTok or Instagram or YouTube, which has an interest based algorithm. So on those other platforms, </p>
-                        <p class="text-body"> <span class="transcript-meta">[07:03] João:</span><br> Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[07:16] Dylan Ciaccio:</span><br> If I'm, you know, liking, leaving likes on dog photos, it's gonna show me more dog photos. It's gonna show me more of what I'm interested in, and that's usually pretty niche. So the discovery feature is there. On LinkedIn, there's no, well, there's kind of discovery. mean, you're on the feed, but usually you're not really seeing new people. But when you do see them, it's because... </p>
-                        <p class="text-body"> <span class="transcript-meta">[07:32] João:</span><br> There's no discovery on LinkedIn. Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[07:45] Dylan Ciaccio:</span><br> ... the connections engaged with it. So discovery is a lot harder. It's still there but not quite. So you're really limited to your first degree connections and your second degree connections. And so if you're not already connected with your ideal client, it's extremely hard to get to them. So five years ago, that wasn't really a problem because if you post something and you get 5,000 impressions, surely you're gonna get in front of your ideal clients. But now if you're only getting a few hundred impressions... </p>
-                        <p class="text-body"> <span class="transcript-meta">[08:03] João:</span><br> Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[08:13] Dylan Ciaccio:</span><br> ...it's very low chances of that actually getting to them. So I call this whole concept the LinkedIn organic reach gap. There's a gap between you and your ideal clients for most people. </p>
-                        <p class="text-body"> <span class="transcript-meta">[08:27] João:</span><br> Yeah, and that's where you pick specific parts of your content to boost specifically. So from my understanding, this is less about ads and more about getting that increased reach on the keystone content pieces that you have, something like that. </p>
-                        <p class="text-body"> <span class="transcript-meta">[08:52] Dylan Ciaccio:</span><br> Yeah, so I kind of stay away from using the word advertising because it gives a certain perception of what's happening here. So for niche content boosting, what we're doing is we're making a small batch of content that is being seen to the niche audience with this niche problem and that content is making them aware of this problem. And so... The goal here is to get that in front of them repeatedly, consume that problem, and the more they understand that problem, the more they're going to perceive the value of the solution the way you do. The reason why you perceive your solution to be so valuable is because you understand the problem. It's in there. It's in your mind. It's in the subconscious. For them, it's not. So there's a bit of a perception gap in between this. So the more you, know, from your mind take and put in the content about the problem and get it to the people with that problem, the more you're going to attract those people... </p>
-                        <p class="text-body"> <span class="transcript-meta">[09:42] João:</span><br> Mm-hmm. Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[09:59] Dylan Ciaccio:</span><br> ...thinking that you're the only solution to that problem that they have. </p>
-                        <p class="text-body"> <span class="transcript-meta">[10:03] João:</span><br> For for sure. And that thing you described, that we don't notice how our thing is not obvious for a lot of other people, for most people. It's so common, right? The curse of knowledge. And I think consultants and knowledge, expertise-based and so on, really suffer from this because...we start to nerd out on our thing and we assume that everyone... Can we know, like, consciously that not everyone cares about it in the same way? But I think we don't realize sneaky ways in which, like, our formatted thinking slips into the way we speak, the way we communicate. And then, like, yeah, people don't get it. I don't get it, but people don't get it. </p>
-                        <p class="text-body"> <span class="transcript-meta">[10:50] Dylan Ciaccio:</span><br> Yeah. </p>
-                        <p class="text-body"> <span class="transcript-meta">[10:52] João:</span><br> And okay, so this disconnects this idea is of, you know, making them understand, but then to make them understand, you need to reach them to reach them since you're on LinkedIn, and there's not a lot of discovery, you really need to be very, very intentional and smart and strategic about it. So you create a specific kind of content, and then you boost that content. But you boost the content that got some resonance, I assume, right? So you don't just... Okay. </p>
-                        <p class="text-body"> <span class="transcript-meta">[11:19] Dylan Ciaccio:</span><br> Not necessarily. So ideally, yes. You have to post it organically and you will probably get some reactions to it. And ideally, yeah, you're gonna get some good resonance in the audience that you already have. But what you find on LinkedIn as well is that... </p>
-                        <p class="text-body"> <span class="transcript-meta">[11:37] João:</span><br> Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[11:44] Dylan Ciaccio:</span><br> Other people aren't necessarily buyers, they're creators. And so when they engage with you, they're usually doing it as a creator. They engage with you because they want you to engage back with them. Or they want to support you because they're your friend. Or they want to stay top of your mind because this is a business platform. And so coming to conclusions based off of... </p>
-                        <p class="text-body"> <span class="transcript-meta">[11:56] João:</span><br> Hmm. I don't do that. </p>
-                        <p class="text-body"> <span class="transcript-meta">[12:10] Dylan Ciaccio:</span><br> ... the engagement you get is tricky, it's kind of risky. And so I prefer to have more of a framework that I use where I'm able to test the content and make sure that we're covering all parts of this problem. </p>
-                        <p class="text-body"> <span class="transcript-meta">[12:14] João:</span><br> got it. </p>
-                        <p class="text-body"> <span class="transcript-meta">[12:28] Dylan Ciaccio:</span><br> And base it on that and say, okay, and I sometimes run it through chat GBT to analyze it make sure that I'm covering every aspect of that problem because that's what really matters is that they're slowly understanding this problem a little bit more and in the mind the options, the potential solutions are narrowing down to one, which is your solution. And sometimes these posts just get less engagement. People usually engage with selfies or hot takes that have no connection to your solution. And so if you boosted that content, it would just be a waste of money. </p>
-                        <p class="text-body"> <span class="transcript-meta">[13:14] João:</span><br> Yeah, yeah, I can see that for sure. Yeah, there are things that sometimes like when you need a little pat on the back, there's things that usually get a little bit more reactions. related to this, tying in back to the languaging aspect, So naming things, figuring out how to describe... </p>
-                        <p class="text-body"> <span class="transcript-meta">[13:29] Dylan Ciaccio:</span><br> Yeah. </p>
-                        <p class="text-body"> <span class="transcript-meta">[13:45] João:</span><br> ...to describe a new perspective, right? Because I think this has been a common thread in conversations I've had, which is you need a point of view, you need a perspective, you need more than just the skills or you need your own lens on things, right? And to claim that lens, it feels that you need to talk about it in a way that is both clear, that people understand, but also claimable in a sense. That's how I think about it, right? And is this how you came up with the name? Niche content boosting? What did you call it before this? What did you call it? </p>
-                        <p class="text-body"> <span class="transcript-meta">[14:28] Dylan Ciaccio:</span><br> Yeah, so the way my... I struggled. I really tried to not focus on that because I really couldn't come up with a good name for it. It kind of clicked once. I realized that it's okay to get known for one thing. </p>
-                        <p class="text-body"> <span class="transcript-meta">[14:40] João:</span><br> Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[14:50] Dylan Ciaccio:</span><br> ... even though it doesn't quite convey everything you know. It's like when you niche down, it's like, feels like, I know so much more than just this. I don't want people to see me just for that. And so I was telling people, yeah, so it's what I do is kind of, it's kind of, it's like, marketing, there's some positioning, there's some LinkedIn advertising and it's like, okay, that's everything. And so I came up with niche content boosting when I realized it's like, </p>
-                        <p class="text-body"> <span class="transcript-meta">[15:11] João:</span><br> Yeah. </p>
-                        <p class="text-body"> <span class="transcript-meta">[15:18] Dylan Ciaccio:</span><br> I had to meet people where they already were and I had to own something in their mind that wasn't already owned. It's like, you could kind of say what I do is LinkedIn ads, but everyone knows someone that does LinkedIn ads. It's like, and so I can't win there. Someone is already in their mind. </p>
-                        <p class="text-body"> <span class="transcript-meta">[15:21] João:</span><br> Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[15:39] Dylan Ciaccio:</span><br> I can't own that space because the first in the mind is usually perceived as the best. That's just, that's a marketing principle that has been timeless. And so I had to kind of come up with my own category or show that's categorically different than other things. </p>
-                        <p class="text-body"> <span class="transcript-meta">[15:48] João:</span><br> Yeah. It's funny how all these things so often are kind of recursive. So you needed to stand out and you needed to create a combination of, you know, not just words, but like skills and places in the minds of people that would set you aside apart. yeah, time and time again, again, because of the perspective lens, the perspective aspect. It's proven that for this kind of work, like expertise-based work, you must step away from the replaceable category. And to me, it feels that I don't think there's infinite cool names to use for things. So I think in a certain sense, it's kind of a zero-sum game. And it's a little bit in my mind like getting a really good domain name like if you get like a clever turn of phrase that people understand and is it say and so on it's not there there's not infinite alternatives to it that are as good in my mind so i i think a lot about this there's levels to it right you coming up with a good explanation and of what you do and in my experience that explanation is kind of a product, so you need to test it, you need to tell people what you do over and over and over again in different ways and see what connects. So yeah, it needs to be forged. And there's something that I'veseen a few times I did it as well, which is just add as a service to things. Oh, I'm like something-something as a service. And that's a very self-referential thing, right? That's how I work, it doesn't say what I do. </p>
-                        <p class="text-body"> <span class="transcript-meta">[17:44] Dylan Ciaccio:</span><br> Hmm. Yeah. </p>
-                        <p class="text-body"> <span class="transcript-meta">[17:51] João:</span><br> And so finding names for new things is super necessary, in my opinion, to stand out in such a crowded market. Difficult. And a lot of it, I don't think is very scientific. It's kind of vibes, know, just this thing sounds intense and then people latch onto it. Have you...you dabbled with more stuff on category creation? </p>
-                        <p class="text-body"> <span class="transcript-meta">[18:22] Dylan Ciaccio:</span><br> Yeah, definitely. mean, a part of niche content boosting is category design. I don't go around trying to tell people that because again, I can't say that I try and do everything. But a key part of this is in this content, you are framing a problem. And so that people understand that problem, they remember it, they don't have the time to like to... </p>
-                        <p class="text-body"> <span class="transcript-meta">[18:36] João:</span><br> Yeah. </p>
-                        <p class="text-body"> <span class="transcript-meta">[18:51] Dylan Ciaccio:</span><br> ...remember and think about all the details. So when you can name the problem... </p>
-                        <p class="text-body"> <span class="transcript-meta">[18:56] João:</span><br> Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[18:58] Dylan Ciaccio:</span><br> ... in their head later on they can be thinking, ⁓ this is the problem I have, I've got this, I've got, I can't be doing this kind of approach. That makes it easier to remember. Just like naming the solution or your category of solution allows them to, in their mind, just when they're not thinking about you, it's like, okay, I've got this problem, say it in three words, here's the category of solution to solve it. And in that way it's very, very simple, clear, it makes the content work better, but you can also be remembered easier. So with my clients, you know, we give the name to the problem or components of the problem to make it easier, but also the solution. So it's usually your category of solution. So for example, I'll give a couple of client examples: One client solved the fragmented franchise marketing problem. I won't go too much into detail about what that problem is, but their category of solution is, kind of a mirror. It's like, what's the opposite of fragmented franchise marketing? Well, it's unified franchise marketing. It's nothing too fancy. It's not too cliche. It's just, very clear. Like you can kind of visualize what the problem is... </p>
-                        <p class="text-body"> <span class="transcript-meta">[20:02] João:</span><br> Yeah. </p>
-                        <p class="text-body"> <span class="transcript-meta">[20:19] Dylan Ciaccio:</span><br> ... and it's very easy to understand what the solution is. And that was definitely a key part of their niche content boosting and why it worked so well in the very first two months. Another example, another client solves the corporate retail disconnect where corporate tries to get their retail employees engaged. So they have these engagement programs throughout the year, they don't work. And that's because there's a disconnect between corporate and retail. They're living in two different realities. And so corporate is trying to use solutions and tech, which retail just don't have time. So different realities. And the solution to that is operational engagement. So it's engagement aligned with their operations. And so when you can very clearly name the problem and very clearly name your category of solution, </p>
-                        <p class="text-body"> <span class="transcript-meta">[20:54] João:</span><br> Mm-hmm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[21:15] Dylan Ciaccio:</span><br> It makes it a lot more effective, easier to understand and remember. </p>
-                        <p class="text-body"> <span class="transcript-meta">[21:21] João:</span><br> Sure and I can like as you were explaining those examples I was also trying to kind of think through some stuff from from my experience and when you said yeah the name is relatively simple and and so on I think this my consultants love to make things complicated... </p>
-                        <p class="text-body"> <span class="transcript-meta">[21:39] Dylan Ciaccio:</span><br> Yeah. </p>
-                        <p class="text-body"> <span class="transcript-meta">[21:41] João:</span><br> ...and, no, I need like a cool name that has like three levels of puns and Easter eggs and like it means something. So a very concrete example on my side. So my company is called Mesozoic, right? From the dinosaurs and so on. And I mean, I think the name sounds cool, but it doesn't say much about what I do, right? And it's clearly like one of those nerdy names just to tell people that I'm nerdy. But if I were like super marketing oriented... </p>
-                        <p class="text-body"> <span class="transcript-meta">[22:00] Dylan Ciaccio:</span><br> All right. You </p>
-                        <p class="text-body"> <span class="transcript-meta">[22:09] João:</span><br> ... I guess I'll call it something else, like much more descriptive. And sometimes I'm like, yeah, should I do it? I don't know. But clear is better than clever, right? And I think another thing that stands out to me, which is you can create the name, you can label the phenomena, but you need to put it in people's consciousness, right? So if you see it...at home or at the office and you come up, this is the best name for that thing but then you don't put the power behind it so that name gets to people and occupies a space in their minds it's just yeah and I think that's kind of one type of blind spot which is we can solve this problem with wits we're just going to be really clever and we're so clever that this thing is going to work and yeah because people don't see it because of the whole environment and that's that's what i find most interesting with all category thing which is it's not about you it's about you know connecting to to people in a way that they'll remember. I think visual frameworks in the sense are a little bit like that because sometimes you come up with a schematic or a drawing that's really good at condensating a useful idea and you're really happy with it but you got to talk about it all the time in many different ways so that people start to think yeah that's the guy with the pyramid for whatever and actually this is a question I have for you do you have any...not numbers answer, but do you have a sense on how long should people kind of keep trying to make something some name more associated with them? Because I would assume this is a long time. </p>
-                        <p class="text-body"> <span class="transcript-meta">[24:18] Dylan Ciaccio:</span><br> Yeah, I mean, I don't think languaging is the priority. I think it is a trick in the book to help simplify and clarify a problem and simplify and clarify your solution and change their perception. That is... </p>
-                        <p class="text-body"> <span class="transcript-meta">[24:32] João:</span><br> Mm. </p>
-                        <p class="text-body"> <span class="transcript-meta">[24:45] Dylan Ciaccio:</span><br> I think the goal of consultant marketing is making a non-obvious problem more visible in their mind so that you get seen as the only solution to that. to maximize your returns of the marketing, yes, I think it would be great that if you can really hammer into people's brains and get that brand recall and associate you with the word or your category, that would be great. But I think that is something that matters more later on after things are tested, things are working really well. now you're thinking, okay, how do we really maximize this? it's like niche content boosting the name to me, it just kind of clicked because I needed something for me to simplify what I do. wasn't like, yes, it was to own something in other people's minds, but that was, it was less of a... number one priority. So I think this thing takes time. It takes a few months to really get things right and maybe you have to test it a little bit. </p>
-                        <p class="text-body"> <span class="transcript-meta">[25:44] João:</span><br> Mm-hmm. It's lot like branding, right? I mean, you need time to forge that association. But it's also funny, I couldn't help but notice that just in my question, I was displaying precisely the failure mode of focusing on the smart depends part. Like, yeah, the name, how long do you need people to, it's not about the name. First you find a way of describing the problem. And then if you get good at that, you put the nice name on it. But I didn't even notice until you... </p>
-                        <p class="text-body"> <span class="transcript-meta">[25:59] Dylan Ciaccio:</span><br> Yeah. Yeah. </p>
-                        <p class="text-body"> <span class="transcript-meta">[26:23] João:</span><br> brought me back which is like this is really like there's a gravitational pull towards it yeah it keeps it keeps popping up so yeah it's difficult to pay attention to that </p>
-                        <p class="text-body"> <span class="transcript-meta">[26:25] Dylan Ciaccio:</span><br> What problem does it solve? It is hard. It's fun to be a nerd, but you gotta get your job right and then you get to have the fun. That's what I tell myself all the time because I get carried away a lot. </p>
-                        <p class="text-body"> <span class="transcript-meta">[26:39] João:</span><br> Yeah Yeah, yeah. For sure, for sure. And I think everyone that I'm inviting here on the podcast kind of shares that approach. I mean, I always talk, I talk about that book all the time. It gets to be boring, like the Business of Expertise from David C. Baker. And one of the parts of the book that really spoke to me the most was when he says something along the lines of, you need to make like your private life more interesting than your work life otherwise you will start to play around with things in your work life to satisfy your curiosity and creativity and just... you know keep reinventing the wheel and stuff like that i think he's he has really lived this because the guy i think flies airplanes, helicopters and so on but but still i mean i was really like my god he really knows his audience that i do this all the time so </p>
-                        <p class="text-body"> <span class="transcript-meta">[27:45] Dylan Ciaccio:</span><br> I 100 % I've been thinking that myself and that's good to hear someone else voice that and know that I'm not the only one thinking that because I'vebeen talking to certain people where it's like they work 60, 80 hours a week and they're they're perfectionists and they love what they do but it's like the things that they do is like that it's gonna have zero impact and I don't think you're able to really </p>
-                        <p class="text-body"> <span class="transcript-meta">[28:12] João:</span><br> Yeah. </p>
-                        <p class="text-body"> <span class="transcript-meta">[28:15] Dylan Ciaccio:</span><br> You're so focused in your work and you love it so much that everything becomes equal impact and you're just doing everything and you don't quite see what the real priority is. And so yes, having work-life balance, that's great. You said that really well. </p>
-                        <p class="text-body"> <span class="transcript-meta">[28:37] João:</span><br> Yeah, And eah, I think it's kind of learning how to live with it and manage it in a sense, being able to laugh at it as well. But yeah, sometimes very annoying for sure, for sure. Okay, so let's recap quickly because we are nearing the end of this in terms of time. We entered this conversation from the perspective of, know, expertise businesses are different. You need to communicate... ...things in a different way, right? And you need to be aware of what kind of things will connect to your audience and will make them take action, right? So making them see the problem, making them see you as a solution, all of these things are in the right direction. And then on that, there's the social media environment we live in, is like, reach is being throttled down and you need to like pierce. Especially on LinkedIn because of the known discovery aspect, you need to pierce your bubble, I like the word pierce, and you get into other ones and you need to be intentional about this, right? And all the while, with this kind of long-term view, you can get results sooner, but with this long-term view of I'm claiming a space in their minds, right? And not just fall so much in love with your craft that... You put all your attention on that. This to me felt a very good description of a pattern that I see sometimes. And that's what I think made me want to talk to you about this, which is really pay attention to what's happening around you in terms of where you spend the time, what kind of tools you use, what kind of interactions you're having, and check is this making sense? Is this the thing that... Where I should put my energy in. Because sometimes it gets so close we don't, we stop seeing it. Very good. So thank you so much, Dylan. I I really enjoy this. This was a very good continuation from our last conversations. And fun fact for the people at home, which maybe it's my mom and my wife at this point. I remember like, I stopped seeing you... </p>
-                        <p class="text-body"> <span class="transcript-meta">[33:54] Dylan Ciaccio:</span><br> Hahaha </p>
-                        <p class="text-body"> <span class="transcript-meta">[33:59] João:</span><br> ... on LinkedIn. And I think I sent you a message like, hey, I don't see you on LinkedIn. And you're like, yeah, the niche boosting worked. And now I am not posting so much. And I was like, OK, so this is a good data point. </p>
-                        <p class="text-body"> <span class="transcript-meta">[34:07] Dylan Ciaccio:</span><br> Yep. That's the thing. It was part of the reason I created it is because, you know, filling the content calendar and always engaging on LinkedIn, it's such a hassle. And I was just so tired of it. I was like, I'm done doing something else. So this removes that pain. </p>
-                        <p class="text-body"> <span class="transcript-meta">[34:26] João:</span><br> Yeah. Yeah. And where can people find more about this, more about you? </p>
-                        <p class="text-body"> <span class="transcript-meta">[34:35] Dylan Ciaccio:</span><br> Everything is on LinkedIn. You can find me on my LinkedIn profile and then my one page website is on that profile. Reach out, happy to talk. </p>
-                        <p class="text-body"> <span class="transcript-meta">[34:45] João:</span><br> Okay, I'll put it on the show notes, it's Dylan Chiaccio, C-I-A-C-C-I-O. And people will find you, and maybe they won't see you posting too much unless you'veset them as your audience for you, but that's what I do. Thank you so much, Dylan, this was really a pleasure. Thank you for joining and being game for this first season. </p>
-                        <p class="text-body"> <span class="transcript-meta">[35:03] Dylan Ciaccio:</span><br> Exactly. Thank you. Man, always happy to have a chat about this stuff. So thank you. </p>
-                        <p class="text-body"> <span class="transcript-meta">[35:16] João:</span><br> yeah </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- About Section -->
-            <div class="panel-mesozoic">
-                <div class="form-space-mesozoic-title form-space text-label" data-type="label" data-section="mesozoic">
-                    About Exotic Matter:
-                </div>
-                <div class="form-space-mesozoic-content form-space" data-section="mesozoic" data-type="content">
-                    <p class="text-body">Exotic Matter is a research project by Mesozoic, exploring the intersection of knowledge work and business strategy. Through conversations with experts and practitioners, we investigate how organizations can better adapt to the changing landscape of work and knowledge management.</p>
-                </div>
-            </div>
-            
-            <!-- Resources Panel -->
-            <div class="panel-resources">
-                <div class="form-space-resources-title form-space text-label" data-type="label" data-section="resources">
-                    Resources:
-                </div>
-                <div class="form-space-resources-content form-space" data-section="resources" data-type="content">
-                    <!-- Resources will be added later -->
-                </div>
-            </div>
-
-            <!-- Invisible spacer div -->
-            <div class="spacer-bottom"></div>
         </div>
     </div>
-    <footer class="footer">
-        <p class="text-body">Exotic Matter is a <a href="https://Mesozoic.co" target="_blank" rel="noopener noreferrer" class="footer-link"><span class="text-accent mesozoic">Mesozoic</span></a> Product. All rights reserved.</p>
-    </footer>
+
+    <!-- Space Animation Script -->
+    <script>
+        // Space animation script for episode pages
+        const container = document.querySelector('.space-background');
+        const totalElements = 18;
+        let activeElements = 0;
+
+        function getRandomValue(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function createSpaceElement() {
+            const element = document.createElement('img');
+            const elementNumber = Math.floor(Math.random() * totalElements) + 1;
+            element.src = `assets/images/element${elementNumber}.png`;
+            element.className = 'space-element';
+
+            // Random angle for direction (in radians)
+            const angle = Math.random() * Math.PI * 2;
+            // Random distance to travel (viewport diagonal)
+            const distance = Math.max(window.innerWidth, window.innerHeight) * 1.5;
+            // Calculate end position
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+            // Random rotation between -180 and 180 degrees
+            const rotation = getRandomValue(-180, 180);
+            // Random duration between 6 and 8 seconds (slower travel)
+            const duration = getRandomValue(6000, 8000);
+
+            element.style.setProperty('--tx', `${tx}px`);
+            element.style.setProperty('--ty', `${ty}px`);
+            element.style.setProperty('--rotation', `${rotation}deg`);
+            element.style.animation = `moveOutward ${duration}ms cubic-bezier(0.34, 0.13, 0.71, 0.95) forwards`;
+
+            container.appendChild(element);
+            activeElements++;
+
+            element.addEventListener('animationend', () => {
+                element.remove();
+                activeElements--;
+            });
+        }
+
+        function createSpaceDust() {
+            const dust = document.createElement('div');
+            dust.className = 'space-dust';
+
+            const angle = Math.random() * Math.PI * 2;
+            const distance = Math.max(window.innerWidth, window.innerHeight) * 1.5;
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+            const duration = getRandomValue(4000, 6000); // Dust moves faster than elements
+
+            dust.style.setProperty('--tx', `${tx}px`);
+            dust.style.setProperty('--ty', `${ty}px`);
+            dust.style.animation = `moveOutwardDust ${duration}ms cubic-bezier(0.34, 0.13, 0.71, 0.95) forwards`;
+
+            container.appendChild(dust);
+
+            dust.addEventListener('animationend', () => {
+                dust.remove();
+            });
+        }
+
+        // Create new element every 200-300ms
+        function spawnElements() {
+            createSpaceElement();
+            const nextSpawn = getRandomValue(200, 300);
+            setTimeout(spawnElements, nextSpawn);
+        }
+
+        // Create new dust particles every 20-40ms (much more frequent)
+        function spawnDust() {
+            // Create multiple dust particles per spawn
+            for(let i = 0; i < 3; i++) {
+                createSpaceDust();
+            }
+            const nextSpawn = getRandomValue(20, 40);
+            setTimeout(spawnDust, nextSpawn);
+        }
+
+        // Start spawning both elements and dust
+        spawnElements();
+        spawnDust();
+    </script>
 </body>
 </html> 

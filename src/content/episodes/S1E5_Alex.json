@@ -1,0 +1,44 @@
+{
+  "id": "episode-5",
+  "season": 1,
+  "number": 5,
+  "title": "Perspective-Driven Positioning",
+  "status": "To be released",
+  "guest": {
+    "name": "Alex James",
+    "image": "assets/images/guest-pictures/AlexJ.png",
+    "linkedin": "https://www.linkedin.com/in/alexjamesmessaging/",
+    "website": "https://alexjamesmessaging.com/"
+  },
+  "summary": {
+    "description": "Alex and I had to do this twice. The first time, the gods of inter-continental communications were not on our side. It was so worth it to double down on it. Wrath of Gods be damned.",
+    "guest": "<a href=\"https://www.linkedin.com/in/alexjamesmessaging/\"><b>Alex James</b></a> is a Messaging Strategist for B2B firms and a friend. Like so many, I was struck by his impeccable carousels on LinkedIn. Seeing that being their brilliance there must be a really clever and creative mind, I got in touch. From there, some of the freshest conversations I've had for a while. Bringing Alex on was a no-brainer."
+  },
+  "links": [
+    {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/alexjamesmessaging/"
+    },
+    {
+      "text": "Website",
+      "url": "https://alexjamesmessaging.com/"
+    },
+    {
+      "text": "Newsletter",
+      "url": "https://alexjamesmessaging.com/newsletter/"
+    }
+  ],
+  "topics": [
+    "What does it mean to have a \"Perspective-Driven\" positioning approach?",
+    "How do you develop a perspective that's both unique and useful?",
+    "What are the practical steps to implement perspective-driven positioning?"
+  ],
+  "shortTopics": [
+    "Perspective-Driven Approach",
+    "Unique & Useful Views",
+    "Implementation Steps"
+  ],
+  "episodeLink": null,
+  "spotifyUrl": null,
+  "transcript": null
+} 

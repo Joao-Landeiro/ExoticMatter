@@ -71,158 +71,228 @@ Converting the podcast website into a static site generator for easier content m
 ### Current Implementation Status
 ✅ **Step 1 COMPLETED**: Basic project structure and build system
 ✅ **Step 2 COMPLETED**: Template-based landing page generation
+✅ **Step 2.1 COMPLETED**: Episode data modularization and build script updates
 
-### Step 2 Achievements
-- **Guest Data Extraction**: Converted guest information from HTML to structured JSON format (`src/content/guests.json`)
-- **Template System**: Created a landing page template (`src/templates/index.html`) that generates dynamic content
-- **Enhanced Generator**: Updated build script with:
-  - Simple template engine with placeholder replacement
-  - Guest card generation from JSON data
-  - Space animation script integration
-  - Error handling and fallback mechanisms
-- **Template Validation**: Successfully generated landing page with all 10 guests and proper formatting
-- **Functionality Preservation**: All original features maintained (space animation, smooth scrolling, styling)
+### Step 2.1 Achievements - Episode Data Modularization
+- **Individual Episode Files**: Successfully converted from single `episodes.json` to individual JSON files:
+  - `src/content/episodes/S1E0_Intro.json` through `src/content/episodes/S1E9_Kurt.json`
+  - Each file contains complete episode data (metadata, guest info, topics, summaries, etc.)
+  - Maintains all existing data structure and compatibility
 
-### New Project Structure
+- **Enhanced Build Script**: Updated `scripts/generate.js` with new `loadEpisodes()` function:
+  - **Automatic Discovery**: Scans `src/content/episodes/` directory for JSON files
+  - **Robust Loading**: Loads and parses each episode file individually
+  - **Smart Sorting**: Automatically sorts episodes by episode number (0, 1, 2, etc.)
+  - **Error Handling**: Continues loading other files if one fails
+  - **Fallback Support**: Falls back to original `episodes.json` if individual files aren't found
+  - **Detailed Logging**: Comprehensive console output for debugging and verification
+
+- **Backward Compatibility**: 
+  - Build script maintains full compatibility with existing templates
+  - Generated site is identical to previous version
+  - All episode data properly loaded and sorted
+  - No breaking changes to existing functionality
+
+- **Verification Results**:
+  - ✅ Successfully loads all 10 episode files
+  - ✅ Episodes correctly sorted (S1E0 → S1E9)
+  - ✅ Landing page generates with proper episode order
+  - ✅ Individual episode pages generate correctly
+  - ✅ All assets and styling preserved
+
+## Milestone 3: Individual Episode Pages System
+
+### Overview
+Complete implementation of individual episode pages with template-based generation, explicit naming conventions, and flexible guest links system.
+
+### Implementation Status
+✅ **Step 3.1 COMPLETED**: Episode template creation and page generation
+✅ **Step 3.2 COMPLETED**: Flexible links system implementation
+
+### Step 3.1 Achievements - Episode Template System
+- **Episode Template**: Created `src/templates/episode.html` with:
+  - Dynamic episode title format: "S{season}E{episode} - {title} | Exotic Matter"
+  - Comprehensive episode metadata display (number, title, status, summary)
+  - Guest information panel with photo and topics
+  - Spotify player integration
+  - Transcript section with full conversation content
+  - Space animation effects matching the landing page
+
+- **Explicit Naming Convention**: Episode pages use clear, consistent filenames:
+  - Format: `S{season}E{episode}_{guestFirstName}.html`
+  - Examples: `S1E1_Nick.html`, `S1E2_Spencer.html`, `S1E6_Dylan.html`
+  - Enables easy identification and direct access to episode pages
+
+- **Template Generation Logic**: Enhanced `generateEpisodePages()` function:
+  - Loads episode template and processes individual JSON files
+  - Generates dynamic content sections (topics, Spotify, transcripts)
+  - Handles missing optional content gracefully
+  - Creates properly formatted episode pages with all metadata
+
+### Step 3.2 Achievements - Flexible Links System
+- **New JSON Structure**: Converted guest links from static objects to flexible arrays:
+  ```json
+  // Old format (static):
+  "links": {
+    "linkedin": "https://linkedin.com/in/username",
+    "website": "https://example.com"
+  }
+  
+  // New format (flexible):
+  "links": [
+    { "text": "LinkedIn", "url": "https://linkedin.com/in/username" },
+    { "text": "Personal Website", "url": "https://example.com" },
+    { "text": "YouTube Video", "url": "https://youtube.com/watch?v=..." }
+  ]
+  ```
+
+- **Custom Link Text Support**: Each guest can now have personalized link descriptions:
+  - Dylan: "LinkedIn", "Focus The Lens", "YouTube Video"
+  - Patrick: "LinkedIn", "Website", "Projects"
+  - Jay: "LinkedIn", "Website", "Newsletter"
+  - Kurt: "LinkedIn", "Leverlo", "Newsletter"
+
+- **Dynamic Link Generation**: New `generateEpisodeLinks()` function:
+  - Processes flexible link arrays from episode JSON
+  - Generates proper HTML with custom text and URLs
+  - Maintains consistent styling and accessibility features
+  - Handles varying numbers of links per guest
+
+- **Template Integration**: Updated episode template system:
+  - Added `<!-- EPISODE_LINKS -->` placeholder in template
+  - Integrated link generation into build process
+  - Maintains backward compatibility with existing episodes
+
+### Updated All Episode Files
+Successfully converted all 10 episode JSON files to the new flexible links format:
+- ✅ S1E0_Intro.json - João (LinkedIn, Mesozoic, Newsletter)
+- ✅ S1E1_Nick.json - Nick (LinkedIn, Website)
+- ✅ S1E2_Spencer.json - Spencer (LinkedIn, Website)
+- ✅ S1E3_Danilo.json - Danilo (LinkedIn, Website)
+- ✅ S1E4_Florian.json - Florian (LinkedIn, Website)
+- ✅ S1E5_Alex.json - Alex (LinkedIn, Website)
+- ✅ S1E6_Dylan.json - Dylan (LinkedIn, Focus The Lens, YouTube Video)
+- ✅ S1E7_Patrick.json - Patrick (LinkedIn, Website, Projects)
+- ✅ S1E8_Jay.json - Jay (LinkedIn, Website, Newsletter)
+- ✅ S1E9_Kurt.json - Kurt (LinkedIn, Leverlo, Newsletter)
+
+### Key Features
+- **Template-Based Generation**: All episode pages generated from templates
+- **Explicit File Naming**: Clear, consistent naming convention for easy navigation
+- **Flexible Guest Links**: Custom link text and URLs for each guest
+- **Dynamic Content**: Handles optional content (transcripts, Spotify) gracefully
+- **Space Animation**: Consistent visual effects across all pages
+- **Mobile Responsive**: Optimized for all device sizes
+- **Accessibility**: Proper link attributes and semantic HTML
+
+### Technical Implementation
+- **Template System**: String replacement with dynamic content generation
+- **Build Process**: Automated generation of all episode pages
+- **Error Handling**: Graceful handling of missing content
+- **Performance**: Static generation for optimal loading speeds
+- **Maintainability**: Modular functions for different content sections
+
+### Verification Results
+- ✅ All 10 episode pages generate successfully
+- ✅ Custom link text displays correctly for each guest
+- ✅ Flexible links work across all episodes
+- ✅ Template system handles missing content gracefully
+- ✅ Space animations work on all episode pages
+- ✅ Mobile responsiveness maintained
+- ✅ Episode page headers now match landing page episode panel format
+
+### Updated Project Structure
 ```
 SitePodcastExoticMatter/
 ├── src/
 │   ├── templates/
 │   │   ├── base.html          # Base HTML template
-│   │   └── index.html         # Landing page template
+│   │   ├── index.html         # Landing page template
+│   │   └── episode.html       # Episode page template (NEW)
 │   ├── content/
+│   │   ├── episodes/          # Individual episode files
+│   │   │   ├── S1E0_Intro.json
+│   │   │   ├── S1E1_Nick.json
+│   │   │   ├── S1E2_Spencer.json
+│   │   │   ├── S1E3_Danilo.json
+│   │   │   ├── S1E4_Florian.json
+│   │   │   ├── S1E5_Alex.json
+│   │   │   ├── S1E6_Dylan.json
+│   │   │   ├── S1E7_Patrick.json
+│   │   │   ├── S1E8_Jay.json
+│   │   │   └── S1E9_Kurt.json
 │   │   ├── site.json          # Site configuration
-│   │   └── guests.json        # Guest data (NEW)
+│   │   ├── guests.json        # Guest data
+│   │   └── episodes.json      # Legacy file (kept for fallback)
 │   └── assets/                # Static assets
 ├── build/                     # Generated static site
+│   ├── index.html            # Generated landing page
+│   ├── S1E0_Intro.html       # Generated episode pages
+│   ├── S1E1_Nick.html
+│   ├── S1E2_Spencer.html
+│   ├── S1E3_Danilo.html
+│   ├── S1E4_Florian.html
+│   ├── S1E5_Alex.html
+│   ├── S1E6_Dylan.html
+│   ├── S1E7_Patrick.html
+│   ├── S1E8_Jay.html
+│   ├── S1E9_Kurt.html
+│   ├── assets/               # Copied static assets
+│   └── styles/               # Copied stylesheets
 ├── scripts/
-│   └── generate.js            # Enhanced build script
+│   └── generate.js            # Complete build script with episode generation
 └── package.json               # Dependencies and scripts
 ```
 
-### Build System Features
-- **Template Engine**: Simple placeholder replacement system (`{{variable}}` syntax)
-- **Dynamic Content**: Guest cards generated from JSON data
-- **Asset Management**: Automatic copying of styles, images, and other assets
-- **Error Handling**: Graceful fallbacks if templates fail
-- **Development Server**: Built-in server for testing
+### Build System Enhancements
+- **Modular Episode Loading**: New `loadEpisodes()` function replaces direct JSON file loading
+- **Episode Page Generation**: Complete `generateEpisodePages()` function with template system
+- **Flexible Links System**: Dynamic link generation with custom text support
+- **Template Processing**: String replacement with dynamic content sections
+- **Improved Maintainability**: Each episode can be edited independently
+- **Better Version Control**: Individual files create cleaner Git diffs
+- **Scalable Architecture**: Easy to add new episodes without modifying existing files
 
-### Available Commands
-```bash
-npm run build    # Generate static site in build/ directory
-npm run dev      # Build and serve site on localhost:8000
-npm run clean    # Clean build directory
-```
+## Step 3.2: Episode Page Header Consistency and Layout Fix
 
-### Development Approach
-- **Incremental**: Each step builds on the previous one
-- **Safe**: All development on separate Git branch
-- **Tested**: Each step includes verification and testing
-- **Documented**: Comprehensive comments and documentation
+### Implementation Details
+- **Header Format**: Updated episode page headers to match landing page format
+  - Changed from "Status: Episode {{episode.status}}" to "Episode Status:<br>{{episode.status}}"
+  - Maintained consistent episode number and title structure
+  
+- **Layout Structure**: Fixed episode page layout to match landing page side-by-side format
+  - **Left side**: Episode content (summary and links)
+  - **Right side**: Guest information (name, photo, topic bars)
+  - Previously all content was stacked vertically, now matches landing page layout
 
-### Next Steps (Step 3)
-- Convert episode pages to use templates
-- Create episode data structure
-- Implement episode page generation
-- Add episode navigation and metadata
+- **Section Spacing**: Fixed spacing between episode sections to match landing page format
+  - Moved Spotify and Transcript sections outside the main episode panel
+  - Now each section (Episode, Spotify, Transcript) is a separate grid item
+  - Proper 2rem spacing between sections using CSS grid gap
+  - Consistent visual hierarchy and breathing room between content sections
 
-### Technical Notes
-- **Template System**: Uses simple string replacement for maximum compatibility
-- **Data Format**: JSON files for easy content management
-- **Compatibility**: 100% backward compatible with existing site
-- **Performance**: Static generation for optimal loading speeds
-- **Maintainability**: Separation of content, templates, and logic
+### Verification Results
+- ✅ All episode pages generated successfully
+- ✅ Episode page headers now match landing page format perfectly
+- ✅ Episode page layout now uses correct side-by-side structure
+- ✅ Guest photos positioned correctly on the right side
+- ✅ Proper spacing between episode sections (Episode → Spotify → Transcript)
+- ✅ Consistent visual design across landing page and episode pages
 
-### Recent Updates
-- Enhanced space travel effect with full 360° rotation
-- Optimized particle spawn rates and sizes
-- Improved episode number visibility with larger font size
-- Standardized guest card layouts with better text handling
-- Mobile responsiveness improvements
-- Resolved mobile guest card layout issues:
-    - Addressed height conflicts caused by `position: absolute` and base `min-height` overrides.
-    - **Solution:**
-        - Ensured `.guests-grid` uses `min-height: auto` in the mobile media query (using increased specificity) to prevent inheriting large base heights.
-        - Set calculated `min-height` on `.guests-grid-container` (nested rule, `52rem`) to match the visual stack height + padding.
-        - Set calculated `min-height` on `.panel-guests` (`66rem`) to contain the content above the stack + the stack container itself.
+### Technical Changes Made
+1. **Episode Template Structure**: Restructured `src/templates/episode.html` to separate content and meta sections
+2. **Header Format**: Updated episode status display format
+3. **Layout Consistency**: Ensured episode pages mirror landing page panel structure
+4. **Section Separation**: Moved Spotify and Transcript sections to be independent grid items with proper spacing
 
-### Locked Decisions
+The Exotic Matter podcast website now has complete visual and structural consistency between the landing page and individual episode pages.
 
-#### Mobile-First Grid Implementation
-- Base case (mobile) uses `display: block` with absolute positioning
-- Grid properties ONLY exist in desktop media query (min-width: 769px)
-- Mobile view container dimensions:
-  ```css
-  width: min(500px, calc(100% - 4rem))
-  margin: 0 auto
-  padding: 4rem 0
-  ```
-- Desktop view reverts to grid:
-  ```css
-  display: grid
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
-  gap: var(--content-margin)
-  ```
-- Clear separation between mobile and desktop styles to prevent property conflicts
+### JSON Structure
 
-### Next Steps
-- Add navigation functionality
-- Implement responsive design adjustments
-- Add content pages
-- Adjust text padding on description text for each guest (`.text-body` padding)
-- Create page template for each episode type
-    - Make episode pages shareable (unique URLs, meta tags)
-    - Consider audio player/clip integration
-- Include links to Spotify (or other podcast platforms)
-- Include a "Return to Top" link/button
-- Include visual indicator for "Season 1"
-- Add a section about the host (Joao)
-- Add link to the Mesozoic site (in footer or dedicated section)
-- Optimize for performance if needed
+Each episode JSON file contains:
+- **Basic Info**: `id`, `title`, `guest`, `summary` (description and guest info)
+- **Content**: `topics` (detailed discussion points), `shortTopics` (brief versions for colored bars)
+- **Links**: `episodeLink`, `spotifyUrl`, `transcript`
+- **Assets**: Guest photo path and other media references
 
-### Episode Updates
-
-*   **S1E1_Nick.html**: Added the full HTML transcript for the episode featuring Nick Himowicz.
-*   **S1E4_Florian.html**: Added the full HTML transcript for the episode featuring Florian Heinrichs.
-*   **S1E2_Spencer.html**: Added the full HTML transcript for the episode featuring Spencer Ayres.
-*   **S1E6_Dylan.html**: Added the full HTML transcript for the episode featuring Dylan Ciaccio.
-*   **S1E7_Patrick.html**: Added the full HTML transcript for the episode featuring Patrick Kizny.
-*   **S1E9_Kurt.html**: Added the full HTML transcript for the episode featuring Kurt Bostelaar.
-- **Episode S1E6 (Dylan Ciaccio):** Located `S1E6_Dylan.html`, removed placeholder. Used temporary file `temp_S1E6_transcript.md` for full transcript. Initial full insertion and reapply failed. Resorting to chunking, first chunk succeeded, second failed. Reapply of second chunk caused data loss in the target div. After confirming div was empty, successfully inserted transcript in 11 chunks. Deleted temporary file.
-
-### Episode S1E3 (Danilo Kreimer)
-- Located `S1E3_Danilo.html` and read its content.
-- Identified and removed the placeholder comment `<!-- Transcript content will be dynamically loaded or manually inserted here -->` from the transcript section.
-- Created a temporary file `temp_S1E3_transcript.md` and pasted the full HTML transcript into it.
-- Attempted to insert the full transcript from the temporary file into `S1E3_Danilo.html`. This initially appeared to fail ("no changes made") but a subsequent read of the target HTML file showed the content was inserted, albeit with a nested `panel-transcript` div structure.
-- Corrected the HTML structure in `S1E3_Danilo.html` by replacing the content of the `div.form-space-transcript-content` with only the `<p>` tags from the transcript, resolving the nesting issue.
-- Deleted the temporary file `temp_S1E3_transcript.md`.
-
-### Episode S1E5 (Alex James)
-
-- Located `S1E5_Alex.html`.
-- Removed placeholder comment `<!-- Transcript will be added later -->`.
-- Encountered issues inserting the full transcript provided by the user using `edit_file` (reported "no changes made") and subsequent `reapply` failed.
-- Reset the process by deleting the corrupted `S1E5_Alex.html` and recreating it with the base structure.
-- Re-attempted transcript insertion using a chunking method, replacing the entire content of the transcript `div` in each step to ensure proper insertion.
-- Successfully inserted the full transcript in stages.
-- Deleted temporary transcript file `temp_S1E5_transcript.md`.
-- Corrected a nested `panel-transcript` div issue in `S1E5_Alex.html` by replacing the content of the correct transcript `div` with only the clean `<p>` tags.
-
-## Style Enhancements (Session ending YYYY-MM-DD) <!-- Replace YYYY-MM-DD with current date -->
-
-This session focused on improving text readability and link consistency across the site through several CSS updates:
-
-1.  **Consistent Left Padding for Text:**
-    *   Introduced a CSS variable `--text-padding-left: 0.75rem;` in `:root`.
-    *   Applied this `padding-left` to general text elements (`h1`, `h2`, `p`) and key text utility classes (`.text-label`, `.text-mono-small`, `.text-heading-primary`, `.text-body`, `.system-status-blink`). This ensures a visually consistent alignment and spacing for most text content.
-
-2.  **Link Color Standardization:**
-    *   The default color for all `<a>` (anchor) tags is now set to `var(--accent)` (which is `#613AA0`, a purple shade), providing a consistent brand color for links.
-    *   The default text underline for links has been removed (`text-decoration: none;`).
-    *   Specific link classes like `.episode-link` and `.guest-box-link` were updated to explicitly use `color: var(--accent);` to ensure they also adhere to this color scheme, overriding previous or inherited styles.
-
-3.  **Vertical Padding for `.text-body`:**
-    *   Added `padding-top: 0.5rem;` and `padding-bottom: 0.5rem;` to the `.text-body` class. This gives paragraphs and other elements using this class more vertical spacing, improving readability.
-
-These changes contribute to a more polished and consistent visual experience on the website.
+**Note**: The `shortTopics` field provides concise versions of the topics specifically for the colored bars displayed under the guest photo. If `shortTopics` is not provided, the system falls back to using the regular `topics` array.

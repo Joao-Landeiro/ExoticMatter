@@ -1,0 +1,44 @@
+{
+  "id": "episode-6",
+  "season": 1,
+  "number": 6,
+  "title": "Getting Found on LinkedIn",
+  "status": "To be released",
+  "guest": {
+    "name": "Dylan Ciaccio",
+    "image": "assets/images/guest-pictures/DylanC.png",
+    "linkedin": "https://www.linkedin.com/in/dylan-ciaccio-766826146/",
+    "website": "https://focusthelens.carrd.co/"
+  },
+  "summary": {
+    "description": "Dylan and I discussed these topics mostly around how Experts can be found on LinkedIn. At some point Dylan caught me falling into old over-thinking patterns. See if you can spot this.",
+    "guest": "<a href=\"https://www.linkedin.com/in/dylan-ciaccio-766826146/\"><b>Dylan Ciaccio</b></a> helps B2B firms burst through their audience Bubble on LinkedIn and he's also a friend. We initially met when Dylan made me see something that had been in front of all our eyes for a long time. That \"slap-my-forehead\" moment was only the first of our conversations. So many experts struggle with reach on LinkedIn and I knew Dylan could help make a few things clearer."
+  },
+  "links": [
+    {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/dylan-ciaccio-766826146/"
+    },
+    {
+      "text": "Focus The Lens",
+      "url": "https://focusthelens.carrd.co/"
+    },
+    {
+      "text": "YouTube Video",
+      "url": "https://www.youtube.com/watch?v=ul1tMZy55Qc"
+    }
+  ],
+  "topics": [
+    "What makes LinkedIn such a powerful platform for knowledge workers?",
+    "How do you build authentic relationships rather than just collecting connections?",
+    "What are the key strategies for getting found by the right people on LinkedIn?"
+  ],
+  "shortTopics": [
+    "LinkedIn's Power",
+    "Authentic Relationships",
+    "Discovery Strategies"
+  ],
+  "episodeLink": null,
+  "spotifyUrl": null,
+  "transcript": null
+} 

@@ -1,0 +1,44 @@
+{
+  "id": "episode-2",
+  "season": 1,
+  "number": 2,
+  "title": "Workshops as Worksites on the Digital World",
+  "status": "To be released",
+  "guest": {
+    "name": "Spencer Ayres",
+    "image": "assets/images/guest-pictures/SpencerA.png",
+    "linkedin": "https://www.linkedin.com/in/spencerayres/",
+    "website": "https://jointly.work/"
+  },
+  "summary": {
+    "description": "Spencer and I got together to answer these questions and in the process went massively over the scheduled time. It's that good.",
+    "guest": "<a href=\"https://www.linkedin.com/in/spencerayres/\"><b>Spencer Ayres</b></a> is an expert at running workshops that get results and a friend. After I saw the beautiful work he's been doing at Jointly.Work, I knew I had found a kindred mind."
+  },
+  "links": [
+    {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/spencerayres/"
+    },
+    {
+      "text": "Personal Site",
+      "url": "https://spencerayres.com/"
+    },
+    {
+      "text": "Workshop Templates",
+      "url": "https://spencerayres.com/templates/"
+    }
+  ],
+  "topics": [
+    "What makes Workshops so good for productizing Expertise?",
+    "What do the best workshops have in common?",
+    "What's the future of Expertise work and how Facilitation fits into it?"
+  ],
+  "shortTopics": [
+    "Workshop Productization",
+    "Best Workshop Practices",
+    "Future of Facilitation"
+  ],
+  "episodeLink": "S1E2_Spencer.html",
+  "spotifyUrl": "https://open.spotify.com/embed/episode/YOUR_EPISODE_ID?utm_source=generator",
+  "transcript": "<p class=\"text-body\"> <span class=\"transcript-meta\">[00:12] João:</span><br> So hello everyone, welcome to Exotic Matter, which is the podcast where I will interview some internet friends and specialists around the topics of productizing expertise and also this new...frontier where knowledge work and expertise work finds itself, right? With AI, global competition, the whole niche down positioning kind of trend. And I'm really happy because today I'll be talking to Spencer Ayres, which was introduced to me by another person that has been on the podcast. you know, starting to look like a little bit of a clique. I would like to be part of this clique. And what excited me about Spencer and his work was, I think he has a nuanced take on both workshops as a tool that can be really useful and also workshops as a product for his own business, right? So, Spencer, welcome. Really happy to have you here. </p>"
+} 

@@ -425,8 +425,8 @@ a {
 .form-space-guests-roster {
     display: grid;
     grid-template-rows: auto;
+    padding: 1.5rem;
 }
-
 
 .sub-wrapper-title {
     width: 100%;
@@ -456,12 +456,10 @@ a {
 
 .guests-grid {
     perspective: 1000px;
-    min-height: 85rem;
 }
 
 .guests-grid-container {
     transform-style: preserve-3d;
-    min-height: 85rem;
     width: min(500px, calc(100% - 4rem));
     padding: 4rem 0;
 }
@@ -470,14 +468,17 @@ a {
     .guests-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: var(--content-margin);
+        column-gap: 1rem;
+        row-gap: 1.5rem;
     }
 
     .guests-grid-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: var(--content-margin);
+        column-gap: 1rem;
+        row-gap: 1.5rem;
         width: 100%;
+        padding: 0 1.5rem;
     }
 
     .sub-wrapper-guest-box {
@@ -494,7 +495,6 @@ a {
     border: var(--border-default);
     display: flex;
     flex-direction: column;
-    height: 100%;
     min-width: 200px;
     transition: transform var(--duration-normal) var(--timing-function);
     transform-origin: top center;
@@ -938,17 +938,17 @@ html body .sub-wrapper-episode-theme {
     display: flex;
     flex-direction: column;
     width: 100%;
-    flex-grow: 1;
     min-height: 0;
 }
 
 .colored-bar-top,
 .colored-bar-middle,
 .colored-bar-bottom {
-    flex: 1;
+    height: 2rem;
     display: flex;
     align-items: center;
     width: 100%;
+    padding: 0 0.75rem;
 }
 
 .colored-bar-middle {
@@ -1024,7 +1024,6 @@ html body .sub-wrapper-episode-theme {
 .sub-wrapper-guest-box {
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
 .form-space-guest-name.form-space {

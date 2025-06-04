@@ -1,0 +1,44 @@
+{
+  "id": "episode-3",
+  "season": 1,
+  "number": 3,
+  "title": "Growth for Early-Stage Consulting Firms",
+  "status": "To be released",
+  "guest": {
+    "name": "Danilo Kreimer",
+    "image": "assets/images/guest-pictures/DaniloK.png",
+    "linkedin": "https://www.linkedin.com/in/danilokreimer/",
+    "website": "https://danilokreimer.com/"
+  },
+  "summary": {
+    "description": "Danilo and I spoke about these and other topics, all related to the unique aspects of Marketing Boutique Consulting firms. Danilo's experience shines through.",
+    "guest": "<a href=\"https://www.linkedin.com/in/danilokreimer/\"><b>Danilo Kreimer</b></a> is a Growth Advisor for Boutique Consulting firms and a friend. I initially met his work via his stellar newsletter and had to compliment him on it. From there, many other conversations emerged. When I decided to launch a podcast season, Danilo was at the top of the list."
+  },
+  "links": [
+    {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/danilokreimer/"
+    },
+    {
+      "text": "Website",
+      "url": "https://danilokreimer.com/"
+    },
+    {
+      "text": "Newsletter",
+      "url": "https://danilokreimer.com/newsletter/"
+    }
+  ],
+  "topics": [
+    "Why early-stage consulting firms need a different set of marketing motions?",
+    "Danilo's reservations with over reliance on \"Productization\" as a silver-bullet",
+    "Secrets to actually develop truly collaborative client relationships"
+  ],
+  "shortTopics": [
+    "Early-Stage Marketing",
+    "Productization Limits",
+    "Collaborative Relationships"
+  ],
+  "episodeLink": "S1E3_Danilo.html",
+  "spotifyUrl": "https://open.spotify.com/embed/episode/YOUR_EPISODE_ID?utm_source=generator",
+  "transcript": null
+} 

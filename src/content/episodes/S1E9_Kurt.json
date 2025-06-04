@@ -1,0 +1,44 @@
+{
+  "id": "episode-9",
+  "season": 1,
+  "number": 9,
+  "title": "How Methodologies get Designed",
+  "status": "To be released",
+  "guest": {
+    "name": "Kurt Bostelaar",
+    "image": "assets/images/guest-pictures/KurtB.png",
+    "linkedin": "https://www.linkedin.com/in/kurt-bostelaar/",
+    "website": "https://leverlo.com/"
+  },
+  "summary": {
+    "description": "Kurt is on top of his game. But he wants you to reach that place too. The amount of sharing and co-learning is off the charts. I wish I had started speaking to Kurt much sooner.",
+    "guest": "<a href=\"https://www.linkedin.com/in/kurt-bostelaar/\"><b>Kurt Bostelaar</b></a> is a Methodology Designer and a friend. The overlap in interests and niche passions that we have borders on the uncanny. Also Kurt's recurring generosity is a permanent source of fascinating ideas. This light-hearted but also passionate session was the perfect way to close off the first season of Exotic Matter."
+  },
+  "links": [
+    {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/kurt-bostelaar/"
+    },
+    {
+      "text": "Leverlo",
+      "url": "https://leverlo.com/"
+    },
+    {
+      "text": "Newsletter",
+      "url": "https://leverlo.com/newsletter/"
+    }
+  ],
+  "topics": [
+    "Lessons from working close to the Strategyzer team",
+    "Some usual failure modes of trying to Productize Expertise",
+    "Figuring out how to package expertise in a way that actually works"
+  ],
+  "shortTopics": [
+    "Strategyzer Lessons",
+    "Common Failure Modes",
+    "Packaging Expertise"
+  ],
+  "episodeLink": null,
+  "spotifyUrl": "https://open.spotify.com/embed/episode/4UK2AfEHON0qkYxxwILIvR/video?utm_source=generator",
+  "transcript": null
+} 

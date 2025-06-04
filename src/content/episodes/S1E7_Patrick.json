@@ -1,0 +1,44 @@
+{
+  "id": "episode-7",
+  "season": 1,
+  "number": 7,
+  "title": "A Future for Creative Work",
+  "status": "To be released",
+  "guest": {
+    "name": "Patrick Kizny",
+    "image": "assets/images/guest-pictures/PatrickK.png",
+    "linkedin": "https://www.linkedin.com/in/patrickkizny/",
+    "website": "https://patrickkizny.com/"
+  },
+  "summary": {
+    "description": "Patrick cares for precision and does not suffer shoddy thinking. This makes for a truly densely packed episode where we not only cover the previous topics, but also one where my observation skills get sharpened live.",
+    "guest": "<a href=\"https://www.linkedin.com/in/patrickkizny/\"><b>Patrick Kizny</b></a> is an entrepreneurial creative at heart. After decades running creative businesses of all kinds, he's now working on spatial sound. He's also a friend. We first spoke regarding ideas for a deck of cards that would productize Patrick's methodology. But our calls evolved from that. When I need honest feedback and a clinical attention to detail, I turn to Patrick."
+  },
+  "links": [
+    {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/patrickkizny/"
+    },
+    {
+      "text": "Website",
+      "url": "https://patrickkizny.com/"
+    },
+    {
+      "text": "Projects",
+      "url": "https://patrickkizny.com/projects/"
+    }
+  ],
+  "topics": [
+    "How is AI changing the landscape of creative work?",
+    "What skills will remain uniquely human in creative fields?",
+    "How can creative professionals adapt and thrive in an AI-enhanced world?"
+  ],
+  "shortTopics": [
+    "AI & Creative Work",
+    "Uniquely Human Skills",
+    "Adaptation Strategies"
+  ],
+  "episodeLink": null,
+  "spotifyUrl": "https://open.spotify.com/embed/episode/4UK2AfEHON0qkYxxwILIvR/video?utm_source=generator",
+  "transcript": null
+} 

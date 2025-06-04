@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Episode 7 - Patrick Kizny - Exotic Matter</title>
+    <title>Episode {{episode.number}} - {{episode.guest.name}} - {{site.title}}</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://api.fontshare.com/v2/css?f[]=familjen-grotesk@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap" rel="stylesheet">
@@ -49,27 +49,27 @@
 </head>
 <body>
     <div class="sticky-topbar">
-        <a href="index.html">Go back to Exotic Matter</a>
+        <a href="index.html">Go back to {{site.title}}</a>
     </div>
     <div class="wrapper-app">
         <div class="space-background"></div>
         <div class="wrapper-content">
             <!-- Episode Panel -->
-            <div class="sub-wrapper-episode" id="episode-7">
+            <div class="sub-wrapper-episode" id="episode-{{episode.number}}">
                 <div class="episode-tab text-label">
-                    Episode Status:<br>To be released
+                    Episode Status:<br>{{episode.status}}
                 </div>
                 <div class="panel-episode">
                     <div class="sub-wrapper-episode-header">
                         <div class="form-space-episode-number form-space" data-section="episode" data-type="number">
-                            <h3 class="text-episode-number">7</h3>
+                            <h3 class="text-episode-number">{{episode.number}}</h3>
                         </div>
                         <div class="sub-wrapper-episode-title">
                             <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
                                 Theme:
                             </div>
                             <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
-                                <h2>A Future for Creative Work</h2>
+                                <h2>{{episode.title}}</h2>
                             </div>
                         </div>
                     </div>
@@ -77,65 +77,32 @@
                         <div class="sub-wrapper-episode-content">
                             <div class="form-space-episode-summary form-space" data-section="episode" data-type="content">
                                 <div class="system-status">
-                                    <p>✺ How is AI changing the landscape of creative work?<br>
-                                    ✺ What skills will remain uniquely human in creative fields?<br>
-                                    ✺ How can creative professionals adapt and thrive in an AI-enhanced world?
+                                    <p><!-- EPISODE_TOPICS -->
                                     <br>
-                                    Patrick cares for precision and does not suffer shoddy thinking. This makes for a truly densely packed episode where we not only cover the previous topics, but also one where my observation skills get sharpened live.
+                                    {{episode.summary.description}}
                                     <br>
                                     <br>
-                                    <a href="https://www.linkedin.com/in/patrickkizny/"><b>Patrick Kizny</b></a> is an entrepreneurial creative at heart. After decades running creative businesses of all kinds, he's now working on spatial sound. He's also a friend. We first spoke regarding ideas for a deck of cards that would productize Patrick's methodology. But our calls evolved from that. When I need honest feedback and a clinical attention to detail, I turn to Patrick.
+                                    {{episode.summary.guest}}
                                     <br>
                                     <br>
-                                    Scroll down for the Spotify Link and the Transcript.
+                                    <!-- SPOTIFY_TRANSCRIPT_NOTE -->
                                 </p>
                                 </div>
                             </div>
                             <div class="sub-wrapper-episode-links">
-                                                                <div class="sub-wrapper-episode-links-1">
-                                    <div class="form-space-episode-links-1-label form-space text-label" data-type="label" data-section="episode">
-                                        Link 1:
-                                    </div>
-                                    <div class="form-space-episode-links-1 form-space" data-section="episode" data-type="content">
-                                        <a href="https://www.linkedin.com/in/patrickkizny/" class="episode-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                                    </div>
-                                </div>
-                                <div class="sub-wrapper-episode-links-2">
-                                    <div class="form-space-episode-links-2-label form-space text-label" data-type="label" data-section="episode">
-                                        Link 2:
-                                    </div>
-                                    <div class="form-space-episode-links-2 form-space" data-section="episode" data-type="content">
-                                        <a href="https://patrickkizny.com/" class="episode-link" target="_blank" rel="noopener noreferrer">Website</a>
-                                    </div>
-                                </div>
-                                <div class="sub-wrapper-episode-links-3">
-                                    <div class="form-space-episode-links-3-label form-space text-label" data-type="label" data-section="episode">
-                                        Link 3:
-                                    </div>
-                                    <div class="form-space-episode-links-3 form-space" data-section="episode" data-type="content">
-                                        <a href="https://patrickkizny.com/projects/" class="episode-link" target="_blank" rel="noopener noreferrer">Projects</a>
-                                    </div>
-                                </div>
+                                <!-- EPISODE_LINKS -->
                             </div>
                         </div>
                         <div class="sub-wrapper-episode-meta">
                             <div class="sub-wrapper-guest-box">
                                 <div class="form-space-episode-guest form-space" data-section="episode" data-type="content">
-                                    <h2>Patrick Kizny</h2>
+                                    <h2>{{episode.guest.name}}</h2>
                                 </div>
                                 <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
-                                    <img src="assets/images/guest-pictures/PatrickK.png" alt="Patrick Kizny">
+                                    <img src="{{episode.guest.image}}" alt="{{episode.guest.name}}">
                                 </div>
                                 <div class="colored-bars-container">
-                                                                        <div class="colored-bar-top">
-                                        <span class="text-body">AI & Creative Work</span>
-                                    </div>
-                                    <div class="colored-bar-middle">
-                                        <span class="text-body">Uniquely Human Skills</span>
-                                    </div>
-                                    <div class="colored-bar-bottom">
-                                        <span class="text-body">Adaptation Strategies</span>
-                                    </div>
+                                    <!-- TOPIC_BARS -->
                                 </div>
                             </div>
                         </div>
@@ -146,18 +113,9 @@
                 </div>
             </div>
                 
-            
-            <!-- Spotify Player Panel -->
-            <div class="panel-spotify">
-                <div class="form-space-spotify-title form-space text-label" data-type="label" data-section="spotify">
-                    Listen:
-                </div>
-                <div class="spotify-container">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/4UK2AfEHON0qkYxxwILIvR/video?utm_source=generator" width="624" height="351" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </div>
+            <!-- SPOTIFY_SECTION -->
                 
-            
+            <!-- TRANSCRIPT_SECTION -->
         </div>
     </div>
 
