@@ -1,0 +1,278 @@
+João (00:14)
+Hello everyone, welcome to Exotic Matter, which is a podcast series I'm creating with some friends from the internet, where I interview experts on different layers and different perspectives related to expertise, productizing expertise, and these new ways of delivering agency work, consulting work, that are a little bit more, you know, shoulder to shoulder, more work with your clients, not for your clients.
+
+And for today, I'm really excited because I have Kurt Bostelaar, probably maimed the pronunciation. But I've been following him for a long time, I think for three to four years now. And eventually we connected. It took me too long, I think. And I think what Kurt does that really spoke to me is that he takes the process of converting expertise into images...
+
+Kurt (00:51)
+Good, good.
+
+João (01:10)
+... to really to the next level. Sometimes we see this from the perspective of just content, but I think Kurt does it from a deeper understanding. So Kurt, please help me introduce yourself.
+
+Kurt (01:25)
+Yeah,it's always a fun. I know from our conversations, like sometimes getting into this expertise space and like, how do you package expertise? Like there's not as many like well-defined roles in that space. So I've been trying out the kind of idea of a role for myself of like methodology designer. How do we take a field or a topic and help someone easily understand so rapidly understand that topic or that field and then be able to expertly execute in that space. So You can kind of see the thread of expertise kind of woven in there. So a lot of people kind of alluding to what you were saying there know me as the visuals guy, someone who creates these visuals where I'm trying to package a really dense narrative in a very short amount of space, just a single visual. So it's sometimes trying to summarize an entire book in a visual or entire 10 minute video into a single visual. But that's really at the heart of that for me is I want to have an entire methodology that's designed that helps people...
+
+João (02:11)
+Mm-hmm.
+
+Kurt (02:25)
+... understand and then execute. So I do that right now primarily with my clients in innovation and entrepreneurship space. So a lot of that is visuals. Like I do a lot of visuals in that space because there's a lot of content and concepts that people need to know about entrepreneurship, but there's also creating the exercises, creating the tools, all these other aspects to it as well. And the kind of umbrella I've kind of given that is methodology design.
+
+João (02:48)
+Mm-hmm. Mm-hmm. So this is perfect example on how the visuals, the idea of visuals has such a strong gravitational pull, because you do much deeper stuff than that, but that's the tip of the iceberg, right? That's what we see more from the outside on the timeline, so to say. But I don't remember, I don't think I've ever come across someone that does exactly what you do. And I find it really, really cool. And...
+
+One of the things that we've chatted about in previous conversations was where you look for in terms of inspiration for the method to create a method, right? It's very meta, of course. But you have a more unique take on it, I think, compared to other people that sometimes I see talking about this stuff.
+
+Kurt (03:42)
+Yeah, I would say, I mean, I just even like in the show intro when you're saying productize expertise, like I get a little bit excited. Like I think it's so interesting to me as a methodology designer. I think so much of what I'm trying to do is to take these complicated things and even like the vision, like how can they quickly get to that place of understanding so that they then can be transformed to take those actions, like I've already mentioned. And I think that productizing process was born out of, for me, being in this leadership development role where I was starting this nonprofit around faith-based leadership development. And I just wanted to see these people transformed. I wanted to see them step into new behaviors. But to get to those new behaviors, they first had to be understanding. So you first had to give some content, some training, some teaching. And then there had to be some way in which they engage with that. They're not just gonna go from, I know the thing to I'm immediately transformed. I immediately have new behaviors. So then there's that process of how do you then guide them. 
+
+And a lot of that can become productizing that expertise. So the way I've thought about it, which is maybe one kind of metaphor that I just love and I don't know if I've shared it with you, but there was this article written by, so I studied mechanical engineering and I lived on the space coast in Florida. So SpaceX was a huge company and at one point in Texas, they were really trying to expand their workforce.
+
+And there's this really fascinating article and I feel like it's framed more than any other book, more than any person I've talked to. It's framed how I think about productizing expertise where they were trying to build, I think they're called starships, like the biggest rocket that can like get people to Mars. And the article is going into like how crazy it was that they weren't just trying to build a single rocket, which would be insane. Like that would be such an endeavor. So much complication just in that they were trying to make the factory.
+
+They were trying to make a starship every single week. And there was this idea that it's a thousand, I think there's a quote in the article, it is a thousand percent harder or 10,000 percent, something like magnitude, exponentially harder to make the factory than it is to make one of something. And that's where I think for me, there's an inherent challenge in productizing expertise where if you think about, hey, I'm trying to start a business, that's hard to do. Like that's a tricky thing to navigate in itself.
+
+João (05:34)
+Mm-hmm.
+
+Massive.
+
+Hmm.
+
+Kurt (06:02)
+But can you then make an accelerator? Can you then make the factory, the resources, the content? So there's the visuals, there's the behavior change, there's the helping people expertly execute. So you then have cranking out multiple people who are able to start businesses. I keep using the entrepreneurship thing because a lot of my clients right now are focused in that space. But I love that factory image of like, you're not trying to do the thing one time. You can get some expert craftsmen, you can get people who really know how to work with their hands, you can get some smart people together to do it once. But to make the factory, that's, and it was so audacious to me, like that they were even trying to attempt that, it's really kind of stuck with me. And that's kind of the main metaphor that kind of bangs around in my head when I think about productizing.
+
+João (06:47)
+That's a very cool one. Also, your engineering background shines through, It speaks to your passions. And one of the things that people often associate with SpaceX and that crowd is the whole first principles thing, which I can see connecting to the next level of abstraction of let's not just create the rocket, let's take a step back and see what we can abstracize.
+
+
+João (07:17)
+Anyway, to make it possible to create a factory of rockets. So, just out of curiosity, are you into the video game Factorio? Okay. It's a video game where you create like a production line and it's like super... you go deep into it. I'm not smart enough to play it, so it's just a curiosity.
+
+Kurt (07:30)
+No, I'm not familiar.
+
+Mmm.
+
+I'll have to see if I can handle it. That sounds a little complicated, but it sounds like it'd be a fun one.
+
+João (07:47)
+I think it's like nerd sniping for engineers and process engineers. But OK. When we so this this the you got into the productizing from a very Real challenge that you had right, you were not looking for productizing, you're trying to solve a thing and then you got you got into this. Got into not caught, but. Called by the...
+
+Kurt (07:51)
+Hehehe
+
+João (08:17)
+...the challenge of finding this thread, right? And accelerating this transformation for others. And there's two things that caught my attention in that moment when you mentioned that. So the first one is the transformation. So it's not just about transferring information. It's about making that information actionable in a sense, And actionable, it's...
+
+Kurt (08:18)
+Mmm. Yep.
+
+João (08:44)
+...It's a word that hides away a lot of complexity. It's more than that, but that caught my eye. And the other thing was the aspect of you needed to combine different skills, different lenses, perspectives to do that thing you're doing. It's like a meta skill, right? How did you go about figuring out how other people had done this productizing thing?
+
+Kurt (08:59)
+Mm.
+
+Yeah, I think I came at it from a weird angle where it was just really following some of my passions and my obsessions. So I think for me, like figuring it out was just doing all the wrong things, like trying a little bit of instructional design, trying UX design, trying product development of physical products. And along the way, there was enough of these disparate experiences that I could start to weave some threads between all of those. So like when I was a mechanical engineer and that was my full time thing.
+
+I was kind of creating these training manuals. So there would be these very complicated undersea electrical cables that were getting designed. And my job was how do we take this very complex design that has to survive at like a deep underwater space with high pressure, actually similar to space in some ways, some of the constraints you have there. And how do I help someone who might only have a high school education, someone who doesn't have a PhD, a master's, how do I help them assemble this?
+
+and know how to do it. So there's like that thread. And then I mentioned already the leadership development startup that I was a part of where in a similar way, I literally went from that engineering job into that leadership development role. And I saw it as a similar thing. Like you have this part and it has to go along this process and you're going to do X, Y, and Z to that part to get it produced. And you need a manual to go with that. So that's where for me,
+
+I then began looking like who's creating manuals, who's creating content, who's creating resources. And it was tricky. feel like for the longest time, I didn't find great influences, but where I'm at now, working with Strategizer, kind of the founders of the business model canvas, the work that they had done to productize. And I think there's so many different formats of productizing. A lot of people, think, productize into code...
+
+João (10:53)
+Mm-hmm.
+
+Kurt (11:02)
+... and they get some sort of software application or application in that space because there's so much money to be made in that space. But mine was more in the content space. So not as much getting into software development, but staying in the media, visuals, images, training manuals, books, PDFs, all those types of things. And that's where connecting with strategizer, I think was where they had pursued it in a kind of a parallel track with work that they were trying to do in developing tools in this entire integrated tool box.
+
+... where they're taking complex business ideas and putting them into these canvases, into this integrated toolbox. So I think just kind of keeping my eyes open as I tried a bunch of different experiences and then getting really well connected and working a lot with strategizer has kind of opened me up to see the depth at which someone can really commit to this. Cause I think before them, it was just a bit of a hobby for me, but seeing like, think the business model canvas, one visual strategy tool.
+
+João (11:54)
+Mm-hmm.
+
+Kurt (11:59)
+Like there's a 14 year development for a single sheet of paper. And I'm just like, to me, I love it. Like there's something amazing about that. It's just like, wow, like the dedication and the craft. Like no one's going to like thank them for that or see the depth that actually is behind that single piece of paper. But that's yeah, all those experiences have kind of come together for me.
+
+João (12:19)
+It's a very interesting process when we were looking for the name of the thing that we want to do. I remember when I left design school, I knew I wasn't going to be like a visual designer or industrial designer. I went to school for industrial design, but I was like, I don't think that's what I do. And I remembered that for me, that anchor term was design thinking.
+
+Kurt (12:46)
+Mm, yeah.
+
+João (12:47)
+So when that popped up, I could use it on Google to find more stuff, find the books, find the people. And that was the beachhead, the conceptual beachhead into that whole world of design and product and workshops and all of that, what I do now. But until you find that, it's based on the hunch. There's someone doing this, right? And you look for the nuggets of information you can get.
+
+Kurt (13:18)
+But I love that just to jump in because I think even if you look at design and the history of it, you would go back some like one of my favorite quotes is Herbert Simon, like one of the kind of godfathers of design is like, design is changing an existing situation into a preferred one. And it's like the elegance of something like that, like that statement where it's like, you can really zoom way out. And it's like that statement encompasses graphic design, industrial, like all these different designs. So for me, it has been helpful to kind of zoom back to go back and
+
+We were even chatting before this call about Christopher Alexander and his books and he's a design theorist and was an architect. And it's like, you can like trace these threads backwards and find this broad sense of what design is, design thinking, how it's been applied in that sense. And then look at parallel industries and see how they're doing it. And then kind of map out. there's more and more people kind of getting into workshops and facilitation and into productizing because especially with AI, opportunities that present it. So there's maybe not a full curriculum there, but there's enough pieces I feel, yeah.
+
+João (14:21)
+yeah, and now it's so much easier to find the missing pieces, right? I just go on perplexity, I'm like, I'm trying to learn this thing, what's the name of this thing, and find me articles, find me authors, and just... This used to be like a PDF I would save and keep on my external hard drive for years during college, you know, like, this is really valuable, and now it's just like, hey, Mr. Supercomputer, tell me the answer. I remember that the last time we spoke...
+
+Kurt (14:35)
+Yeah.everywhere.
+
+João (14:49)
+...You told me that you are now in terms of these skills for, you know, packaging expertise. The latest one you were investigating and experimenting with, I think was storytelling. Do I remember that right?
+
+Kurt (15:00)
+Mm.
+
+Yep. Yeah. I feel like I always kind of jump around. So there's, think, different aspects. So like, when I think about understanding, I'm like, how can I use visuals to like make things super clear and accessible? And then stories make it so concrete because that's, for me, I think that's like the passive learning space where like someone can view a visual, someone can watch a video and they can learn, they can be lectured, they can hear a story. And then there's like the active learning space where they're really engaging. And that's where I get into focusing on the tools. What are...
+
+Like I mentioned earlier, the business model canvas, it's like you can interact with that. You can analyze a business. You can design a business. You can ideate a bit and using that tool. So stories for me are interesting in between because the more you move into that active learning and some of those tools, you want to have those high level principles. You want to make it abstract so that it can apply in different instances. And I think that's useful, but stories offer a nice counterbalance where stories are very concrete.
+
+And I think sometimes you deal with abstract tools, which are really helpful when you want to create a factory. Like you can't make a one-off custom rocket that has like extra little things. It's like, no, it all has to be streamlined. It all has to fit together. And to do that, you sometimes have to go abstract. You have to zoom out. You have to use these high level principles. So yeah, storytelling for me, I think I went through a season of really focusing on the abstract. How do you look at the abstract relationships between concepts? How do you, yeah...pull out and understand the high level principles that then people can apply. And now I think I'm in a season where I have been focusing a little bit more on the storytelling. How can I craft these stories that make it concrete? So that's been a fun, yeah, just kind of keeping it fresh.
+
+João (16:47)
+You gotta talk with Tom Kerwin. I don't know if you follow him. He was just showing me the other day a methodology that he was developing, he has developed, that it uses storytelling precisely for this, for connecting the high level and the more ground level, so to say. And he had to explain it to me really, really quickly, but it was very good. And well, this goes on a podcast. I think you'll have fun talking to him.
+
+Kurt (16:51)
+Mm.So check that out.
+
+João (17:16)
+So a lot of the thread here is about adapting to the audience, right? To find the ways that the audience could better understand what we're doing. And in a sense, it's a little bit like the factory example you gave, which is you're creating a material or you're giving shape to something. And besides the concern of this thing has to be good,
+
+But this thing has to be good in many ways. And one of the ways is that this thing has to be transferable and cohesive and so on. One of the other aspects you've mentioned was this zoom in, zoom out, approximate. How do you manage that in terms of avoiding blind spots or trying to get the best of both worlds?
+
+Kurt (17:47)
+Mmm.
+
+
+Yeah, I think the thing that comes to mind, especially working with strategizers so much is testing. So I think that iterative process and it even goes back to not to hit that idea too many times with that factory example of Starship where it's like, how do they know if they're like building a rocket that's going to work well? And there's one of my favorite laws, like Boyd's law of iteration, like speed of iteration is better than quality of iteration.
+
+And I think there's often this temptation to like really fine tune, to really get all the details right. like, like we got to make sure that when we test this massive rocket that it's going to work well. But I think if you take Boyd's wall of iteration, it's like, how, how can we iterate as fast as possible? And that's why I love that example. And it's been so helpful is because with SpaceX, what they did is like, they had so many of them blow up so many of these giant rockets, destroy landing pad or blow up over the ocean.
+
+João (19:09)
+You
+
+Kurt (19:14)
+But now you see like the progress and they're like they recently caught it with like these mechanized giant arms like I have some friends who've worked for NASA and for SpaceX and just mind-blowing like what they've been able to do and to just it's crazy but how do you get there like if you started with let me build a perfect Starship and then let me catch it it's like there's no way in the first attempt you're gonna get the launch right and then the coming down and like but with each one they learn from those failures and I think that's for me how I've been able to kind of navigate some of that. And even I'm, people sometimes know me because of my visuals on socials, on LinkedIn, on Twitter and such. But I think that's even like a first sounding board where it's like, let me test. Like I might have an idea for an entire article or entire chapter of a book I want to write. And it's like, well, let me just quickly make one visual and post it. And I've had ideas that I thought would be great and no one cared. And then other ones where I was like, this is a unique idea, but I'm like, I didn't think much of it. And I post and people like,
+
+João (19:56)
+Uh-huh.
+
+Kurt (20:13)
+It blew up and it's an interesting tale. And obviously that's not the only data point, but I think for me, you can kind of see just from different testing, like I tested out in my kids, tested in my wife. I'm always just like different language, different tools, different visuals. Yeah. That testing aspect is how I've kind of solved that.
+
+João (20:32)
+the testing and we keep shifting from this real world of atoms, factories, rockets, and to the more conceptual world of ideas. And I think this is just earlier today, I was writing some chapters on my book and I was writing it precisely about this because the whole productization thing involves thinking about expertise as a product, both...
+
+Kurt (20:56)
+Mm. Yep.
+
+João (20:59)
+...of what it is and also how to communicate it. And from experience, a lot of people, when they are starting out with that effort of productizing, they don't necessarily take it as iteratively, right? They try to get it right or to make like a really good presentation or they get a designer for the visual style, like branding, you know? And so what you're saying speaks a lot to me in terms of if you want to productize, be ready to iterate and to experiment and to find cheap ways of learning more about that idea, right?
+
+Kurt (21:17)
+Hmm. Yeah.
+
+Well, that's where I think of two quotes as you're talking. I'm going to forget the name of the copywriter who had the first one, but he said something to the effect of like, I'm going to be a better copywriter than you because my first draft, I'm not going to care what it's like. I'm just going to get the spirit of the idea. It's going to be the worst line of copy you've ever seen. It's going to be so, but it's going to have the like spirit of what I'm trying to say. And once I have that, then I can make it a little better. There's another quote by, I think it's Ernest, Ernest Hemingway.
+
+João (22:01)
+Uh-huh.
+
+Kurt (22:04)
+which you're like, this like esteemed classic author. And he has a quote where he's like, the first 50 drafts of anything is shit. Like it's just garbage. Like it's just not going to be good. So I just love that idea of like, cause it almost for me provides clarity on the process. Cause the creative struggle can be real when you're trying to productize something where it's like, there's that first draft. I feel terrible and the work looks terrible. So it's just like both aspects. Like the work is not going to be good.
+
+But if I trust the process, if I know by iteration eight, it's guaranteed to be good, then I know I can just, well, I'm just gonna make the first one and then I'm gonna make the second and then I'm gonna make the, and it's more of just like, I'm showing up nine to five, I just gotta make my first iteration. Let me move some pixels. Gotta make my second one. Cause I think when I first started, I would get so caught up in that first iteration, kind of resonating with what you're saying of like, why can't I do this? I want this to be in here. And I'm like, I want this and it's not working. And it's like, now it's just.
+
+João (22:54)
+Mm-hmm.
+
+Kurt (23:02)
+Swapping something on an index card in a Figma file, putting it in front of someone, posting it, and it's much more fluid and kind of letting that process happen naturally.
+
+João (23:11)
+Yeah, yeah, for sure. I think also when it doesn't feel like we've made a huge investment on a thing, right, we are much more open to changing the thing. And like from the perspective of, I don't know, workshops or canvases, I think canvases is a great example because there was a time maybe 10 to seven years ago, a lot of people were trying to launch their own canvases, but they were just visual...
+
+Kurt (23:38)
+Hmm.
+
+João (23:39)
+...they were not really...
+
+Kurt (23:39)
+Hmm.
+
+João (23:40)
+... based on anything conceptually sound. So they look good and they kind of look the way the canvas does, the BMC does, but they didn't work, right? They were not functional. And I think that that was really an example of people mistaking the format for the content and like, yeah, it's an pretty piece of paper with some squares, sure. But the...
+
+Well, we keep using that example because it's a really good one, but we could see the story of that canvas, right? And the other ones, because there's records of that, like V1, V2, and they keep evolving and it gets more nuanced. I think another aspect, the thought is kind of forming in my mind still, but expertise at a certain level becomes about nuance. So...
+
+Kurt (24:38)
+Hmm.
+
+João (24:40)
+...you really show that you know about that thing if you can think about it in a not just non-obvious, but like no-one's take with deep way. And iteration allows for that, right? When you try to get it right for the first time, only the more salient things will be represented. But then you keep trying to fit something in and experiment and you create like Easter eggs and things that if you know what you're looking for, the tool you'll see, this was really really clever like a cognitive ergonomics kind of thing.
+
+Kurt (25:17)
+Yeah, it's fun to one thing that I've noticed over time is like taking a tool or taking a framework that's developed and then like almost stress testing it. And I used to always stress test it with one example. But I realized like that example usually was like the one that was like my prevailing mental model as I was creating the tool. So the tool was like catered to that one example. And I found like if I have two diverse examples, even just that, like it's such a fresh take that it ...
+
+João (25:34)
+Yeah, yeah, yeah.
+
+Kurt (25:46)
+... the quality of it goes up pretty significantly.
+
+João (25:49)
+Absolutely, yeah, absolutely. And I think that you have so many advantages on doing that stress testing because functionally it improves the tool. But also when you communicate the tool, you can use those examples to show, look, this works because I'm applying this with different situations and people are like, okay, yeah, I can see myself using that tool because he has inputted data according to my situation that the tool still holds.
+
+Kurt (26:19)
+And that just, I just had to jump in because the one last thought that came to me, I'm going to still like close that loop mentally is like, there's that moment when the rocket does take off and there's the rocket is flying through and it does get caught. And it's just like, for me, like when a framework it's, and that's what I love about business sometimes is like, you know, you found success when people like, I've had instances where I share something and nothing happens. And other instances where I share an idea and people were like pounding on my email door, like...
+
+
+"Hey, can you give me more examples? Can you give me more of this? Can you or sending me requests or like, Hey, how do I get access to that?" So I think it's interesting that again, you made that connection between like the physical and the digital. Sometimes it's hard to know. Like, how do I know the rocket is working? My framework is work. But I think for me, that's the close that loop fully when that interests like people are just organically reaching out and knocking on your door. That's an interesting signal.
+
+João (27:03)
+yeah.
+
+For sure, for sure. Because it is, at end of the day, a bit of a social phenomenon, right? Like, you create the thing, but if it only works in your mind, it's not really useful. So you need that kind of marketplace of ideas validation. Yeah. So we're nearing the end. And as usual, I tend to feel that I should have booked more time. anyway.
+
+Kurt (27:27)
+Yeah, yeah. This is great, this is great. Thank you so much for having me.
+
+João (27:43)
+Yeah, and I had a lot of fun. And when I start looking outside the frame, it's because I'm thinking about all the stuff that I cannot forget before I need to write down before I forget. So I'm getting to that stage. You put a lot of interesting ideas. I didn't know, for instance, the Void's law of iteration, but it's self-explanatory for the OODA loops fans.
+
+Kurt (28:05)
+Mm.
+
+João (28:13)
+and stuff like that. But so Kurt, just before we wrap it up, is there like a specific thing that in your experience, and something that perhaps we haven't touched yet, when people try to productize, what's like the first mistake they tend to make? It's not a cardinal sin, but just like something that they might trip up on.
+
+Kurt (28:38)
+The one I, cause I really get obsessed with designing tools. Like you mentioned the canvases where it's like, you see strategyzer when they spent 14 years on a canvas and then someone's like, I put some boxes in like a PDF. Like, so I think for me, the one that I've learned from Alex Osterwalder was like when designing a canvas don't include process in that canvas. So the, like, if you take the business model canvas example, there's no process. It's just a bunch of aspects of a business and the relationship...
+
+João (28:47)
+Yeah.
+
+Kurt (29:07)
+...and how they relate to each other. And then you can layer in 17,000 different processes with that tool. You can take that hammer and you destroy a bathroom or you can put a nail in or you can use it in different formats, but we're not making the hammer only fit for one process. And I think that's where, if you look at a lot of those canvases that people in that movement, when it got so popular, they put process, sometimes even like the steps that you take. And for me,
+
+Those tools are so much more helpful when you remove the process as a separate thing. It could even be a checklist or a process next to it of your preferred format. But having that, I learned that through Alex when I have a coaching map and I included process and he's like, why do you need this in here? And then I removed it and it felt so unnatural, unintuitive. But then I started using that coaching map in like three or four different ways instead of just the singular way that I had originally had planned for it. So it just opened up a world. So I would say...
+
+Just kind of to tie back to what you had mentioned before with the canvases, that's like maybe the number one thing I've seen people like, I need to create a canvas that's tool, but they include process as a part of the actual tool itself.
+
+João (30:16)
+That's a really, I really like this take. And I can, I didn't know about that. And now I can look back at some situations and I can see, ⁓ yeah, that thing was happening. And I think it was probably affecting the results. So really, really nice insight. Thank you for sharing that. And so where can people find you? What are your websites, your links? Do you have socials?
+
+Kurt (30:41)
+Yeah, I would say the number one place right now I'm trying to direct people to is I've started writing again. So I have five different books that I'm I have two kids. So I'm like, there's no set deadline on these books. But if you like any of these topics, so leverlow.com, so lever, L-E-V-E-R-L-O.com. And I'm writing about methodology design, how to develop people, how to make simple content, all these different topics kind of related and adjacent to productizing.
+
+João (30:57)
+Mm-hmm.
+
+Kurt (31:09)
+So that's the number one place I point people to, Leverlo.com
+
+João (31:12)
+nice nice thank you so much Kurt this was really a pleasure and I'm sure we'll keep talking
+
+Kurt (31:18)
+Yeah, of course. Thanks for having me again.
+

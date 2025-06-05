@@ -1,0 +1,440 @@
+João (00:13)
+So hello everyone and welcome to Exotic Matter, the podcast I'm doing with some internet friends and specialists from the agency and consulting world. So for today, I'm talking to Dan Kreimer from the Boutique Consulting Club. And I don't remember how I came across the Boutique Consulting Club, but I remember the first message, the first email I got from it was really impressive because it was short, to the point, and really densely packed with useful information that changed the way I thought about these things. And I've been reading and studying about these things for a while, so I was really impressed. And then I started talking to Dan, and eventually we got into this kind of relationship that we can talk about these things. So welcome, Dan. Thank you for being here. Can you introduce yourself?
+
+Danilo Kreimer (01:00)
+Thanks for the invitation, João. Nice to chat.
+
+João (01:05)
+I'm very happy that we're doing this. It's been a long time coming, so it's good. Can you tell us a little bit more about the work that you do for consultants?
+
+Danilo Kreimer (01:16)
+Yeah, so we help early stage consulting firms or consulting practices to go to market. That's our job. And this typically means... creating or rethinking their service offerings, positioning or building their brand in the market, and building a pipeline, so increasing revenue. The goal is really to get them from this early stage as quick as possible within the limits of how the industry works.
+
+And also kind of one of the missions that we have or one of the goals that we have with this is to really ensure that founders are well served and they're getting access to specialized support and not kind of relying on generic advice, generic marketing advice, generic best practices that many times can kind of slow growth down.
+
+João (02:07)
+Mm-hmm.
+
+Yeah, there's like three or four things in just this little explanation that you gave that stick out to me. So I'll just list them and we can choose to explore or not. So the first one is that let's reduce the time you spend in that early stage kind of experimenting with a lot of different things, not a lot of structure, which I imagine is you need to go through some sort of early stage, but we don't need to have that stage to be extremely long, right? At some point, find your bearing. And the other thing that you've also mentioned that caught my attention was there's a lot of advice, marketing advice that does not apply for this kind of businesses, right? And if you don't come from a marketing background, I don't come from a marketing background. It took me a long time to start to realize,
+
+Maybe I'm following the wrong kind of references or reading the wrong kind of books. These expertise-based businesses, they have a different set of rules, right? And I think I spent a lot of time in the early stage trying to figure some of these things out. So it's interesting that I think I'm probably not too far off when a specialist says that, you know, that's a good way to look at it.
+
+Danilo Kreimer (03:25)
+Yeah, there are many best practices, especially when we look at B2B marketing, or even marketing advice that is focused on SaaS, for example, software as a product. So we are looking at...
+
+João (03:41)
+Mm-hmm. Mm-hmm.
+
+Danilo Kreimer (03:45)
+... products or productized services, highly productized services, which are not expert driven. And it requires a very different playbook, let's say, to bring those to market. If you don't have that guidance, if you try to kind of find it, connect the dots by yourself, it's fairly common that you can't... 
+
+João (03:52)
+Mm-hmm.
+
+Danilo Kreimer (04:10)
+... kind of get stuck a couple of years when you start a practice because you really learn by doing, learn by selling, learn by marketing. So it's helpful that the idea here is for us to accelerate that in any way we can.
+
+João (04:25)
+Yeah, and I think that experts starting their own practices by definition are clever people, right? And they're used to being clever, used to being able to figure things out. And I feel that that kind of personality is really curious as well, because that's how you develop expertise. Like you're more curious than the other guys...there's this thing that calls to you, this Siren song of figuring it out from first principles. Like, I'm going to really understand the structure of this thing and then eventually I'll apply it. then exactly, because I mean, this has happened to me, it's clear that you spend a lot of time, this is fascinating. I really like this stuff. But you're...you're burning your runway, right? And... eventually you find out there's people that know about this, that have done this, and I don't need to be like a beginner at the thing that is not at the bleeding edge, you know? So there are established best practices. You don't need to learn from scratch.
+
+Danilo Kreimer (05:26)
+Yes, yes, it's a fairly common problem that we consultancy founders, like we over complicate, we procrastinate working on kind of complex, difficult pieces of the puzzle when often like at any point in time, you have one limiting factor in your business at any point in time, you have a bottleneck.
+
+So it's kind of like, yeah, you get like when you're playing with Lego, for example, you have all of those pieces and you, okay, I'm trying to build something. Like it's way easier if you have the instructions. This comes first, this other piece here, this other piece there, and you follow the instructions. Of course, not...
+
+João (06:03)
+Yeah.
+
+Danilo Kreimer (06:11)
+...not every practice is the same. And if you're looking for like a one size fits all, a magic solution, which is often what you get through online courses or those kind of products, it's very difficult to adapt that best practices to your context.
+
+João (06:24)
+Mm-hmm.
+
+Danilo Kreimer (06:34)
+As a founder, which is also important, which is also something that we consider. You have your own personality, you have your own lifestyle preferences. There are many different reasons why you even start to practice. So it's important to come back, okay, why did I start this in the first place? Because it's way more difficult than to get a job in the market, for most of you.
+
+João (06:56)
+So are you telling me that I shouldn't just get a book at an airport that says the management secrets of Jeff Bezos and apply it to my own consulting? That's not how it's done? I could have saved so much money on airport books.
+
+Danilo Kreimer (07:08)
+Yeah, I mean, I love books and I learned a lot of things from books. But what I found, what I learned is that you get much better results and much faster results if you're best practices with specific individual bespoke guidance.
+
+
+Danilo Kreimer (07:30)
+That's how you build a practice on your own terms. Whatever the reason you started this, was it flexibility? I wanted to work remotely. Was it for the kind of projects that I'm working on? Was it because I want to build a team with the culture that I never had when I used to work at that shitty firm? There are many ways. No, really, there are several things and probably it's a combination. All of those things make more money, et cetera.
+
+João (07:44)
+huh, huh.
+
+Danilo Kreimer (07:57)
+But there's a context there. Like, do you have like, you have small kids, like have a baby, I just like, okay, I need to fit the work around my lifestyle. So you need to consider, I mean, you don't need to, but if you want to build a sustainable practice and something that grows in the direction that you're looking for, then
+
+João (08:13)
+It's healthy.
+
+Danilo Kreimer (08:21)
+It's really, really useful to have individual guidance advice.
+
+João (08:26)
+I think this connects, this conversation is starting to get a little bit meta because this connects a couple of things. So one of the, one of the trends that I think it's, it's becoming a little bit more in the collective consciousness is this shifting on working with clients instead of just for clients, right? Like working...
+
+I've been using this expression. really like it. I didn't come up with it like shoulder to shoulder, like we're next to each other, figuring something out. Right. And this is where it gets meta because I can see how consultants of every sort are starting to see, I need to work with my clients in this way. This more participative way, together with them, not just as, just advice giving, also understanding the context, right? And the way you work with consultants is a perfect example of this because you've used the best practices plus the context, right? Which I think is a very good mix in terms of you have a certain anchoring around best practices. So these things are known. We know what's the best way to do this. We don't need to reinvent the wheel. That's an anchor.
+
+And then there's another anchor around, I don't know, sales, right? But in between these anchors, there's some flexibility. Like, what's your personality? Do you like talking to people? Oh, you don't like talking to people. So maybe we need to go this way. And to come full circle, it's the way you describe your work for consultants. It's also, to me, a good pattern for how consultants should work with their clients. Like you provide them with a car that, you...it's solid but you're not stuck to that core you you inject some flexibility into your own way of doing things right which is a difficult balance it's a tricky thing
+
+Danilo Kreimer (10:16)
+Yeah. Yeah. It's a tricky thing. It's a tricky thing. I saw, I saw your post. I saw your LinkedIn post today. I think that you were referring to that when you're designing. No, when you're designing, when you're designing services. So a productized service, a productized service, and you have a hundred percent bespoke work, productized service.
+
+João (10:28)
+The nerdy one about seashells?...
+
+yeah.
+
+Danilo Kreimer (10:41)
+...and product and then a product as a service, so the different levels. 
+
+João (10:46)
+yeah, that's not from me, that's from Eisha Armstrong.
+
+Danilo Kreimer (10:48)
+Yeah, yeah, yeah. I also read her book, by the way. It's a good book. But that's the core. I think there is this craze about productizing and even the term...
+... productizing when applied to consulting, it can be kind of misleading or I think I have a few issues with this term, but okay, as long as people understand what this means. But when we are talking about consulting, essentially we're helping clients change.
+
+João (11:08)
+Mm-hmm.
+
+Danilo Kreimer (11:23)
+There's an outcome that they want, there's a problem that they want to solve, and we're helping them to change and to facilitate that change.
+
+If we follow only one path, a single path, and we apply that to every client, we won't be making the best work that we could be. We won't be helping the client in the best way we can. Consulting is getting this context, getting together, combining the solution to their specific context, and that's why they pay... Surplus for our fee by the way, otherwise it would be too easy. Often when I hear now with, I mean, now recently with AI and all this craze, mean, how many people, like every week there's someone saying consulting is that, which is ludicrous when you think about it. Even if you think about companies, organizations who sell products.
+
+João (12:20)
+Thanks.
+
+Danilo Kreimer (12:21)
+...there are consultants in the team. Like, take whatever, Salesforce. Like, there's a whole ecosystem of consultants who are actually certified by Salesforce. Why is that? Like, if their product was the perfect solution to all of these organizations, you wouldn't need those consultants. So, of course, so that's our job.
+
+João (12:23)
+Mm-hmm.
+
+Yeah.
+
+Danilo Kreimer (12:47)
+And this is pretty much an approach that we take and I recommend to clients when they don't have any proven service offerings yet or when they're struggling to kind of rethink or create their service in early stages. We pretty much recommend them to think about the minimum viable service...
+
+João (13:08)
+Mm-hmm, mm-hmm.
+
+Danilo Kreimer (13:09)
+...which is exactly what you were describing there. There are core service components, so some parts of the service that cannot be removed in any way. So it's the basic that I need to deliver to ensure a minimum quality or consistency in the service. And then there are flexible service components. So things that I can add or I combine...
+
+João (13:12)
+Mm-hmm.
+
+Mm-hmm.
+
+Danilo Kreimer (13:35)
+...based on their context, like, they need more availability, they need more support, they have a larger team, they are based in multiple locations. So I might need to change or add different solutions, different components to that service.
+
+that's the idea. That's the idea.
+
+João (13:58)
+I think that this is a good segue into something that you hinted at before, is common misconceptions around productization.
+I think your mic changed a little bit. I hear it's like a windy.
+
+
+João (14:20)
+No? Okay, gotta put... Sorry. Sorry to interrupt. But so, I'll recap.
+
+Danilo Kreimer (14:21)
+Okay. okay. That's okay.
+
+Yeah.
+
+João (14:29)
+So this connects to something that I think you've alluded to previously, which is there are misconceptions around productization, or at least you have your issues with the term. I don't know what they are because we never spoke about this before, but I want to know. So can you tell me about this?
+
+Danilo Kreimer (14:47)
+Well, it's mostly thinking about the...
+
+I think it's mostly the idea that you can design one single service that you can then bring to market successfully from day one, from day zero. I think that when you...
+
+João (14:56)
+Mm-hmm.
+
+Danilo Kreimer (15:05)
+... when you're in the early stages of your practice, like you're a very visual guy. I like to think about, think of this like a spectrum. So on one side you have a hundred percent personalized solutions. So like for every client you do the thing, it's personalized work. And the other side you have a hundred percent
+
+João (15:22)
+Uh-huh. Uh-huh.
+
+Danilo Kreimer (15:28)
+standardized service. So it's a product. It's a product.
+
+João (15:30)
+Mm-hmm.
+
+Danilo Kreimer (15:36)
+Neither work When you're in the early stages the the 100 % personalized solution they You... you can't get the practice off the ground. Okay, but the thing is You have no boundaries in terms of scope of work. So you end up doing different things to different clients, right and Yes
+
+João (15:49)
+Mm-hmm.
+
+
+It's all based on referrals at that stage, right? People that know you and like they vibe with you, yeah.
+
+Danilo Kreimer (16:04)
+Based on referrals, yeah, based on referrals, but I mean, you're doing different things with organizations of different sizes. So like it's very difficult for you to guarantee results or to deliver kind of reliable results to clients. And not only that, but like everything takes so much time. And especially in the early stage when...
+
+João (16:14)
+Mm-hmm.
+
+Mm-hmm. Mm-hmm.
+
+Danilo Kreimer (16:25)
+... you're by yourself or you have a partner or you have an assistant, like you don't have a large team to count on. So you're a delivery, you're very active in delivery. And I saw countless, I saw many, many times this happens. So you tap into your existing network, referrals, existing relationships, you find your first three or four projects, engagements.
+
+And then you can't do anything else. Like with three or four engagements, they are completely different. You have no streamlined processes. You're doing everything. You're reinventing the wheel every time.
+
+João (16:57)
+Mm-hmm.
+
+
+Danilo Kreimer (17:07)
+You get stuck. Like that's not sustainable at all. You end up kind of working with these engagements and you often need to deliver some of them until the end to then kind of light up marketing again so you have the whole feast and famine problem where like marketing consistency. So that's not good.
+
+João (17:09)
+Mm-hmm.
+
+Danilo Kreimer (17:29)
+And the other side of the spectrum, course, like a product or a standardized service and the book you mentioned by Aisha, she also talks about it, it's notoriously difficult. The problem is risk because the less feedback you have from the markets, the higher the chance that whatever you're putting together, you will see no demand from your offer... in terms of messaging, also marketing material, it doesn't resonate. So it becomes a pushing exercise, say, like a convincing exercise.
+
+João (17:57)
+Yeah, yeah, yeah.
+
+Which is what a lot of consultants don't like to do because they feel it's uncomfortable, right? And they have like this, like they, when they say they add me or me at some time ago, I'm changing, but this is how I started. Yeah, sales, but if I'm really good, maybe I don't need to learn sales. I can just learn the tech skills or like being very good at what I do. But if you don't get the feedback from the market and you build something...with a lot of risk as you described and then you'll find yourself in that position again which is now I need to push this because there's a lot of effort behind it and I'm pushing something I don't believe as much is really a bad place to be.
+
+Danilo Kreimer (18:38)
+Yeah, yeah. And again, it's very tricky when you're kind of... trying to bring a new service to market. There's a lot of uncertainty. Psychologically speaking, like you have so many doubts. I think, what I saw by working with other founders, is that it's very useful to kind of break this problem down, think...
+
+João (18:50)
+Mm-hmm.
+
+
+Danilo Kreimer (19:08)
+... you can think about this like supply and demand.
+
+João (19:11)
+Okay.
+
+Danilo Kreimer (19:13)
+So the demand part, is why most early stage consultancies build services that fail to gain traction. So are only two reasons. So it's either there's not enough market pool, which means you're building something no one wants, or...
+
+João (19:32)
+Mm-hmm.
+
+Danilo Kreimer (19:38)
+... you don't have a strong presence in the mind of your buyers. So people do not remember you or your firm when they move into the market. So, for example, João, your practice. You help consultancies design workshops. So, is there...
+
+João (19:46)
+Mm-hmm.
+
+Danilo Kreimer (20:03)
+... market pool. So is it something that people want, that consultancies want? I think it is. So you have that. The other part of the puzzle here on the demand side is making sure that whenever people are looking to design a workshop, remember, okay, João is the guy to do this. So you need both of these things.
+
+João (20:17)
+Which is like 3 % at any time,
+
+Mm-hmm.
+
+Danilo Kreimer (20:30)
+This is the demand part. So if you don't have the demand side set up, it doesn't really matter what you sell, what your service is. It doesn't really matter. So it's really interesting because when you think about the supply side, so, what exactly my service is? You don't need the service. to go to market, oftentimes, when you're selling your expertise. Because if someone understands what's the problem you're solving and for whom...
+
+João (20:59)
+Mm-hmm.
+
+Danilo Kreimer (21:00)
+... and have you as the go-to option whenever they have this problem, they will reach out and ask, how can you help me? So you don't need any service to create interest, to create demand. You don't need any service at all. This is a separate thing. So once you have this, okay, let's think about the elephant in the room.
+
+João (21:05)
+Mm-hmm.
+
+Yeah. Yeah.
+
+Mm-hmm
+
+Danilo Kreimer (21:26)
+which is how do you create a service that solves this problem. Then I highly recommend you to away from both sides of the spectrum. So not personalized solutions, not like a product, and deliver a minimum viable service, which is kind of a set of solutions. Like there's a minimum structure. So this is how typically I work. These are some things that we can add to the work.
+
+João (21:40)
+Yes.
+
+Danilo Kreimer (21:58)
+These are some things that we don't do. So there's customization boundaries. These are things that we don't do. And then you have a conversation.
+
+João (22:00)
+Mm-hmm. Mm-hmm.
+
+And you do that from a position of strength as well, right? I feel that oftentimes when we see companies or people presenting themselves as, we are your trusted partners for everything you need, for every company. This really comes across, I feel, as a very anxious position to be in. Like, please pick me, please pick me, I really need the work.
+
+
+João (22:30)
+And I'm not judging the morality of that. It's just like the effectiveness of that, right? And then you get all sorts of weird engagements and weird clients. it's maybe a phase at some point, but it's a phase that you can really shorten because it's not a good place to be. another thing that I think we are nearing the end, but there's an aspect here that I really wanted to touch on that I think we've been...dancing around this world without noticing, I feel, which is the whole idea of patterns, right? Both the good patterns, like what do the successful firms have in common, and also like the failure modes or the bad patterns. We spoke a little bit about the bad patterns, like they focus too much on creating something before validating or reducing the risk, or they go onto the extremes, it's super customized, zero customized, you know.
+
+I think we have a good understanding of how things go wrong. In your experience, like working with different consultants and people making this transition into consulting, do you have like a notion of the top three green flags that are maybe not very obvious? So for instance, if you meet a client or a prospect client and they're really on top of their game, you can see that they are organized, okay, that's...
+
+...that makes sense, that will be helpful. But are there things that are a little bit sneaker that are a little bit more subtle, that are green flags for you?
+
+Danilo Kreimer (23:58)
+whenever I'm talking to a consultancy founder?
+
+João (24:00)
+Yeah, yeah.
+
+Danilo Kreimer (24:03)
+Yes. So of course we see founders with different personalities as well. So it's tricky to look at behavior. But in terms of mindset, for example, what I see is that
+founders who are action oriented...
+
+João (24:25)
+Mm-hmm.
+
+Danilo Kreimer (24:27)
+...The more the better. Let's see. You need to create momentum. You need to keep doing stuff. You need to keep delivering. So the faster the founder can pass from thought to action, the better. And this is something that we incentivize as well with our clients. So we have...
+
+João (24:30)
+Mm-hmm.
+
+
+Danilo Kreimer (24:48)
+... Also, in our membership service, for example, we have this new pricing model. I don't even know if you know this. It's earn as you grow. So every week, we give our recommendations. We give two or three recommendations for clients, and these can be capabilities to build.
+
+João (24:57)
+I don't know.
+
+
+Danilo Kreimer (25:12)
+...activities to perform.
+
+João (25:14)
+Mm-hmm.
+
+Danilo Kreimer (25:15)
+... the more they follow those recommendations, the more they put those things into practice, the more they earn, which means we actually pay them in the form of a reduction of the membership fee. So if I'm working together with a consultancy and they're actually doing and implementing the recommendations that we are agreeing with,
+
+João (25:27)
+Mm-hmm.
+
+Danilo Kreimer (25:45)
+Their membership fee is practically zero.
+
+João (25:50)
+This is really interesting. I should have asked this earlier in the podcast. I think we'll need a second session at some point. Okay, okay. I can see the incentives there, yeah.
+
+Danilo Kreimer (25:56)
+So what we really want is them to grow. And what we really want is them to put those things into practice, like having an execution-first approach. So why not pay them or reward them to do that? So this is something that we started to do. And it's going really well because at the end, it acts like some sort of a filter.
+
+João (26:01)
+For sure. Yeah, yeah.
+
+Danilo Kreimer (26:23)
+I want to keep working with founders who want to make this work. Because everyone who's listening, if you do consulting, you know how frustrating it is when you put together the work, you work together and you see that there's no drive or it's very difficult to help the client to put those recommendations into practice.
+
+João (26:27)
+For sure. Yes.
+
+Danilo Kreimer (26:44)
+So this is one thing.
+
+João (26:46)
+That's really fascinating. I genuinely wish I had asked sooner. But that is true. I think you are in such an interesting position because you are a consultant and you serve consultants, right? So like the pain points or the frustrations you might feel oftentimes are very similar to the ones they do, but with an added perception layer because you see a lot of that. So yeah, the frustration of... not getting people to act on advice or suggestions or strategies that you've seen work before. It's very real, that's frustration for sure.
+
+Danilo Kreimer (27:18)
+Yeah, so that's one thing. I don't know if we have time for other things, but... One more. Yeah, so another thing that I'm often, like for me would be a green light is... So more related to the psychology or to the mindset of founders would be intentionality. So how intentional...
+
+João (27:23)
+Just one more, okay, we make it a little bit longer, but it's good.
+
+Danilo Kreimer (27:41)
+... you are about the kind of business that you're building. And this is, it's tricky. It's a difficult thing to assess because it requires you to...
+
+João (27:48)
+That's a difficult thing to assess.
+
+Danilo Kreimer (27:56)
+...really understand what's important, what matters for me in the long term, what's really important, what do I really want to work on. And it's difficult because then, and the way I think about it, the only way, like, and it's a difficult question, what's worth working on?
+
+João (28:01)
+Mm-hmm.
+
+Danilo Kreimer (28:14)
+What's really important? How do I identify important work? For me, the best way to answer this question is thinking, will...whatever I'm working now matter in a couple of years. If it's really important for like my next meeting or if it's really important for this week or like it's a small thing for a client, chances are it's not that important. So I often kind of...
+
+João (28:30)
+Mm-hmm. Mm-hmm.
+
+
+Danilo Kreimer (28:50)
+...push founders or incentivize founders to at least once a week, review their week, but also zoom out, revisit, okay, what's the vision? And it might sound very self-helpy, but it's really important. What's the business? And we have this thing which we call the business concept. So it's a summary of...
+
+João (29:07)
+But it works.
+
+Danilo Kreimer (29:17)
+...an objective concrete summary of the practice that you want to build. So how many clients do I want to be working with? What's my revenue? How much money do I want to bring home? How many hours a week do I want to work with? What's the size of the team that I want to build? Like all of these things, it's objective. So we have these numbers and there's a clear vision here. And stopping once in a while and...
+
+João (29:27)
+Mm-hmm.
+
+Danilo Kreimer (29:44)
+...like when you're pursuing opportunities or when you're considering whether to take on a project or not taking a refer or not looking at this and say okay will this take me closer to this idea or like this project this engagement like i'm making some money but it will actually slow me down like...
+
+João (29:58)
+Mm-hmm, mm-hmm. Yeah, yep.
+
+Danilo Kreimer (30:11)
+... it will actually slow me down, it will not be helpful for me to build this kind of practice that I want to build. Like, work with these clients in this way, respecting those limitations that I put on. So, like, be intentional about what you do, what clients you take on, how you manage your time. And we are all learning. No one is perfect.
+
+João (30:32)
+For sure. Yeah, for sure, for sure.
+
+Danilo Kreimer (30:33)
+But I highly recommend everyone who's listening to kind of stop. Kind of zoom out, zoom in, zoom out, zoom in. Don't be afraid to put ideas into paper. What do I really want here? Why did I even start at this? What kind of projects do I want to sell? Not only how many clients I want to bring in, not how much money I want to make, but from which clients?
+
+João (30:57)
+Mm-hmm.
+
+Danilo Kreimer (31:05)
+This is key.
+
+João (31:07)
+I completely agree and I get it when you say, this feels a little bit self-helpy because sometimes, especially in this very intellectual crowd, people just want like the system and so on. it's, like, this is a thing I use (holds paper forming front of camera). I have one for each day. Every day I start a new one, I read this thing. And this is kind of a new system for me. I've been doing this only for a couple of weeks.
+
+But I can see that this brings a level of intentionality and awareness of like, what am I doing? Because especially at the start, when you are like working on your own or your team is small, it's very easy to get pulled out from many directions. And I do this and I totally agree with you. Like paper is different than just reading things on the screen, that's for sure. And repetitive...reflection is really key and we are not in the business of selling I don't know...pipe fittings right? We are selling what we know, the way we work, the way we create relationships with people. So that's really important. So let me just do a quick recap because I think we touched on many, many things. So at the start, we entered this conversation from a perspective of people that are starting their own practices, right? And there's a few things that they might do wrong or it's just they don't need to do... to stay in that zone for so long. There's bad habits that we sometimes bring from our previous lives before we were consultants, right? And then we started to move towards dispelling some myths around productization, like the extremes, like, you cannot productize at all, or you need to productize 100%. We spoke about poor advice that comes from other kind of things, like SaaS marketing is different from services marketing.
+
+And then from there we started to explore also patterns, both good patterns and bad patterns on what signals can you get from a new customer that they will be a good fit. Across all of this, there was a common theme which was, yes, context is very important, right? And context is a broad thing. Context means your market, your objectives, the people you serve for sure. But it also means like who you are, how you think, how you function, what do you value, you know? And as consultants, we exist in kind of this flexible space in between the technical and the almost the spiritual, like the emotional for sure. And there's, it's impossible to do this work just based on checklists and also...
+
+...just based on vibes. We need to find a balance between vibes and checklists and work with people. So, I mean, this went a little bit over scheduled because it was very good. And I really thank you for being here. And I'd like to ask you, where can people find more of your work then?
+
+Danilo Kreimer (34:06)
+BoutiqueConsultingClub.com It's the official website, connect with me on LinkedIn. But yeah, I would say website and LinkedIn, best places.
+
+João (34:18)
+I'll put the links in the show notes and I must recommend the newsletter. That's how I got to find your work. just yesterday I was cleaning out my inbox. I get so many newsletters and there's a few that always survive these calling periods and yours always survives. There's some newsletters I get for three months and then I leave, but there's some others I'm like, no, no, I need to keep getting this stuff. So I really, really recommend it. It's very good. Very actionable and very thoughtful.
+
+Danilo Kreimer (34:46)
+Appreciate it.
+
+João (34:47)
+Yeah, no, you can see, we can see the work that goes into it. So that's really good. So thank you so much, Dan. It was really a pleasure to have you here and maybe we'll do this some other time and explore a little bit more of like interesting tricks, not tricks, but strategies you've found to get clients to really, you know, do the things we know that will help them. This is really a pleasure.
+
+Danilo Kreimer (35:10)
+Yeah,
+
+I hope you... I'll be waiting for the season 2. And I'm ready to come back if invited so we can expand on the conversation.
+
+João (35:15)
+Yeah.
+
+You are invited.
+
