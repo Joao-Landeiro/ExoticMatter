@@ -11,12 +11,15 @@
     --light-secondary-rgb: 187, 187, 187;
     --accent: #613AA0;
     --accent-rgb: 97, 58, 160;
+    --to-be-released-color: #999966;
+    --to-be-released-color-rgb: 153, 153, 102;
 
     --color-background: var(--dark-primary);
     --color-surface: var(--dark-primary);
     --color-text: var(--light-primary);
     --color-text-secondary: var(--light-secondary);
     --color-accent: var(--accent);
+    --color-to-be-released: var(--to-be-released-color);
 
     --bg-primary: var(--color-background);
     --bg-secondary: var(--color-surface);
@@ -129,7 +132,7 @@ body {
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
 }
 
 h1, h2 {
@@ -138,8 +141,9 @@ h1, h2 {
 
 .wrapper-app {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     min-height: 100vh;
     padding-top: 2rem;
 }
@@ -222,6 +226,11 @@ h1, h2 {
 .form-space-episode-links,
 .form-space-guest-name,
 .form-space-host-details {
+}
+
+.form-space-guests-details p {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
 }
 
 .form-space-intro-title {
@@ -366,16 +375,167 @@ a {
 }
 
 .footer {
-    position: fixed;
+    position: relative;
     width: 100%;
-    text-align: center;
-    z-index: var(--z-overlay);
     background-color: var(--bg-primary);
     border-top: var(--border-default);
+    margin-top: 4rem;
+    margin-bottom: 0;
+    z-index: var(--z-overlay);
 }
 
-.footer p {
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-intro-title {
+    display: grid;
+    place-items: end start;
+    aspect-ratio: 1;
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+    container-type: inline-size;
+    width: 120px;
+    height: 120px;
+    border: var(--border-default);
+    background: rgba(var(--dark-primary-rgb), 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.footer-intro-title h1 {
+    font-size: 35cqw;
+    text-align: left;
+    line-height: 0.85;
     margin: 0;
+    padding-left: 0;
+    color: var(--text-primary);
+}
+
+.footer-logo-square {
+    border: 2px solid var(--light-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: fit-content;
+    min-height: 4rem;
+}
+
+.footer-logo-text {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-large);
+    color: var(--accent);
+    margin: 0;
+    text-align: left;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.footer-branding .footer-title h3 {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-large);
+    color: var(--accent);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.footer-tagline p {
+    color: var(--light-secondary);
+    margin: 0;
+    font-size: var(--font-size-small);
+}
+
+.footer-nav-title,
+.footer-connect-title,
+.footer-status-title {
+    margin-bottom: 0.5rem;
+}
+
+.footer-status-title {
+    margin-bottom: 0.5rem;
+}
+
+.footer-status-title .text-label {
+    color: #999966;
+}
+
+.footer p.text-label {
+    padding-left: 0;
+}
+
+.footer-nav-links,
+.footer-connect-links,
+.footer-status-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-link {
+    color: var(--light-primary);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    text-transform: none;
+    letter-spacing: normal;
+    transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease;
+    padding: 0.25rem 0;
+}
+
+.footer-link:hover {
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
+}
+
+.footer-copyright {
+    border-top: none;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    background-color: transparent;
+}
+
+.footer-copyright p {
+    margin: 0;
+    color: var(--light-secondary);
+    font-size: var(--font-size-small);
+}
+
+/* Responsive footer adjustments */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    
+    .footer-nav-links,
+    .footer-connect-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .footer-bottom {
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
 }
 
 .space-element {
@@ -453,6 +613,11 @@ a {
     border: var(--border-inner);
 }
 
+.form-space-guests-details {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
 .guests-grid,
 .guests-grid-container {
     width: 100%;
@@ -461,11 +626,9 @@ a {
 }
 
 .guests-grid {
-    perspective: 1000px;
 }
 
 .guests-grid-container {
-    transform-style: preserve-3d;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     column-gap: 1rem;
@@ -492,7 +655,6 @@ a {
     min-width: 200px;
     transition: transform var(--duration-normal) var(--timing-function);
     transform-origin: top center;
-    will-change: transform;
 }
 
 .guest-box-link {
@@ -523,7 +685,6 @@ a {
     }
 
     .guests-grid {
-        perspective: 1000px;
         overflow: visible;
         position: relative;
         padding: 0;
@@ -534,8 +695,6 @@ a {
         display: block;
         padding: 4rem 0 1rem 0;
         position: relative;
-        transform-style: preserve-3d;
-        transform: translateZ(0);
         width: min(500px, calc(100% - 4rem));
         min-height: auto;
         margin: 0 auto;
@@ -545,6 +704,7 @@ a {
         position: relative;
         width: 100%;
         left: unset;
+        margin-bottom: 2rem;
     }
     .sub-wrapper-guest-box:first-child {
     }
@@ -561,20 +721,11 @@ a {
         transform: scale(1);
     }
 
-    .guests-grid-container > a:nth-child(1) .sub-wrapper-guest-box { --offset: 0rem; --scale: 0.56; z-index: 1; }
-    .guests-grid-container > a:nth-child(2) .sub-wrapper-guest-box { --offset: 3.0rem; --scale: 0.59; z-index: 2; }
-    .guests-grid-container > a:nth-child(3) .sub-wrapper-guest-box { --offset: 6.0rem; --scale: 0.62; z-index: 3; }
-    .guests-grid-container > a:nth-child(4) .sub-wrapper-guest-box { --offset: 9.0rem; --scale: 0.65; z-index: 4; }
-    .guests-grid-container > a:nth-child(5) .sub-wrapper-guest-box { --offset: 12.0rem; --scale: 0.68; z-index: 5; }
-    .guests-grid-container > a:nth-child(6) .sub-wrapper-guest-box { --offset: 15.0rem; --scale: 0.71; z-index: 6; }
-    .guests-grid-container > a:nth-child(7) .sub-wrapper-guest-box { --offset: 18.0rem; --scale: 0.74; z-index: 7; }
-    .guests-grid-container > a:nth-child(8) .sub-wrapper-guest-box { --offset: 21.0rem; --scale: 0.77; z-index: 8; }
-    .guests-grid-container > a:nth-child(9) .sub-wrapper-guest-box { --offset: 24.0rem; --scale: 0.80; z-index: 9; }
+
 
     .guest-box-link {
-        position: absolute;
+        display: block;
         width: 100%;
-        height: 100%;
         pointer-events: auto;
     }
 
@@ -620,6 +771,45 @@ a {
     .spotify-container iframe {
         width: 100%;
         height: 200px;
+        display: block;
+    }
+
+    /* Mobile transcript improvements */
+    .transcript-container {
+        padding: 1.75rem;
+        border-radius: 6px;
+    }
+
+    .transcript-container p {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .transcript-meta {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.4rem;
+        margin-bottom: 0.4rem;
+        display: block;
+        width: fit-content;
+    }
+    
+    .transcript-container .text-body {
+        padding: 0.5rem 0;
+        padding-left: 0.75rem;
+    }
+    
+    .transcript-container p:has(.transcript-meta:contains("João")),
+    .transcript-container p:has(.transcript-meta:contains("Nick")),
+    .transcript-container p:has(.transcript-meta:contains("Spencer")),
+    .transcript-container p:has(.transcript-meta:contains("Danilo")),
+    .transcript-container p:has(.transcript-meta:contains("Florian")),
+    .transcript-container p:has(.transcript-meta:contains("Alex")),
+    .transcript-container p:has(.transcript-meta:contains("Dylan")),
+    .transcript-container p:has(.transcript-meta:contains("Patrick")),
+    .transcript-container p:has(.transcript-meta:contains("Jay")),
+    .transcript-container p:has(.transcript-meta:contains("Kurt")) {
+        padding-left: 0.75rem;
     }
 }
 
@@ -692,6 +882,7 @@ a {
 .form-space-episode-links-3 a {
     transition: background-color var(--duration-fast) ease;
     display: inline-block;
+    font-family: var(--font-primary);
 }
 
 .form-space-episode-links a:hover,
@@ -816,49 +1007,18 @@ html body .sub-wrapper-episode-theme {
     max-height: none;
 }
 
-@media screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
     .wrapper-content {
         width: 90vw;
         margin: 0 auto;
     }
-
+    
     .panel-intro {
         grid-template-columns: 1fr;
     }
-
+    
     .sub-wrapper-episode-body {
-        grid-template-columns: 2fr 1fr;
-    }
-
-    .sub-wrapper-guests-content {
         grid-template-columns: 1fr;
-    }
-
-    .guests-grid {
-        width: 100%;
-    }
-
-    .sub-wrapper-episode-meta .sub-wrapper-guest-box {
-        height: 100%;
-    }
-
-    .colored-bars-container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        min-height: 0;
-    }
-
-    .colored-bar-top,
-    .colored-bar-middle,
-    .colored-bar-bottom {
-        flex: 1;
-        height: auto;
-        min-height: 2rem;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        padding: 0 0.75rem;
     }
 }
 
@@ -959,30 +1119,85 @@ html body .sub-wrapper-episode-title {
 .form-space-resources-content {
 }
 
+/* Enhanced transcript formatting for better readability */
 .transcript-container {
-    padding: 0 2rem;
-    opacity: 0.9;
+    padding: 2.5rem;
+    opacity: 1;
+    margin: 0 auto;
+    background-color: rgba(var(--dark-primary-rgb), 0.9);
+    border-radius: 8px;
+    line-height: 1.6;
 }
 
 .transcript-container p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    padding-left: 0;
+    color: var(--light-primary);
+    position: relative;
 }
 
 .transcript-container p:last-child {
     margin-bottom: 0;
 }
 
-.transcript-container p:has(+ p:not(:contains("[João]"))) {
-    font-style: italic;
+/* Enhanced speaker name and timestamp styling */
+.transcript-meta {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    line-height: 1.2;
+    font-family: var(--font-secondary);
+    background-color: rgba(var(--accent-rgb), 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent);
 }
 
-.transcript-meta {
+/* João's specific styling - using attribute selector for better compatibility */
+.transcript-meta[data-speaker="joao"],
+.transcript-container .transcript-meta:contains("João") {
+    color: #999966 !important;
+    background-color: rgba(153, 153, 102, 0.1) !important;
+    border-left: 3px solid #999966 !important;
+}
+
+/* Improved line break handling */
+.transcript-container br {
     display: block;
-    opacity: 0.8;
+    content: "";
+    margin: 0.5rem 0;
+    line-height: 0.5rem;
+}
+
+/* Better text body formatting */
+.transcript-container .text-body {
+    padding: 0.75rem 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+    border-left: 2px solid transparent;
+    padding-left: 1rem;
+}
+
+/* Speaker differentiation - using class-based approach for better compatibility */
+.transcript-container p.joao-speaker {
+    padding-left: 1rem;
+    color: #999966 !important;
+}
+
+.transcript-container p.guest-speaker {
+    padding-left: 1rem;
 }
 
 .spotify-container {
     padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .topic-line {
@@ -1059,15 +1274,17 @@ html body .sub-wrapper-episode-title {
     visibility: hidden;
 }
 
-.footer-link {
-    color: inherit;
-    text-decoration: none;
-}
-
 .episode-link {
     text-decoration: none;
     color: var(--accent);
     padding-left: var(--text-padding-left);
+    font-family: var(--font-primary);
+    transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease;
+}
+
+.episode-link:hover {
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
 }
 
 .sub-wrapper-episode-meta {
@@ -1086,11 +1303,6 @@ html body .sub-wrapper-episode-title {
 }
 
 @media screen and (max-width: 1200px) {
-    .wrapper-content {
-        width: 90vw;
-        margin: 0 auto;
-    }
-
     .panel-intro {
         grid-template-columns: 1fr;
     }
@@ -1129,6 +1341,12 @@ html body .sub-wrapper-episode-title {
         width: 100%;
         padding: 0 0.75rem;
     }
+
+    .spotify-container iframe {
+        width: 100%;
+        height: 200px;
+        display: block;
+    }
 }
 
 .episode-player-wrapper iframe {
@@ -1140,3 +1358,315 @@ html body .sub-wrapper-episode-title {
         align-items: flex-start;
     }
 }
+
+.footer-status-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-status-links .footer-link {
+    color: #999966;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-small);
+    text-transform: none;
+    letter-spacing: normal;
+    padding: 0.25rem 0;
+    transition: none;
+}
+
+.footer-status-links .footer-link:hover {
+    background-color: transparent;
+    color: #999966;
+}
+
+/* Desktop Spotify iframe styling */
+.spotify-container iframe {
+    max-width: 624px;
+    width: 100%;
+    height: 351px;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Episode Status Styling */
+.episode-status-to-be-released .panel-episode {
+    background: rgba(var(--to-be-released-color-rgb), 0.9);
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .sub-wrapper-episode-header {
+    background: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .form-space-episode-number {
+    background: var(--color-to-be-released) !important;
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .form-space-episode-title {
+    background: var(--dark-primary) !important;
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .form-space-episode-title-label {
+    background: var(--color-to-be-released) !important;
+    border-color: var(--color-to-be-released);
+    color: var(--dark-primary) !important;
+}
+
+.episode-status-to-be-released .text-episode-number {
+    color: var(--dark-primary) !important;
+}
+
+.episode-status-to-be-released .form-space-episode-number h3 {
+    color: var(--dark-primary) !important;
+}
+
+.episode-status-to-be-released .sub-wrapper-episode-header h2,
+.episode-status-to-be-released .form-space-episode-title h2 {
+    color: var(--color-to-be-released) !important;
+}
+
+.episode-status-to-be-released .form-space-episode-summary {
+    background: var(--dark-primary);
+    color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .form-space-episode-summary .text-body,
+.episode-status-to-be-released .form-space-episode-summary p {
+    color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .sub-wrapper-episode-links {
+    background: var(--dark-primary);
+}
+
+.episode-status-to-be-released [class*="form-space-episode-links"]:not([class*="-label"]) {
+    background: var(--dark-primary);
+}
+
+.episode-status-to-be-released [class*="form-space-episode-links"][class*="-label"] {
+    background: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released [class*="form-space-episode-links"] {
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .episode-link {
+    color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .episode-link:hover {
+    background-color: var(--color-to-be-released);
+    color: var(--dark-primary);
+}
+
+.episode-status-to-be-released .form-space-episode-links a:hover,
+.episode-status-to-be-released .form-space-episode-links-1 a:hover,
+.episode-status-to-be-released .form-space-episode-links-2 a:hover,
+.episode-status-to-be-released .form-space-episode-links-3 a:hover {
+    background-color: var(--color-to-be-released);
+    color: var(--dark-primary);
+}
+
+.episode-status-to-be-released .guest-box-link {
+    color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .guest-box-link:focus {
+    outline: 2px solid var(--color-to-be-released);
+    outline-offset: 4px;
+}
+
+.episode-status-to-be-released .form-space-guest-photo,
+.episode-status-to-be-released .colored-bar-top,
+.episode-status-to-be-released .colored-bar-middle,
+.episode-status-to-be-released .colored-bar-bottom {
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .form-space-guest-photo img {
+    mix-blend-mode: multiply;
+}
+
+.episode-status-to-be-released .form-space-episode-guest h2,
+.episode-status-to-be-released .colored-bar-top .text-body,
+.episode-status-to-be-released .colored-bar-middle .text-body,
+.episode-status-to-be-released .colored-bar-bottom .text-body {
+    color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .sub-wrapper-episode-meta,
+.episode-status-to-be-released .sub-wrapper-guest-box {
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-to-be-released .episode-tab {
+    background-color: var(--color-to-be-released);
+    border-color: var(--color-to-be-released);
+    color: var(--dark-primary);
+}
+
+.episode-status-coming-soon .panel-episode {
+    background: rgba(var(--to-be-released-color-rgb), 0.9);
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon .sub-wrapper-episode-header {
+    background: var(--dark-primary);
+}
+
+.episode-status-coming-soon .form-space-episode-number {
+    background: var(--color-to-be-released) !important;
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon .form-space-episode-title {
+    background: var(--dark-primary) !important;
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon .form-space-episode-title-label {
+    background: var(--color-to-be-released) !important;
+    border-color: var(--color-to-be-released);
+    color: var(--dark-primary) !important;
+}
+
+.episode-status-coming-soon .text-episode-number {
+    color: var(--dark-primary) !important;
+}
+
+.episode-status-coming-soon .form-space-episode-number h3 {
+    color: var(--dark-primary) !important;
+}
+
+.episode-status-coming-soon .sub-wrapper-episode-header h2,
+.episode-status-coming-soon .form-space-episode-title h2 {
+    color: var(--color-to-be-released) !important;
+}
+
+.episode-status-coming-soon .form-space-episode-summary {
+    background: var(--dark-primary);
+    color: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon .form-space-episode-summary .text-body,
+.episode-status-coming-soon .form-space-episode-summary p {
+    color: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon .sub-wrapper-episode-links {
+    background: var(--dark-primary);
+}
+
+.episode-status-coming-soon [class*="form-space-episode-links"]:not([class*="-label"]) {
+    background: var(--dark-primary);
+}
+
+.episode-status-coming-soon [class*="form-space-episode-links"][class*="-label"] {
+    background: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon [class*="form-space-episode-links"] {
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon .episode-link {
+    color: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon .form-space-guest-photo,
+.episode-status-coming-soon .colored-bar-top,
+.episode-status-coming-soon .colored-bar-middle,
+.episode-status-coming-soon .colored-bar-bottom {
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon .form-space-guest-photo img {
+    mix-blend-mode: multiply;
+}
+
+.episode-status-coming-soon .form-space-episode-guest h2,
+.episode-status-coming-soon .colored-bar-top .text-body,
+.episode-status-coming-soon .colored-bar-middle .text-body,
+.episode-status-coming-soon .colored-bar-bottom .text-body {
+    color: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon .sub-wrapper-episode-meta,
+.episode-status-coming-soon .sub-wrapper-guest-box {
+    border-color: var(--color-to-be-released);
+}
+
+.episode-status-coming-soon .episode-tab {
+    background-color: var(--color-to-be-released);
+    border-color: var(--color-to-be-released);
+    color: var(--dark-primary);
+}
+
+/* Guest Roster Status Styling */
+.guest-status-to-be-released {
+    background: rgba(var(--to-be-released-color-rgb), 0.9);
+    border-color: var(--color-to-be-released);
+}
+
+.guest-status-to-be-released .form-space-guest-name {
+    background: var(--color-to-be-released);
+    border-color: var(--color-to-be-released);
+}
+
+.guest-status-to-be-released .form-space-guest-name h2 {
+    color: var(--dark-primary) !important;
+}
+
+.guest-status-to-be-released .form-space-guest-photo {
+    border-color: var(--color-to-be-released);
+}
+
+.guest-status-to-be-released .form-space-guest-photo img {
+    mix-blend-mode: multiply;
+}
+
+.guest-status-to-be-released .guest-box-link {
+    color: var(--color-to-be-released);
+}
+
+.guest-status-to-be-released .guest-box-link:focus {
+    outline: 2px solid var(--color-to-be-released);
+    outline-offset: 4px;
+}
+
+.guest-status-coming-soon {
+    background: rgba(var(--to-be-released-color-rgb), 0.9);
+    border-color: var(--color-to-be-released);
+}
+
+.guest-status-coming-soon .form-space-guest-name {
+    background: var(--color-to-be-released);
+    border-color: var(--color-to-be-released);
+}
+
+.guest-status-coming-soon .form-space-guest-name h2 {
+    color: var(--dark-primary) !important;
+}
+
+.guest-status-coming-soon .form-space-guest-photo {
+    border-color: var(--color-to-be-released);
+}
+
+.guest-status-coming-soon .form-space-guest-photo img {
+    mix-blend-mode: multiply;
+}
+
+.guest-status-coming-soon .guest-box-link {
+    color: var(--color-to-be-released);
+}
+
+.guest-status-coming-soon .guest-box-link:focus {
+    outline: 2px solid var(--color-to-be-released);
+    outline-offset: 4px;
+}
+
