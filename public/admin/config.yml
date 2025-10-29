@@ -12,7 +12,7 @@ media_folder: "public/assets/images/guest-pictures"
 public_folder: "assets/images/guest-pictures"
 
 # Enable editorial workflow for drafts and scheduling
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow  # Disabled for immediate saves during development
 
 collections:
   # Episodes Collection
