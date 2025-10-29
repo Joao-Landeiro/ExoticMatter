@@ -1,0 +1,29 @@
+{
+  "season": 1,
+  "number": 10,
+  "status": "To be released",
+  "guestId": "test-guest",
+  "episodeLink": "S1E10-Test-guest",
+  "guest": {
+    "name": "Test Guest Name",
+    "image": "assets/images/guest-pictures/JoaoL.png"
+  },
+  "title": "test",
+  "links": [
+    {
+      "text": "link uno",
+      "url": "www.1.com"
+    },
+    {
+      "text": "link duo",
+      "url": "www.2.com"
+    },
+    {
+      "text": "link trio",
+      "url": "www.3.com"
+    }
+  ],
+  "id": "episode-10",
+  "description": "Very cool stuff\n\n* 1\n* 2\n* 3\n\nother less cool stuff",
+  "publishDate": "2025-10-29T16:45:00.000-03:00"
+}
