@@ -21,7 +21,7 @@ const episodesCollection = defineCollection({
       text: z.string(),
       url: z.string(),
     })).optional(),
-    shortTopics: z.array(z.string()),
+    shortTopics: z.array(z.string()).optional(),
     episodeLink: z.string().nullable().optional(),
     spotifyUrl: z.string().nullable().optional(),
     transcript: z.string().nullable().optional(),
