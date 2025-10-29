@@ -117,20 +117,3 @@ collections:
             widget: "object"
             fields:
               - {label: "Description", name: "description", widget: "text"}
-
-  # Background Elements Collection (for animation images)
-  - name: "background_elements"
-    label: "Background Elements"
-    label_singular: "Background Element"
-    folder: "public/assets/images/background-elements"
-    create: true
-    slug: "{{slug}}"
-    media_folder: ""
-    public_folder: "/assets/images/background-elements"
-    extension: "png"
-    format: "frontmatter"
-    fields:
-      - {label: "Element Name", name: "title", widget: "string", hint: "e.g., element1, element2"}
-      - {label: "Image", name: "image", widget: "image"}
-      - {label: "Description", name: "description", widget: "text", required: false, hint: "Optional description of this element"}
-
