@@ -23,37 +23,10 @@ interface Props {
 
 const { episode, processedTranscript, site } = Astro.props;
 import Panel from '~/components/Panel.astro';
+import { marked } from 'marked';
 
-// Simple markdown to HTML converter
-function markdownToHtml(markdown: string): string {
-  if (!markdown) return '';
-  
-  let html = markdown;
-  
-  // Convert markdown links [text](url) to HTML
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-  
-  // Convert **bold** to <strong>
-  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-  
-  // Convert bullet points (- item) to <ul><li>
-  html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
-  html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
-  
-  // Convert double newlines to paragraph breaks
-  html = html.split('\n\n').map(para => {
-    // Don't wrap if already wrapped in ul
-    if (para.trim().startsWith('<ul>')) return para;
-    return `<p>${para.trim()}</p>`;
-  }).join('\n');
-  
-  // Clean up any remaining single newlines within paragraphs
-  html = html.replace(/<p>([^<]*)\n([^<]*)<\/p>/g, '<p>$1<br>$2</p>');
-  
-  return html;
-}
-
-const descriptionHtml = markdownToHtml(episode.data.description);
+// Convert markdown to HTML using marked library
+const descriptionHtml = marked.parse(episode.data.description);
 ---
 
 <!-- Episode Panel -->
