@@ -9,9 +9,25 @@ import EpisodeList from '~/components/EpisodeList.astro';
 import Spacer from '~/components/Spacer.astro';
 
 const episodes = await getCollection('episodes');
-const guestsEntry = await getEntry('guests', 'guests');
-const guests = guestsEntry.data.guests;
+const allGuests = await getCollection('guests');
 const site = await getEntry('site', 'site');
+
+// Create a guest roster with episode links
+const guests = allGuests.map(guestEntry => {
+  // Find episodes where this guest appeared
+  const guestEpisodes = episodes.filter(ep => ep.data.guestId === guestEntry.id);
+  
+  // Use the first episode link (or create a default one)
+  const episodeLink = guestEpisodes.length > 0 
+    ? `/episodes/${guestEpisodes[0].data.id}` 
+    : '#';
+  
+  return {
+    name: guestEntry.data.name,
+    image: guestEntry.data.image,
+    episodeLink: episodeLink
+  };
+});
 
 ---
 <BaseLayout title={site.data.title}>

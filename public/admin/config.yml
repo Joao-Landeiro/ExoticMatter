@@ -32,6 +32,7 @@ collections:
       - {label: "Episode Number", name: "number", widget: "number", value_type: "int", min: 0}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Status", name: "status", widget: "select", options: ["released", "Published", "To be released"], default: "To be released"}
+      - {label: "Guest ID", name: "guestId", widget: "string", hint: "Guest filename without .json (e.g., 'nick-himowicz')"}
       - label: "Guest"
         name: "guest"
         widget: "object"
@@ -68,27 +69,24 @@ collections:
       - {label: "Transcript (HTML)", name: "transcript", widget: "text", required: false, hint: "Full transcript with HTML formatting"}
       - {label: "Publish Date", name: "publishDate", widget: "datetime", required: false, hint: "Schedule when this episode should be published"}
 
-  # Guests Collection
+  # Guests Collection - Each guest is a separate file
   - name: "guests"
-    label: "Guests Database"
-    files:
-      - label: "All Guests"
-        name: "guests"
-        file: "src/content/guests/guests.json"
-        extension: "json"
-        format: "json"
-        fields:
-          - label: "Guests"
-            name: "guests"
-            widget: "list"
-            fields:
-              - {label: "Guest ID", name: "id", widget: "string"}
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Season", name: "season", widget: "number", value_type: "int"}
-              - {label: "Image", name: "image", widget: "image", media_folder: "/public/assets/images/guest-pictures", public_folder: "assets/images/guest-pictures"}
-              - {label: "Episode Number", name: "episodeNumber", widget: "number", value_type: "int"}
-              - {label: "Episode ID", name: "episodeId", widget: "string"}
-              - {label: "Episode Link", name: "episodeLink", widget: "string"}
+    label: "Guests"
+    label_singular: "Guest"
+    folder: "src/content/guests"
+    create: true
+    slug: "{{fields.name | slugify}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Image", name: "image", widget: "image", media_folder: "/public/assets/images/guest-pictures", public_folder: "assets/images/guest-pictures"}
+      - {label: "Bio", name: "bio", widget: "text", required: false, hint: "Short biography of the guest"}
+      - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}
+      - {label: "Website URL", name: "website", widget: "string", required: false}
+      - {label: "Twitter URL", name: "twitter", widget: "string", required: false}
 
   # Site Settings Collection
   - name: "site"

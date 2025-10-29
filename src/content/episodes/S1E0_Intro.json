@@ -4,6 +4,7 @@
   "number": 0,
   "title": "Welcome to Exotic Matter",
   "status": "released",
+  "guestId": "joao-landeiro",
   "guest": {
     "name": "João Landeiro",
     "image": "assets/images/guest-pictures/JoaoL.png",
