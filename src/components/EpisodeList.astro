@@ -5,22 +5,23 @@ interface Props {
   episodes: {
     data: {
       id: string;
-      status: string;
+      season: number;
       number: number;
       title: string;
-      topics: string[];
-      summary: {
-        description: string;
-        guest: string;
-      };
-      links: { url: string; text: string }[];
+      status: string;
+      guestId: string;
       guest: {
         name: string;
         image: string;
+        linkedin?: string;
+        website?: string;
       };
+      description: string;
+      links?: { text: string; url: string }[];
       shortTopics: string[];
-      spotifyUrl: string;
-      transcript: string;
+      episodeLink?: string | null;
+      spotifyUrl?: string | null;
+      transcript?: string | null;
     };
   }[];
 }
