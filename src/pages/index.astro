@@ -1,0 +1,143 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Guest from '~/components/Guest.astro';
+import Episode from '~/components/Episode.astro';
+import Panel from '~/components/Panel.astro';
+import GuestList from '~/components/GuestList.astro';
+import EpisodeList from '~/components/EpisodeList.astro';
+import Spacer from '~/components/Spacer.astro';
+
+const episodes = await getCollection('episodes');
+const guestsEntry = await getEntry('guests', 'guests');
+const guests = guestsEntry.data.guests;
+const site = await getEntry('site', 'site');
+
+---
+<BaseLayout title={site.data.title}>
+    <Panel panelClass="panel-intro">
+        <div class="form-space-intro-title form-space" data-section="intro" data-type="title">
+            <h1 class="text-heading-primary text-center">Exotic<br>Matter</h1>
+        </div>
+        <div class="sub-wrapper-intro-content">
+            <div class="sub-wrapper-intro-observation">
+                <div class="form-space-intro-observation-label form-space text-label" data-type="label" data-section="intro">
+                    Observation:
+                </div>
+                <div class="form-space-intro-observation form-space" data-section="intro" data-type="content">
+                    <h2 class="text-heading-primary" set:html={site.data.intro.observation}></h2>
+                </div>
+            </div>
+            <div class="sub-wrapper-intro-hypothesis">
+                <div class="form-space-intro-hypothesis-label form-space text-label" data-type="label" data-section="intro">
+                    Hypothesis:
+                </div>
+                <div class="form-space-intro-hypothesis form-space" data-section="intro" data-type="content">
+                    <h2 class="text-heading-primary" set:html={site.data.intro.hypothesis}></h2>
+                </div>
+            </div>
+            <div class="sub-wrapper-intro-method">
+                <div class="form-space-intro-method-label form-space text-label" data-type="label" data-section="intro">
+                    Methodology:
+                </div>
+                <div class="form-space-intro-method form-space" data-section="intro" data-type="content">
+                    <h2 class="text-heading-primary" set:html={site.data.intro.methodology}></h2>
+                </div>
+            </div>
+        </div>
+    </Panel>
+    <Panel panelClass="panel-guests">
+        <GuestList guests={guests} site={site.data} />
+    </Panel>
+    <EpisodeList episodes={episodes} />
+    <Spacer />
+</BaseLayout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Space animation script for landing page
+        const container = document.querySelector('.space-background');
+        if (container) {
+            const totalElements = 18;
+            let activeElements = 0;
+
+            function getRandomValue(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            function createSpaceElement() {
+                const element = document.createElement('img');
+                const elementNumber = Math.floor(Math.random() * totalElements) + 1;
+                element.src = `/assets/images/background-elements/element${elementNumber}.png`;
+                element.className = 'space-element';
+
+                // Random angle for direction (in radians)
+                const angle = Math.random() * Math.PI * 2;
+                // Random distance to travel (viewport diagonal)
+                const distance = Math.max(window.innerWidth, window.innerHeight) * 1.5;
+                // Calculate end position
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                // Random rotation between -180 and 180 degrees
+                const rotation = getRandomValue(-180, 180);
+                // Random duration between 6 and 8 seconds (slower travel)
+                const duration = getRandomValue(6000, 8000);
+
+                element.style.setProperty('--tx', `${tx}px`);
+                element.style.setProperty('--ty', `${ty}px`);
+                element.style.setProperty('--rotation', `${rotation}deg`);
+                element.style.animation = `moveOutward ${duration}ms cubic-bezier(0.34, 0.13, 0.71, 0.95) forwards`;
+
+                container.appendChild(element);
+                activeElements++;
+
+                element.addEventListener('animationend', () => {
+                    element.remove();
+                    activeElements--;
+                });
+            }
+
+            function createSpaceDust() {
+                const dust = document.createElement('div');
+                dust.className = 'space-dust';
+
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.max(window.innerWidth, window.innerHeight) * 1.5;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                const duration = getRandomValue(4000, 6000); // Dust moves faster than elements
+
+                dust.style.setProperty('--tx', `${tx}px`);
+                dust.style.setProperty('--ty', `${ty}px`);
+                dust.style.animation = `moveOutwardDust ${duration}ms cubic-bezier(0.34, 0.13, 0.71, 0.95) forwards`;
+
+                container.appendChild(dust);
+
+                dust.addEventListener('animationend', () => {
+                    dust.remove();
+                });
+            }
+
+            // Create new element every 200-300ms
+            function spawnElements() {
+                createSpaceElement();
+                const nextSpawn = getRandomValue(200, 300);
+                setTimeout(spawnElements, nextSpawn);
+            }
+
+            // Create new dust particles every 20-40ms (much more frequent)
+            function spawnDust() {
+                // Create multiple dust particles per spawn
+                for(let i = 0; i < 3; i++) {
+                    createSpaceDust();
+                }
+                const nextSpawn = getRandomValue(20, 40);
+                setTimeout(spawnDust, nextSpawn);
+            }
+
+            // Start spawning both elements and dust
+            spawnElements();
+            spawnDust();
+        }
+    });
+</script>
