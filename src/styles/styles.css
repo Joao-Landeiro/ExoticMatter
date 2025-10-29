@@ -394,6 +394,7 @@ a {
 /* Wrapper content uses fluid grid - no breakpoint needed */
 
 .panel-spotify {
+    grid-column: 1 / -1;
     backdrop-filter: blur(10px);
 }
 
@@ -498,6 +499,7 @@ a {
 }
 
 .panel-episode {
+    grid-column: 1 / -1;
     display: grid;
     grid-template-columns: subgrid;
     grid-template-rows: auto 1fr;
@@ -593,6 +595,7 @@ a {
     color: var(--text-primary);
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 1rem;
 }
 
 .episode-description p {
@@ -972,6 +975,7 @@ a {
 
 .panel-transcript,
 .panel-resources {
+    grid-column: 1 / -1;
     background-color: transparent;
 }
 
