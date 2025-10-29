@@ -32,36 +32,31 @@ if (processedTranscript) {
     <div class="sticky-topbar">
         <a href="/">Go back to Exotic Matter</a>
     </div>
-    <div class="wrapper-app">
-        <div class="space-background"></div>
-        <div class="wrapper-content">
-            <Episode episode={episode} processedTranscript={processedTranscript} site={site.data} />
+    <Episode episode={episode} processedTranscript={processedTranscript} site={site.data} />
 
-            {episode.data.spotifyUrl && (
-                <Panel panelClass="panel-spotify">
-                    <div class="form-space-spotify-title form-space text-label" data-type="label" data-section="spotify">
-                        Listen:
-                    </div>
-                    <div class="spotify-container">
-                        <iframe style="border-radius:12px" src={episode.data.spotifyUrl} width="624" height="351" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    </div>
-                </Panel>
-            )}
-            
-            {episode.data.transcript && (
-                <Panel panelClass="panel-transcript">
-                    <div class="form-space-transcript-title form-space text-label" data-type="label" data-section="transcript">
-                        Transcript:
-                    </div>
-                    <div class="transcript-container">
-                        <div class="form-space-transcript-content form-space" data-section="transcript" data-type="content" set:html={processedTranscript}>
-                        </div>
-                    </div>
-                </Panel>
-            )}
-            <Spacer />
-        </div>
-    </div>
+    {episode.data.spotifyUrl && (
+        <Panel panelClass="panel-spotify">
+            <div class="form-space-spotify-title form-space text-label" data-type="label" data-section="spotify">
+                Listen:
+            </div>
+            <div class="spotify-container">
+                <iframe style="border-radius:12px" src={episode.data.spotifyUrl} width="624" height="351" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </Panel>
+    )}
+    
+    {episode.data.transcript && (
+        <Panel panelClass="panel-transcript">
+            <div class="form-space-transcript-title form-space text-label" data-type="label" data-section="transcript">
+                Transcript:
+            </div>
+            <div class="transcript-container">
+                <div class="form-space-transcript-content form-space" data-section="transcript" data-type="content" set:html={processedTranscript}>
+                </div>
+            </div>
+        </Panel>
+    )}
+    <Spacer />
 </BaseLayout>
 
 <style>
