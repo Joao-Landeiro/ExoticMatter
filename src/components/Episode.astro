@@ -26,6 +26,10 @@ import { getEntry } from 'astro:content';
 // Fetch guest data using guestId reference
 const guest = await getEntry('guests', episode.data.guestId);
 
+if (!guest) {
+  throw new Error(`Guest not found: ${episode.data.guestId}. Check that the guestId matches the guest filename (lowercase slugified).`);
+}
+
 // Convert markdown to HTML using marked library
 const descriptionHtml = marked.parse(episode.data.description);
 ---

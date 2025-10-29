@@ -18,6 +18,10 @@ const { episode } = Astro.props;
 const site = await getEntry('site', 'site');
 const guest = await getEntry('guests', episode.data.guestId);
 
+if (!guest) {
+  throw new Error(`Guest not found: ${episode.data.guestId}. Check that the guestId matches the guest filename (lowercase slugified).`);
+}
+
 // Process transcript HTML to add speaker-line class
 let processedTranscript = episode.data.transcript;
 if (processedTranscript) {
