@@ -5,5 +5,9 @@
   "id": "episode-10",
   "number": 10,
   "title": "test title",
+  "guest": {
+    "image": "assets/images/guest-pictures/DaniloK.png",
+    "name": "teste guest name in the episode"
+  },
   "description": "description"
 }

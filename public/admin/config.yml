@@ -32,15 +32,14 @@ collections:
       - {label: "Episode Number", name: "number", widget: "number", value_type: "int", min: 0}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Status", name: "status", widget: "select", options: ["released", "Published", "To be released"], default: "To be released"}
-      - {label: "Guest ID", name: "guestId", widget: "string", hint: "Guest filename without .json (e.g., 'nick-himowicz')"}
       - label: "Guest"
-        name: "guest"
-        widget: "object"
-        fields:
-          - {label: "Name", name: "name", widget: "string"}
-          - {label: "Image", name: "image", widget: "image", media_folder: "/public/assets/images/guest-pictures", public_folder: "assets/images/guest-pictures"}
-          - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}
-          - {label: "Website URL", name: "website", widget: "string", required: false}
+        name: "guestId"
+        widget: "relation"
+        collection: "guests"
+        search_fields: ["name"]
+        value_field: "{{slug}}"
+        display_fields: ["name"]
+        hint: "Select the guest for this episode"
       - {label: "Episode Description", name: "description", widget: "markdown", hint: "Full episode description with topics and guest bio (supports markdown formatting)"}
       - label: "Links"
         name: "links"

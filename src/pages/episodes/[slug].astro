@@ -16,6 +16,7 @@ export async function getStaticPaths() {
 
 const { episode } = Astro.props;
 const site = await getEntry('site', 'site');
+const guest = await getEntry('guests', episode.data.guestId);
 
 // Process transcript HTML to add speaker-line class
 let processedTranscript = episode.data.transcript;
@@ -23,7 +24,7 @@ if (processedTranscript) {
     processedTranscript = processedTranscript.replace(/<p class="text-body">(?= <span class="transcript-meta">)/g, '<p class="text-body speaker-line">');
 }
 ---
-<BaseLayout title={`Episode ${episode.data.number} - ${episode.data.guest.name} - ${site.data.title}`}>
+<BaseLayout title={`Episode ${episode.data.number} - ${guest.data.name} - ${site.data.title}`}>
     <div class="sticky-topbar">
         <a href="/">Go back to Exotic Matter</a>
     </div>

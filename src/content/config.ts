@@ -10,12 +10,6 @@ const episodesCollection = defineCollection({
     title: z.string(),
     status: z.string(),
     guestId: z.string(), // Reference to guest file (e.g., "nick-himowicz")
-    guest: z.object({
-      name: z.string(),
-      image: z.string(),
-      linkedin: z.string().optional(),
-      website: z.string().optional(),
-    }),
     description: z.string(), // Single markdown field combining description, topics, and guest bio
     links: z.array(z.object({
       text: z.string(),

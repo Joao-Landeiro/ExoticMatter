@@ -6,12 +6,9 @@ interface Props {
       status: string;
       number: number;
       title: string;
+      guestId: string;
       description: string; // Markdown description
       links?: { url: string; text: string }[];
-      guest: {
-        name: string;
-        image: string;
-      };
       shortTopics?: string[];
     };
   };
@@ -24,6 +21,10 @@ interface Props {
 const { episode, processedTranscript, site } = Astro.props;
 import Panel from '~/components/Panel.astro';
 import { marked } from 'marked';
+import { getEntry } from 'astro:content';
+
+// Fetch guest data using guestId reference
+const guest = await getEntry('guests', episode.data.guestId);
 
 // Convert markdown to HTML using marked library
 const descriptionHtml = marked.parse(episode.data.description);
@@ -70,10 +71,10 @@ const descriptionHtml = marked.parse(episode.data.description);
             <div class="sub-wrapper-episode-meta">
                 <div class="episode-guest-box">
                     <div class="episode-guest-name form-space" data-section="episode" data-type="content">
-                        <h2>{episode.data.guest.name}</h2>
+                        <h2>{guest.data.name}</h2>
                     </div>
                     <div class="episode-guest-photo form-space" data-section="guests" data-type="photo">
-                        <img src={'/' + episode.data.guest.image} alt={episode.data.guest.name}>
+                        <img src={'/' + guest.data.image} alt={guest.data.name}>
                     </div>
                 </div>
             </div>
