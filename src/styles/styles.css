@@ -586,6 +586,21 @@ a {
     border: none;
 }
 
+/* Episode markdown description styling */
+.episode-description {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+}
+
+.episode-description p {
+    margin-bottom: 1rem;
+}
+
+.episode-description ul {
+    margin-left: 2rem;
+}
+
 .sub-wrapper-episode-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
