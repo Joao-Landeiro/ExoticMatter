@@ -12,10 +12,15 @@ const episodes = await getCollection('episodes');
 const allGuests = await getCollection('guests');
 const site = await getEntry('site', 'site');
 
-// Create a guest roster with episode links
+// Create a guest roster with episode links, sorted by first appearance
 const guests = allGuests.map(guestEntry => {
   // Find episodes where this guest appeared
   const guestEpisodes = episodes.filter(ep => ep.data.guestId === guestEntry.id);
+  
+  // Find the earliest episode number for this guest
+  const firstEpisodeNumber = guestEpisodes.length > 0 
+    ? Math.min(...guestEpisodes.map(ep => ep.data.number))
+    : 999; // Guests with no episodes go to the end
   
   // Use the first episode link (or create a default one)
   const episodeLink = guestEpisodes.length > 0 
@@ -25,9 +30,10 @@ const guests = allGuests.map(guestEntry => {
   return {
     name: guestEntry.data.name,
     image: guestEntry.data.image,
-    episodeLink: episodeLink
+    episodeLink: episodeLink,
+    firstEpisodeNumber: firstEpisodeNumber
   };
-});
+}).sort((a, b) => a.firstEpisodeNumber - b.firstEpisodeNumber);
 
 ---
 <BaseLayout title={site.data.title}>
