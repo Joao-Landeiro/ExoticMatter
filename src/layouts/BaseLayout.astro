@@ -1,0 +1,70 @@
+---
+import '~/styles/styles.css';
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=familjen-grotesk@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Netlify Identity Widget for Decap CMS authentication -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scroll enhancement (for all pages)
+            document.querySelectorAll('a[href^="#episode-"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Scroll to the target
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Add highlight effect
+                        setTimeout(() => {
+                            targetElement.style.transition = 'background-color 0.5s ease';
+                            targetElement.style.backgroundColor = 'rgba(230, 213, 184, 0.1)'; // Subtle accent color
+                            
+                            // Reset after animation
+                            setTimeout(() => {
+                                targetElement.style.backgroundColor = '';
+                                setTimeout(() => {
+                                    targetElement.style.transition = '';
+                                }, 500);
+                            }, 1000);
+                        }, 500); // Wait for scroll to complete
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper-app">
+        <div class="space-background"></div>
+        <div class="wrapper-content">
+            <slot />
+        </div>
+    </div>
+    
+    <!-- Netlify Identity redirect script for CMS -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

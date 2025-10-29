@@ -43,7 +43,12 @@ Your podcast now uses a **proper relational structure** (Option C) where:
    - Episode ID: `episode-1`
    - Season: `1`
    - Episode Number: `1`
-   - Title, Status, Topics, etc.
+   - Title, Status
+   - **Episode Description**: Write the full description in markdown format, including:
+     - Opening paragraph
+     - **Topics:** as a bullet list
+     - Guest bio paragraph with links (use markdown syntax: `[Name](url)`)
+   - **Short Topics**: Abbreviated versions for display (e.g., "Visual Tools & Alignment")
    - **Guest section**: (This is for backwards compatibility, fill it in with the same info)
 4. **Save**
 
@@ -145,4 +150,33 @@ The new structure:
 - All existing guests have been migrated to individual files
 - All episodes have been updated with `guestId` references
 - Old `guests.json` has been removed
+- Episode descriptions consolidated into single markdown field (Oct 2025)
+
+---
+
+## Episode Description Format (Updated Oct 2025)
+
+Episodes now use a **single markdown description field** instead of separate fields for description, topics, and guest bio.
+
+### Format Example:
+```markdown
+These are the questions Nick and I will go over in this episode.
+
+**Topics:**
+- What makes visual tools like the Business Model Canvas so effective?
+- How can you make sure clients follow through after workshops?
+- What's the best way to begin running Customer Interviews?
+
+[Nick Himowicz](https://linkedin.com/in/nickhimowicz) is a Product Innovation 
+Coach and a friend. After countless conversations...
+```
+
+### Benefits:
+- Easier to edit in CMS (one field instead of three)
+- More flexible formatting with markdown
+- Cleaner content management
+- `shortTopics` still separate for SEO/filtering
+
+### Migration:
+All existing episodes were automatically migrated on Oct 29, 2025 using `Utils/MIGRATE_episode_descriptions.js`. Backups are in `Utils/backups/episodes/`.
 

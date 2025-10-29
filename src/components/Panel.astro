@@ -1,0 +1,11 @@
+---
+interface Props {
+  panelClass: string;
+}
+
+const { panelClass } = Astro.props;
+---
+
+<div class={`panel ${panelClass}`}>
+    <slot />
+</div>

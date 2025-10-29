@@ -1,0 +1,112 @@
+---
+interface Props {
+  episode: {
+    data: {
+      id: string;
+      status: string;
+      number: number;
+      title: string;
+      description: string; // Markdown description
+      links: { url: string; text: string }[];
+      guest: {
+        name: string;
+        image: string;
+      };
+      shortTopics: string[];
+    };
+  };
+  processedTranscript?: string;
+  site?: {
+    title: string;
+  };
+}
+
+const { episode, processedTranscript, site } = Astro.props;
+import Panel from '~/components/Panel.astro';
+
+// Simple markdown to HTML converter
+function markdownToHtml(markdown: string): string {
+  if (!markdown) return '';
+  
+  let html = markdown;
+  
+  // Convert markdown links [text](url) to HTML
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  
+  // Convert **bold** to <strong>
+  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  
+  // Convert bullet points (- item) to <ul><li>
+  html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
+  html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
+  
+  // Convert double newlines to paragraph breaks
+  html = html.split('\n\n').map(para => {
+    // Don't wrap if already wrapped in ul
+    if (para.trim().startsWith('<ul>')) return para;
+    return `<p>${para.trim()}</p>`;
+  }).join('\n');
+  
+  // Clean up any remaining single newlines within paragraphs
+  html = html.replace(/<p>([^<]*)\n([^<]*)<\/p>/g, '<p>$1<br>$2</p>');
+  
+  return html;
+}
+
+const descriptionHtml = markdownToHtml(episode.data.description);
+---
+
+<!-- Episode Panel -->
+<div class="sub-wrapper-episode" id={episode.data.id}>
+    <div class="episode-tab text-label">
+        Episode Status:<br>{episode.data.status}
+    </div>
+    <Panel panelClass="panel-episode">
+        <div class="sub-wrapper-episode-header">
+            <div class="form-space-episode-number form-space" data-section="episode" data-type="episode-number">
+                <h3 class="text-episode-number">{episode.data.number}</h3>
+            </div>
+            <div class="sub-wrapper-episode-title">
+                <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                    Theme:
+                </div>
+                <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                    <h2><a href={`/episodes/${episode.data.id}`} class="episode-link">{episode.data.title}</a></h2>
+                </div>
+            </div>
+        </div>
+        <div class="sub-wrapper-episode-body">
+            <div class="sub-wrapper-episode-content">
+                <div class="episode-summary" data-section="episode" data-type="content">
+                    <div set:html={descriptionHtml}></div>
+                    <p>Scroll down for the Spotify Link and the Transcript.</p>
+                </div>
+                <div class="sub-wrapper-episode-links">
+                    {episode.data.links && episode.data.links.map((link, index) => (
+                        <div class={`sub-wrapper-episode-links-${index + 1}`}>
+                            <div class={`form-space-episode-links-${index + 1}-label form-space text-label`} data-type="label" data-section="episode">
+                                Link {index + 1}:
+                            </div>
+                            <div class={`form-space-episode-links-${index + 1} form-space`} data-section="episode" data-type="content">
+                                <a href={link.url} class="episode-link episode-link-with-padding" target="_blank" rel="noopener noreferrer">{link.text}</a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div class="sub-wrapper-episode-meta">
+                <div class="episode-guest-box">
+                    <div class="episode-guest-name form-space" data-section="episode" data-type="content">
+                        <h2>{episode.data.guest.name}</h2>
+                    </div>
+                    <div class="episode-guest-photo form-space" data-section="guests" data-type="photo">
+                        <img src={'/' + episode.data.guest.image} alt={episode.data.guest.name}>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Panel>
+    <div class="episode-tab text-label episode-tab-bottom">
+        <a href="/#roster" class="tab-link">Back to Roster</a>
+    </div>
+</div>

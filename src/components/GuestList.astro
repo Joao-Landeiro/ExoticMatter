@@ -1,0 +1,34 @@
+---
+import Guest from './Guest.astro';
+
+interface Props {
+  guests: {
+    name: string;
+    image: string;
+    episodeLink: string;
+  }[];
+  site: {
+    team: {
+      description: string;
+    };
+  };
+}
+
+const { guests, site } = Astro.props;
+---
+
+<div class="form-space-guests-details-label form-space text-label" data-type="label" data-section="guests">
+    The team:
+</div>
+<div class="form-space-guests-details form-space" data-section="guests" data-type="content">
+    <p>{site.team.description}</p>
+</div>
+<div class="form-space-guests-roster form-space" data-section="guests" data-type="content">
+    <div class="guests-grid">
+        <div class="guests-grid-container">
+            {guests.map(guest => (
+                <Guest guest={guest} />
+            ))}
+        </div>
+    </div>
+</div>

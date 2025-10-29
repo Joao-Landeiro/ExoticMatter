@@ -16,15 +16,11 @@ const episodesCollection = defineCollection({
       linkedin: z.string().optional(),
       website: z.string().optional(),
     }),
-    summary: z.object({
-      description: z.string(),
-      guest: z.string(),
-    }),
+    description: z.string(), // Single markdown field combining description, topics, and guest bio
     links: z.array(z.object({
       text: z.string(),
       url: z.string(),
     })).optional(),
-    topics: z.array(z.string()),
     shortTopics: z.array(z.string()),
     episodeLink: z.string().nullable().optional(),
     spotifyUrl: z.string().nullable().optional(),

@@ -1,0 +1,99 @@
+
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Episode from '~/components/Episode.astro';
+import Panel from '~/components/Panel.astro';
+import Spacer from '~/components/Spacer.astro';
+
+export async function getStaticPaths() {
+  const episodes = await getCollection('episodes');
+  return episodes.map(episode => ({
+    params: { slug: episode.data.id }, // Use episode.data.id as slug
+    props: { episode },
+  }));
+}
+
+const { episode } = Astro.props;
+const site = await getEntry('site', 'site');
+
+// Process transcript HTML to add speaker-line class
+let processedTranscript = episode.data.transcript;
+if (processedTranscript) {
+    processedTranscript = processedTranscript.replace(/<p class="text-body">(?= <span class="transcript-meta">)/g, '<p class="text-body speaker-line">');
+}
+---
+<BaseLayout title={`Episode ${episode.data.number} - ${episode.data.guest.name} - ${site.data.title}`}>
+    <div class="sticky-topbar">
+        <a href="/">Go back to Exotic Matter</a>
+    </div>
+    <div class="wrapper-app">
+        <div class="space-background"></div>
+        <div class="wrapper-content">
+            <Episode episode={episode} processedTranscript={processedTranscript} site={site.data} />
+
+            {episode.data.spotifyUrl && (
+                <Panel panelClass="panel-spotify">
+                    <div class="form-space-spotify-title form-space text-label" data-type="label" data-section="spotify">
+                        Listen:
+                    </div>
+                    <div class="spotify-container">
+                        <iframe style="border-radius:12px" src={episode.data.spotifyUrl} width="624" height="351" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </Panel>
+            )}
+            
+            {episode.data.transcript && (
+                <Panel panelClass="panel-transcript">
+                    <div class="form-space-transcript-title form-space text-label" data-type="label" data-section="transcript">
+                        Transcript:
+                    </div>
+                    <div class="transcript-container">
+                        <div class="form-space-transcript-content form-space" data-section="transcript" data-type="content" set:html={processedTranscript}>
+                        </div>
+                    </div>
+                </Panel>
+            )}
+            <Spacer />
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .sticky-topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 1rem 2rem;
+        z-index: var(--z-top);
+        border-bottom: var(--border-width-small) solid var(--light-secondary);
+    }
+    .sticky-topbar a {
+        color: var(--dark-primary);
+        text-decoration: none;
+        font-family: var(--font-mono);
+        font-size: var(--font-size-small);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .sticky-topbar a:hover {
+        color: var(--accent);
+    }
+    /* Add padding to body to account for fixed header */
+    body {
+        padding-top: 4rem;
+    }
+    .sub-wrapper-episode-meta {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .sub-wrapper-guest-box {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+</style>
