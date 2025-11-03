@@ -3,7 +3,7 @@ backend:
   name: github
   repo: Joao-Landeiro/ExoticMatter
   branch: main
-  base_url: https://exoticmatter.space
+  # base_url: https://exoticmatter.space
   auth_type: pkce
   app_id: Ov23livJjebMeq2tFsTz
 
