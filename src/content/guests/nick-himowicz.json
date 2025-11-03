@@ -3,6 +3,9 @@
   "image": "assets/images/guest-pictures/NickH.png",
   "bio": "Product Innovation Coach specializing in Strategyzer tools like the Business Model Canvas and Value Proposition Canvas. Nick helps entrepreneurs and companies create products people actually want to use through customer discovery and strategic alignment.",
   "linkedin": "https://www.linkedin.com/in/nickhimowicz/",
-  "website": "https://nickhimowicz.com/"
+  "website": "https://nickhimowicz.com/",
+  "seo": {
+    "seoBio": "Short SEO bio"
+  }
 }
 

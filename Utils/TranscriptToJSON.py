@@ -56,6 +56,17 @@ def parse_transcript_line(line):
         return False, None, None, line
 
 
+def get_speaker_attribute(speaker_name):
+    """
+    Determine if the speaker is João and return appropriate data attribute.
+    Returns the data-speaker attribute string or empty string.
+    """
+    normalized = speaker_name.strip().lower()
+    if normalized in ['joão', 'joao']:
+        return ' data-speaker="joao"'
+    return ''
+
+
 def process_transcript(input_file):
     """
     Process the transcript file and convert to HTML format.
@@ -89,8 +100,9 @@ def process_transcript(input_file):
                     escaped_content = escape_html_content(full_content)
                     
                     # Create the HTML paragraph
+                    speaker_attr = get_speaker_attribute(current_speaker)
                     speaker_tag = f'<span class="transcript-meta">[{current_timestamp}] {current_speaker}:</span><br>'
-                    paragraph = f'<p class="text-body">{speaker_tag}{escaped_content}</p>'
+                    paragraph = f'<p class="text-body"{speaker_attr}>{speaker_tag}{escaped_content}</p>'
                     html_parts.append(paragraph)
             
             # Start new speaker section
@@ -107,8 +119,9 @@ def process_transcript(input_file):
         full_content = ' '.join(current_content).strip()
         if full_content:
             escaped_content = escape_html_content(full_content)
+            speaker_attr = get_speaker_attribute(current_speaker)
             speaker_tag = f'<span class="transcript-meta">[{current_timestamp}] {current_speaker}:</span><br>'
-            paragraph = f'<p class="text-body">{speaker_tag}{escaped_content}</p>'
+            paragraph = f'<p class="text-body"{speaker_attr}>{speaker_tag}{escaped_content}</p>'
             html_parts.append(paragraph)
     
     # Join all parts into single HTML string

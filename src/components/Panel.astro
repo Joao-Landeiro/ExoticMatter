@@ -1,11 +1,12 @@
 ---
 interface Props {
   panelClass: string;
+  id?: string;
 }
 
-const { panelClass } = Astro.props;
+const { panelClass, id } = Astro.props;
 ---
 
-<div class={`panel ${panelClass}`}>
+<div class={`panel ${panelClass}`} id={id}>
     <slot />
 </div>

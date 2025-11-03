@@ -4,14 +4,14 @@ interface Props {
     name: string;
     image: string;
     episodeLink: string;
-    episodeId: string;
+    episodeId?: string;
   };
 }
 
 const { guest } = Astro.props;
 ---
 
-<a href={`/episodes/${guest.episodeId}`} class="guest-link">
+<a href={guest.episodeLink} class="guest-link">
     <div class="sub-wrapper-guest-box">
         <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
             <h2>{guest.name}</h2>

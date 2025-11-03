@@ -29,9 +29,10 @@
   "id": "episode-1",
   "description": "These are the questions Nick and I will go over in this episode of Exotic Matter.\n\n**Topics:**\n- What makes visual tools like the Business Model Canvas and The Value Proposition Canvas so effective?\n- At the end of a Workshop, how can you make sure clients do what they said they would?\n- And what's the best way to actually begin running Customer Interviews?\n\n[Nick Himowicz](https://www.linkedin.com/in/nickhimowicz/) is a Product Innovation Coach and a friend. After countless conversations and nerding out together on this stuff, I was sure he would be a phenomenal start to the inaugural season of Exotic Matter. I believe you'll agree.",
   "seo": {
-    "metaDescription": "testing meta description",
-    "seoTitle": "testing custom seo title",
-    "seoKeywords": "test word, keyword",
-    "ogImage": "assets/images/screenshot-2025-10-30-at-12.26.51.png"
-  }
+  "metaDescription": "Full override test",
+  "seoTitle": "Custom Episode Title",
+  "ogImage": "assets/images/test-image.jpg",
+  "seoKeywords": "override, test, keywords",
+  "noindex": true
+}
 }

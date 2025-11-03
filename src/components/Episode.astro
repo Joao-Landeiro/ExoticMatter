@@ -57,7 +57,6 @@ const descriptionHtml = marked.parse(episode.data.description);
             <div class="sub-wrapper-episode-content">
                 <div class="episode-summary" data-section="episode" data-type="content">
                     <div class="episode-description" set:html={descriptionHtml}></div>
-                    <p>Scroll down for the Spotify Link and the Transcript.</p>
                 </div>
                 <div class="sub-wrapper-episode-links">
                     {episode.data.links && episode.data.links.map((link, index) => (

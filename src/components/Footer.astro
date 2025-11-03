@@ -1,0 +1,31 @@
+---
+interface Props {
+  site: {
+    title: string;
+  };
+}
+
+const { site } = Astro.props;
+---
+
+<footer class="site-footer">
+    <div class="footer-logo">
+        <img src="/assets/images/ExoticMatter-Logo.svg" alt="Exotic Matter" class="footer-logo-img" />
+    </div>
+    
+    <div class="footer-description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    
+    <div class="footer-links">
+        <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+        <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener" class="footer-link">YouTube</a>
+        <a href="https://YOUR_WEBSITE.com" target="_blank" rel="noopener" class="footer-link">Personal Page</a>
+    </div>
+    
+    <div class="footer-credit">
+        <p class="footer-credit-text">A Mesozoic Production</p>
+        <p class="footer-credit-text footer-copyright">© 2025 All Rights Reserved</p>
+    </div>
+</footer>
+
