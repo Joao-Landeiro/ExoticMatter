@@ -3,7 +3,8 @@ backend:
   name: github
   repo: Joao-Landeiro/ExoticMatter
   branch: main
-  auth_type: pkce  # Recommended for GitHub
+  base_url: https://exoticmatter.space
+  auth_type: pkce
   app_id: Ov23livJjebMeq2tFsTz
 
 # Local testing backend - use this for offline testing without GitHub auth
