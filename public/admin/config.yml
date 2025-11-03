@@ -57,6 +57,18 @@ collections:
       - {label: "Spotify URL", name: "spotifyUrl", widget: "string", required: false, hint: "Spotify embed URL"}
       - {label: "Transcript (HTML)", name: "transcript", widget: "text", required: false, hint: "Full transcript with HTML formatting"}
       - {label: "Publish Date", name: "publishDate", widget: "datetime", required: false, hint: "Schedule when this episode should be published"}
+      - label: "SEO Settings"
+        name: "seo"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Optional SEO overrides. If left empty, values are auto-generated from episode content."
+        fields:
+          - {label: "Custom Meta Description", name: "metaDescription", widget: "text", required: false, hint: "Override auto-generated description (max 160 characters for optimal SEO)"}
+          - {label: "Custom Social Image", name: "ogImage", widget: "image", required: false, media_folder: "/public/assets/images", public_folder: "assets/images", hint: "Override guest image for social sharing (Open Graph)"}
+          - {label: "Custom SEO Title", name: "seoTitle", widget: "string", required: false, hint: "Override auto-generated page title for search results"}
+          - {label: "SEO Keywords", name: "seoKeywords", widget: "string", required: false, hint: "Comma-separated keywords for this episode"}
+          - {label: "Hide from Search Engines", name: "noindex", widget: "boolean", required: false, default: false, hint: "Prevent search engines from indexing this episode"}
 
   # Guests Collection - Each guest is a separate file
   - name: "guests"
@@ -76,6 +88,15 @@ collections:
       - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}
       - {label: "Website URL", name: "website", widget: "string", required: false}
       - {label: "Twitter URL", name: "twitter", widget: "string", required: false}
+      - label: "SEO Settings"
+        name: "seo"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Optional SEO metadata for this guest"
+        fields:
+          - {label: "SEO Bio", name: "seoBio", widget: "text", required: false, hint: "Shorter, SEO-optimized bio snippet (used in structured data)"}
+          - {label: "Keywords", name: "keywords", widget: "string", required: false, hint: "Comma-separated keywords related to this guest"}
 
   # Site Settings Collection
   - name: "site"
@@ -104,3 +125,15 @@ collections:
             widget: "object"
             fields:
               - {label: "Description", name: "description", widget: "text"}
+          - label: "SEO Settings"
+            name: "seo"
+            widget: "object"
+            required: false
+            collapsed: true
+            hint: "Site-wide SEO configuration"
+            fields:
+              - {label: "Default Social Image", name: "seoDefaultImage", widget: "image", required: false, media_folder: "/public/assets/images", public_folder: "assets/images", hint: "Default Open Graph image for homepage and pages without custom images"}
+              - {label: "Twitter Handle", name: "twitterHandle", widget: "string", required: false, hint: "Twitter/X handle (format: @username or username)"}
+              - {label: "Facebook Page URL", name: "facebookPage", widget: "string", required: false, hint: "Full URL to Facebook page (for article publisher)"}
+              - {label: "Default Keywords", name: "defaultKeywords", widget: "string", required: false, hint: "Comma-separated site-wide keywords"}
+              - {label: "Google Analytics ID", name: "googleAnalyticsId", widget: "string", required: false, hint: "Google Analytics tracking ID (e.g., G-XXXXXXXXXX)"}

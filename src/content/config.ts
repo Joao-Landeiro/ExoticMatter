@@ -19,6 +19,14 @@ const episodesCollection = defineCollection({
     episodeLink: z.string().nullable().optional(),
     spotifyUrl: z.string().nullable().optional(),
     transcript: z.string().nullable().optional(),
+    publishDate: z.string().datetime().optional(), // ISO 8601 datetime string
+    seo: z.object({
+      metaDescription: z.string().max(160).optional(),
+      ogImage: z.string().optional(),
+      seoTitle: z.string().optional(),
+      seoKeywords: z.string().optional(),
+      noindex: z.boolean().optional(),
+    }).optional(),
   }),
 });
 
@@ -32,6 +40,10 @@ const guestsCollection = defineCollection({
     linkedin: z.string().optional(),
     website: z.string().optional(),
     twitter: z.string().optional(),
+    seo: z.object({
+      seoBio: z.string().optional(),
+      keywords: z.string().optional(),
+    }).optional(),
   }),
 });
 
@@ -51,6 +63,13 @@ const siteCollection = defineCollection({
         team: z.object({
             description: z.string(),
         }),
+        seo: z.object({
+            seoDefaultImage: z.string().optional(),
+            twitterHandle: z.string().optional(),
+            facebookPage: z.string().optional(),
+            defaultKeywords: z.string().optional(),
+            googleAnalyticsId: z.string().optional(),
+        }).optional(),
     }),
 });
 
