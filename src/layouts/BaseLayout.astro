@@ -61,9 +61,6 @@ const pageUrl = url || (Astro.url ? Astro.url.pathname : '/');
     <link href="https://api.fontshare.com/v2/css?f[]=familjen-grotesk@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Netlify Identity Widget for Decap CMS authentication -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Smooth scroll enhancement (for all pages)
@@ -104,18 +101,5 @@ const pageUrl = url || (Astro.url ? Astro.url.pathname : '/');
             <Footer site={site.data} />
         </div>
     </div>
-    
-    <!-- Netlify Identity redirect script for CMS -->
-    <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
-        }
-    </script>
 </body>
 </html>

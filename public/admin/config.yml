@@ -2,7 +2,7 @@
 backend:
   name: github
   repo: Joao-Landeiro/ExoticMatter
-  branch: experiments-with-layout
+  branch: main
 
 # Local testing backend - use this for offline testing without GitHub auth
 # backend:
