@@ -1,0 +1,139 @@
+# GitHub Pages backend - log in with your GitHub account
+backend:
+  name: github
+  repo: Joao-Landeiro/ExoticMatter
+  branch: experiments-with-layout
+
+# Local testing backend - use this for offline testing without GitHub auth
+# backend:
+#   name: test-repo
+
+media_folder: "public/assets/images/guest-pictures"
+public_folder: "assets/images/guest-pictures"
+
+# Enable editorial workflow for drafts and scheduling
+# publish_mode: editorial_workflow  # Disabled for immediate saves during development
+
+collections:
+  # Episodes Collection
+  - name: "episodes"
+    label: "Episodes"
+    label_singular: "Episode"
+    folder: "src/content/episodes"
+    create: true
+    slug: "S{{season}}E{{number}}_{{fields.guest.name}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - {label: "Episode ID", name: "id", widget: "string", pattern: ["^episode-[0-9]+$", "Must be 'episode-X' format"], hint: "Format: episode-1, episode-2, etc."}
+      - {label: "Season", name: "season", widget: "number", value_type: "int", min: 1, default: 1}
+      - {label: "Episode Number", name: "number", widget: "number", value_type: "int", min: 0}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Status", name: "status", widget: "select", options: ["released", "Published", "To be released"], default: "To be released"}
+      - label: "Guest"
+        name: "guestId"
+        widget: "relation"
+        collection: "guests"
+        search_fields: ["name"]
+        value_field: "{{slug}}"
+        display_fields: ["name"]
+        hint: "Select the guest for this episode"
+      - {label: "Episode Description", name: "description", widget: "markdown", hint: "Full episode description with topics and guest bio (supports markdown formatting)"}
+      - label: "Links"
+        name: "links"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Text", name: "text", widget: "string"}
+          - {label: "URL", name: "url", widget: "string"}
+      - label: "Short Topics"
+        name: "shortTopics"
+        widget: "list"
+        field: {label: "Short Topic", name: "shortTopic", widget: "string"}
+        hint: "Abbreviated topic titles"
+      - {label: "Episode Link", name: "episodeLink", widget: "string", required: false, hint: "Link to episode page (e.g., S1E1_Nick.html)"}
+      - {label: "Spotify URL", name: "spotifyUrl", widget: "string", required: false, hint: "Spotify embed URL"}
+      - {label: "Transcript (HTML)", name: "transcript", widget: "text", required: false, hint: "Full transcript with HTML formatting"}
+      - {label: "Publish Date", name: "publishDate", widget: "datetime", required: false, hint: "Schedule when this episode should be published"}
+      - label: "SEO Settings"
+        name: "seo"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Optional SEO overrides. If left empty, values are auto-generated from episode content."
+        fields:
+          - {label: "Custom Meta Description", name: "metaDescription", widget: "text", required: false, hint: "Override auto-generated description (max 160 characters for optimal SEO)"}
+          - {label: "Custom Social Image", name: "ogImage", widget: "image", required: false, media_folder: "/public/assets/images", public_folder: "assets/images", hint: "Override guest image for social sharing (Open Graph)"}
+          - {label: "Custom SEO Title", name: "seoTitle", widget: "string", required: false, hint: "Override auto-generated page title for search results"}
+          - {label: "SEO Keywords", name: "seoKeywords", widget: "string", required: false, hint: "Comma-separated keywords for this episode"}
+          - {label: "Hide from Search Engines", name: "noindex", widget: "boolean", required: false, default: false, hint: "Prevent search engines from indexing this episode"}
+
+  # Guests Collection - Each guest is a separate file
+  - name: "guests"
+    label: "Guests"
+    label_singular: "Guest"
+    folder: "src/content/guests"
+    create: true
+    slug: "{{fields.name | slugify}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Image", name: "image", widget: "image", media_folder: "/public/assets/images/guest-pictures", public_folder: "assets/images/guest-pictures"}
+      - {label: "Bio", name: "bio", widget: "text", required: false, hint: "Short biography of the guest"}
+      - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}
+      - {label: "Website URL", name: "website", widget: "string", required: false}
+      - {label: "Twitter URL", name: "twitter", widget: "string", required: false}
+      - label: "SEO Settings"
+        name: "seo"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Optional SEO metadata for this guest"
+        fields:
+          - {label: "SEO Bio", name: "seoBio", widget: "text", required: false, hint: "Shorter, SEO-optimized bio snippet (used in structured data)"}
+          - {label: "Keywords", name: "keywords", widget: "string", required: false, hint: "Comma-separated keywords related to this guest"}
+
+  # Site Settings Collection
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - label: "Site Configuration"
+        name: "site"
+        file: "src/content/site/site.json"
+        extension: "json"
+        format: "json"
+        fields:
+          - {label: "Site Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Base URL", name: "baseUrl", widget: "string"}
+          - {label: "Author", name: "author", widget: "string"}
+          - {label: "Current Season", name: "season", widget: "string"}
+          - label: "Intro"
+            name: "intro"
+            widget: "object"
+            fields:
+              - {label: "Observation", name: "observation", widget: "text"}
+              - {label: "Hypothesis", name: "hypothesis", widget: "text"}
+              - {label: "Methodology", name: "methodology", widget: "text"}
+          - label: "Team"
+            name: "team"
+            widget: "object"
+            fields:
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "SEO Settings"
+            name: "seo"
+            widget: "object"
+            required: false
+            collapsed: true
+            hint: "Site-wide SEO configuration"
+            fields:
+              - {label: "Default Social Image", name: "seoDefaultImage", widget: "image", required: false, media_folder: "/public/assets/images", public_folder: "assets/images", hint: "Default Open Graph image for homepage and pages without custom images"}
+              - {label: "Twitter Handle", name: "twitterHandle", widget: "string", required: false, hint: "Twitter/X handle (format: @username or username)"}
+              - {label: "Facebook Page URL", name: "facebookPage", widget: "string", required: false, hint: "Full URL to Facebook page (for article publisher)"}
+              - {label: "Default Keywords", name: "defaultKeywords", widget: "string", required: false, hint: "Comma-separated site-wide keywords"}
+              - {label: "Google Analytics ID", name: "googleAnalyticsId", widget: "string", required: false, hint: "Google Analytics tracking ID (e.g., G-XXXXXXXXXX)"}

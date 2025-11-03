@@ -1,0 +1,37 @@
+{
+  "id": "episode-0",
+  "season": 1,
+  "number": 0,
+  "title": "Welcome to Exotic Matter",
+  "status": "released",
+  "guestId": "joao-landeiro",
+  "guest": {
+    "name": "João Landeiro",
+    "image": "assets/images/guest-pictures/JoaoL.png",
+    "linkedin": "https://www.linkedin.com/in/joaolandeiro/",
+    "website": "https://mesozoic.co"
+  },
+  "description": "Welcome to the inaugural episode of Exotic Matter, where we explore the evolving landscape of knowledge work and expertise.\n\n**Topics:**\n- What is Exotic Matter and why does it exist?\n- What kinds of conversations will we be having?\n- Who are the guests and what can you expect from them?\n\n[João Landeiro](https://www.linkedin.com/in/joaolandeiro/) is the host of Exotic Matter and founder of Mesozoic. This introductory episode sets the stage for conversations about productizing expertise and the future of knowledge work.",
+  "links": [
+    {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/joaolandeiro/"
+    },
+    {
+      "text": "Mesozoic",
+      "url": "https://mesozoic.co"
+    },
+    {
+      "text": "Newsletter",
+      "url": "https://mesozoic.co/newsletter"
+    }
+  ],
+  "shortTopics": [
+    "What is Exotic Matter?",
+    "Types of Conversations",
+    "Guest Expectations"
+  ],
+  "episodeLink": "S1E0_Intro.html",
+  "spotifyUrl": "https://open.spotify.com/embed/episode/4UK2AfEHON0qkYxxwILIvR/video?utm_source=generator",
+  "transcript": null
+}

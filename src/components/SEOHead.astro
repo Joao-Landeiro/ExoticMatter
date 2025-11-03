@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  url?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  structuredData?: Record<string, any>;
+  siteName?: string;
+  baseUrl?: string;
+  keywords?: string;
+  twitterHandle?: string;
+  facebookPage?: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  url,
+  type = 'website',
+  noindex = false,
+  structuredData,
+  siteName = 'Exotic Matter',
+  baseUrl = 'https://exoticmatter.space',
+  keywords,
+  twitterHandle,
+  facebookPage,
+} = Astro.props;
+
+// Generate canonical URL
+const canonicalUrl = url ? `${baseUrl}${url}` : baseUrl;
+
+// Default image if none provided
+const ogImage = image ? (image.startsWith('http') ? image : `${baseUrl}${image}`) : `${baseUrl}/assets/images/ExoticMatter-Logo.svg`;
+
+// Generate robots meta tag
+const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow';
+
+// Format Twitter handle (remove @ if present, will add it back in meta tag)
+const formattedTwitterHandle = twitterHandle ? twitterHandle.replace(/^@/, '') : null;
+---
+
+<!-- Primary Meta Tags -->
+<meta name="description" content={description} />
+<meta name="robots" content={robotsContent} />
+{keywords && <meta name="keywords" content={keywords} />}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content={siteName} />
+{facebookPage && type === 'article' && <meta property="article:publisher" content={facebookPage} />}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+{formattedTwitterHandle && <meta name="twitter:site" content={`@${formattedTwitterHandle}`} />}
+{formattedTwitterHandle && <meta name="twitter:creator" content={`@${formattedTwitterHandle}`} />}
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Structured Data (JSON-LD) -->
+{structuredData && (
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+)}

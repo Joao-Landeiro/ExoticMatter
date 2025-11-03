@@ -1,0 +1,121 @@
+---
+import '~/styles/styles.css';
+import Footer from '~/components/Footer.astro';
+import SEOHead from '~/components/SEOHead.astro';
+import { getEntry } from 'astro:content';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  structuredData?: Record<string, any>;
+  keywords?: string;
+}
+
+const { 
+  title, 
+  description,
+  image,
+  url,
+  type,
+  noindex,
+  structuredData,
+  keywords,
+} = Astro.props;
+
+const siteEntry = await getEntry('site', 'site');
+if (!siteEntry) {
+    throw new Error('Site configuration not found');
+}
+const site = siteEntry;
+
+// Use site description as default if none provided
+const metaDescription = description || site.data.description || '';
+const pageUrl = url || (Astro.url ? Astro.url.pathname : '/');
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    
+    <SEOHead 
+      title={title}
+      description={metaDescription}
+      image={image}
+      url={pageUrl}
+      type={type}
+      noindex={noindex}
+      keywords={keywords}
+      twitterHandle={site.data.seo?.twitterHandle}
+      facebookPage={site.data.seo?.facebookPage}
+      structuredData={structuredData}
+      siteName={site.data.title}
+      baseUrl={site.data.baseUrl}
+    />
+    
+    <link href="https://api.fontshare.com/v2/css?f[]=familjen-grotesk@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Netlify Identity Widget for Decap CMS authentication -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scroll enhancement (for all pages)
+            document.querySelectorAll('a[href^="#episode-"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Scroll to the target
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Add highlight effect
+                        setTimeout(() => {
+                            targetElement.style.transition = 'background-color 0.5s ease';
+                            targetElement.style.backgroundColor = 'rgba(230, 213, 184, 0.1)'; // Subtle accent color
+                            
+                            // Reset after animation
+                            setTimeout(() => {
+                                targetElement.style.backgroundColor = '';
+                                setTimeout(() => {
+                                    targetElement.style.transition = '';
+                                }, 500);
+                            }, 1000);
+                        }, 500); // Wait for scroll to complete
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper-app">
+        <div class="space-background"></div>
+        <div class="wrapper-content">
+            <slot />
+            <Footer site={site.data} />
+        </div>
+    </div>
+    
+    <!-- Netlify Identity redirect script for CMS -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

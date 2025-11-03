@@ -1,0 +1,213 @@
+
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Episode from '~/components/Episode.astro';
+import Panel from '~/components/Panel.astro';
+import Spacer from '~/components/Spacer.astro';
+
+export async function getStaticPaths() {
+  const episodes = await getCollection('episodes');
+  return episodes.map(episode => ({
+    params: { slug: episode.data.id }, // Use episode.data.id as slug
+    props: { episode },
+  }));
+}
+
+const { episode } = Astro.props;
+const site = await getEntry('site', 'site');
+const guest = await getEntry('guests', episode.data.guestId);
+
+if (!site) {
+  throw new Error('Site configuration not found');
+}
+
+if (!guest) {
+  throw new Error(`Guest not found: ${episode.data.guestId}. Check that the guestId matches the guest filename (lowercase slugified).`);
+}
+
+// Generate plain text description from markdown (strip markdown formatting)
+const stripMarkdown = (text: string): string => {
+  return text
+    .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1') // Remove markdown links
+    .replace(/\*\*([^\*]+)\*\*/g, '$1') // Remove bold
+    .replace(/\*([^\*]+)\*/g, '$1') // Remove italic
+    .replace(/#+\s/g, '') // Remove headers
+    .replace(/\n\n/g, ' ') // Replace double newlines with space
+    .replace(/\n/g, ' ') // Replace single newlines with space
+    .trim();
+};
+
+// SEO: Use CMS metaDescription if provided, otherwise auto-generate from description
+const autoMetaDescription = stripMarkdown(episode.data.description);
+const autoTruncatedDescription = autoMetaDescription.length > 160 
+  ? autoMetaDescription.substring(0, 157) + '...' 
+  : autoMetaDescription;
+const metaDescription = episode.data.seo?.metaDescription || autoTruncatedDescription;
+
+// SEO: Use CMS seoTitle if provided, otherwise auto-generate
+const pageTitle = episode.data.seo?.seoTitle 
+  || `Episode ${episode.data.number}: ${episode.data.title} - ${guest.data.name} | ${site.data.title}`;
+
+// Generate episode URL
+const episodeUrl = `/episodes/${episode.data.id}`;
+
+// SEO: Use CMS ogImage if provided, otherwise fall back to guest image
+const cmsOgImage = episode.data.seo?.ogImage;
+const guestImageUrl = guest.data.image 
+  ? (guest.data.image.startsWith('/') ? guest.data.image : `/${guest.data.image}`)
+  : undefined;
+const ogImageUrl = cmsOgImage 
+  ? (cmsOgImage.startsWith('/') ? cmsOgImage : `/${cmsOgImage}`)
+  : guestImageUrl;
+
+// SEO: Get noindex flag
+const noindex = episode.data.seo?.noindex || false;
+
+// SEO: Get keywords (combine episode keywords with site default keywords)
+const episodeKeywords = episode.data.seo?.seoKeywords;
+const siteKeywords = site.data.seo?.defaultKeywords;
+const keywords = [episodeKeywords, siteKeywords].filter(Boolean).join(', ') || undefined;
+
+// Generate structured data for PodcastEpisode
+const episodeSchema: Record<string, any> = {
+  '@context': 'https://schema.org',
+  '@type': 'PodcastEpisode',
+  name: episode.data.title,
+  description: autoMetaDescription, // Use full description in structured data, not truncated meta description
+  episodeNumber: episode.data.number,
+  partOfSeason: {
+    '@type': 'PodcastSeason',
+    seasonNumber: episode.data.season,
+  },
+  partOfSeries: {
+    '@type': 'PodcastSeries',
+    name: site.data.title,
+    description: site.data.description,
+  },
+  url: `${site.data.baseUrl}${episodeUrl}`,
+  // Guest information
+  guest: {
+    '@type': 'Person',
+    name: guest.data.name,
+    sameAs: [
+      ...(guest.data.linkedin ? [guest.data.linkedin] : []),
+      ...(guest.data.website ? [guest.data.website] : []),
+      ...(guest.data.twitter ? [guest.data.twitter] : []),
+    ],
+  },
+  // Host information
+  host: {
+    '@type': 'Person',
+    name: site.data.author,
+  },
+};
+
+// Add publish date if available
+if (episode.data.publishDate) {
+  episodeSchema.datePublished = episode.data.publishDate;
+}
+
+// Add optional fields only if they exist
+if (ogImageUrl) {
+  episodeSchema.image = `${site.data.baseUrl}${ogImageUrl}`;
+  episodeSchema.guest.image = `${site.data.baseUrl}${ogImageUrl}`;
+}
+
+// Use SEO bio if available, otherwise fall back to regular bio
+if (guest.data.seo?.seoBio || guest.data.bio) {
+  episodeSchema.guest.description = guest.data.seo?.seoBio || guest.data.bio;
+}
+
+if (episode.data.spotifyUrl) {
+  episodeSchema.associatedMedia = {
+    '@type': 'MediaObject',
+    contentUrl: episode.data.spotifyUrl,
+    encodingFormat: 'audio/mpeg',
+  };
+}
+
+// Process transcript HTML to add speaker-line class
+let processedTranscript = episode.data.transcript;
+if (processedTranscript) {
+    processedTranscript = processedTranscript.replace(/<p class="text-body">(?= <span class="transcript-meta">)/g, '<p class="text-body speaker-line">');
+}
+---
+<BaseLayout 
+  title={pageTitle}
+  description={metaDescription}
+  url={episodeUrl}
+  type="article"
+  image={ogImageUrl || undefined}
+  noindex={noindex}
+  keywords={keywords}
+  structuredData={episodeSchema}
+>
+    <div class="sticky-topbar">
+        <a href="/">Go back to Exotic Matter</a>
+    </div>
+    <Episode episode={episode} processedTranscript={processedTranscript || undefined} site={site.data} />
+
+    {episode.data.spotifyUrl && (
+        <Panel panelClass="panel-spotify">
+            <div class="form-space-spotify-title form-space text-label" data-type="label" data-section="spotify">
+                Listen:
+            </div>
+            <div class="spotify-container">
+                <iframe style="border-radius:12px" src={episode.data.spotifyUrl} width="624" height="351" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </Panel>
+    )}
+    
+    {episode.data.transcript && (
+        <Panel panelClass="panel-transcript">
+            <div class="form-space-transcript-title form-space text-label" data-type="label" data-section="transcript">
+                Transcript:
+            </div>
+            <div class="transcript-container">
+                <div class="form-space-transcript-content form-space" data-section="transcript" data-type="content" set:html={processedTranscript}>
+                </div>
+            </div>
+        </Panel>
+    )}
+    <Spacer />
+</BaseLayout>
+
+<style>
+    .sticky-topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 1rem 2rem;
+        z-index: var(--z-top);
+        border-bottom: var(--border-width-small) solid var(--light-secondary);
+    }
+    .sticky-topbar a {
+        color: var(--dark-primary);
+        text-decoration: none;
+        font-family: var(--font-mono);
+        font-size: var(--font-size-small);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .sticky-topbar a:hover {
+        color: var(--accent);
+    }
+    /* Add padding to body to account for fixed header */
+    body {
+        padding-top: 4rem;
+    }
+    .sub-wrapper-episode-meta {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .sub-wrapper-guest-box {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+</style>

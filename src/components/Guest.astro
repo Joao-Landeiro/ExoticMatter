@@ -1,0 +1,23 @@
+---
+interface Props {
+  guest: {
+    name: string;
+    image: string;
+    episodeLink: string;
+    episodeId: string;
+  };
+}
+
+const { guest } = Astro.props;
+---
+
+<a href={`/episodes/${guest.episodeId}`} class="guest-link">
+    <div class="sub-wrapper-guest-box">
+        <div class="form-space-guest-name form-space" data-section="guests" data-type="name">
+            <h2>{guest.name}</h2>
+        </div>
+        <div class="form-space-guest-photo form-space" data-section="guests" data-type="photo">
+            <img src={'/' + guest.image} alt={guest.name}>
+        </div>
+    </div>
+</a>

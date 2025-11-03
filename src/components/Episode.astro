@@ -1,0 +1,90 @@
+---
+interface Props {
+  episode: {
+    data: {
+      id: string;
+      status: string;
+      number: number;
+      title: string;
+      guestId: string;
+      description: string; // Markdown description
+      links?: { url: string; text: string }[];
+      shortTopics?: string[];
+    };
+  };
+  processedTranscript?: string;
+  site?: {
+    title: string;
+  };
+}
+
+const { episode, processedTranscript, site } = Astro.props;
+import Panel from '~/components/Panel.astro';
+import { marked } from 'marked';
+import { getEntry } from 'astro:content';
+
+// Fetch guest data using guestId reference
+const guest = await getEntry('guests', episode.data.guestId);
+
+if (!guest) {
+  throw new Error(`Guest not found: ${episode.data.guestId}. Check that the guestId matches the guest filename (lowercase slugified).`);
+}
+
+// Convert markdown to HTML using marked library
+const descriptionHtml = marked.parse(episode.data.description);
+---
+
+<!-- Episode Panel -->
+<div class="sub-wrapper-episode" id={episode.data.id}>
+    <div class="episode-tab text-label">
+        Episode Status:<br>{episode.data.status}
+    </div>
+    <Panel panelClass="panel-episode">
+        <div class="sub-wrapper-episode-header">
+            <div class="form-space-episode-number form-space" data-section="episode" data-type="episode-number">
+                <h3 class="text-episode-number">{episode.data.number}</h3>
+            </div>
+            <div class="sub-wrapper-episode-title">
+                <div class="form-space-episode-title-label form-space text-label" data-type="label" data-section="episode">
+                    Theme:
+                </div>
+                <div class="form-space-episode-title form-space" data-section="episode" data-type="content">
+                    <h2><a href={`/episodes/${episode.data.id}`} class="episode-link">{episode.data.title}</a></h2>
+                </div>
+            </div>
+        </div>
+        <div class="sub-wrapper-episode-body">
+            <div class="sub-wrapper-episode-content">
+                <div class="episode-summary" data-section="episode" data-type="content">
+                    <div class="episode-description" set:html={descriptionHtml}></div>
+                    <p>Scroll down for the Spotify Link and the Transcript.</p>
+                </div>
+                <div class="sub-wrapper-episode-links">
+                    {episode.data.links && episode.data.links.map((link, index) => (
+                        <div class={`sub-wrapper-episode-links-${index + 1}`}>
+                            <div class={`form-space-episode-links-${index + 1}-label form-space text-label`} data-type="label" data-section="episode">
+                                Link {index + 1}:
+                            </div>
+                            <div class={`form-space-episode-links-${index + 1} form-space`} data-section="episode" data-type="content">
+                                <a href={link.url} class="episode-link episode-link-with-padding" target="_blank" rel="noopener noreferrer">{link.text}</a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div class="sub-wrapper-episode-meta">
+                <div class="episode-guest-box">
+                    <div class="episode-guest-name form-space" data-section="episode" data-type="content">
+                        <h2>{guest.data.name}</h2>
+                    </div>
+                    <div class="episode-guest-photo form-space" data-section="guests" data-type="photo">
+                        <img src={'/' + guest.data.image} alt={guest.data.name}>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Panel>
+    <div class="episode-tab text-label episode-tab-bottom">
+        <a href="/#roster" class="tab-link">Back to Roster</a>
+    </div>
+</div>

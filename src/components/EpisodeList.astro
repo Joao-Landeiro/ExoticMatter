@@ -1,0 +1,28 @@
+---
+import Episode from './Episode.astro';
+
+interface Props {
+  episodes: {
+    data: {
+      id: string;
+      season: number;
+      number: number;
+      title: string;
+      status: string;
+      guestId: string;
+      description: string;
+      links?: { text: string; url: string }[];
+      shortTopics?: string[];
+      episodeLink?: string | null;
+      spotifyUrl?: string | null;
+      transcript?: string | null;
+    };
+  }[];
+}
+
+const { episodes } = Astro.props;
+---
+
+{episodes.sort((a, b) => a.data.number - b.data.number).map(episode => (
+    <Episode episode={episode} />
+))}

@@ -1,0 +1,135 @@
+:root {
+    --dark-primary: #121212;
+    --dark-primary-rgb: 18, 18, 18;
+    --light-primary: #E8E8E8;
+    --light-primary-rgb: 232, 232, 232;
+    --light-secondary: #BBBBBB;
+    --light-secondary-rgb: 187, 187, 187;
+    --accent: #613AA0;
+    --accent-rgb: 97, 58, 160;
+    --to-be-released-color: #999966;
+    --to-be-released-color-rgb: 153, 153, 102;
+
+    --color-background: var(--dark-primary);
+    --color-surface: var(--dark-primary);
+    --color-text: var(--light-primary);
+    --color-text-secondary: var(--light-secondary);
+    --color-accent: var(--accent);
+    --color-to-be-released: var(--to-be-released-color);
+
+    --bg-primary: var(--color-background);
+    --bg-secondary: var(--color-surface);
+    --text-primary: var(--color-text);
+    --text-secondary: var(--color-text-secondary);
+    --accent: var(--color-accent);
+
+    --opacity-light: 0.3;
+    --opacity-medium: 0.6;
+    --opacity-high: 0.8;
+
+    --border-width-large: 2px;
+    --border-width-small: 1px;
+    --border-color: var(--light-primary);
+    --border-style: solid;
+    --border-default: var(--border-width-large) var(--border-style) var(--border-color);
+    --border-inner: var(--border-width-small) var(--border-style) var(--border-color);
+
+    --blur-background: blur(10px);
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    --container-width: 70vw;
+    --container-height: 70vh;
+    --content-padding: 1.5rem;
+    --content-margin: 2rem;
+    --text-padding-left: 0.75rem;
+
+    --font-primary: 'Instrument Serif', serif;
+    --font-secondary: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-accent: 'Familjen Grotesk', sans-serif;
+    --font-size-small: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-large: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.5rem;
+    --font-size-huge: 10.5rem;
+
+    --z-background: 0;
+    --z-content: 1;
+    --z-overlay: 2;
+    --z-modal: 3;
+    --z-top: 4;
+
+    --duration-fast: 200ms;
+    --duration-normal: 400ms;
+    --duration-slow: 800ms;
+    --timing-function: cubic-bezier(0.34, 0.13, 0.71, 0.95);
+
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+
+/* === Exotic Matter Header & Intro Styles (migrated) === */
+.text-heading-primary {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    color: var(--text-primary);
+    padding-left: var(--text-padding-left);
+}
+
+.panel-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(var(--dark-primary-rgb), 0.6);
+    backdrop-filter: blur(10px);
+    border: var(--border-default);
+}
+
+.sub-wrapper-intro-content {
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+.form-space-intro-title {
+    display: grid;
+    place-items: end start;
+    height: 100%;
+    aspect-ratio: 1;
+    padding: 1rem 1rem 0.5rem 1rem;
+    container-type: inline-size;
+}
+
+.form-space-intro-title h1 {
+    font-size: 35cqw;
+    text-align: left;
+    line-height: 0.85;
+    margin: 0;
+    padding-left: 0;
+}
+
+.form-space-intro-observation,
+.form-space-intro-hypothesis,
+.form-space-intro-method {
+    display: grid;
+    place-content: start;
+}
+
+.form-space-intro-observation-label,
+.form-space-intro-hypothesis-label,
+.form-space-intro-method-label {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
+    border: none;
+}
+
+/* Add any additional header/intro styles as needed */
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-bottom: 0;
+} 
