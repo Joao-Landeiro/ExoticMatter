@@ -8,9 +8,20 @@ import GuestList from '~/components/GuestList.astro';
 import EpisodeList from '~/components/EpisodeList.astro';
 import Spacer from '~/components/Spacer.astro';
 
-const episodes = await getCollection('episodes');
+const allEpisodes = await getCollection('episodes');
 const allGuests = await getCollection('guests');
 const site = await getEntry('site', 'site');
+
+// Filter out future episodes (only show published episodes)
+// Episodes without publishDate are always visible (treated as published)
+const now = new Date();
+const episodes = allEpisodes.filter(episode => {
+  if (!episode.data.publishDate) {
+    return true; // No publishDate means always visible
+  }
+  const publishDate = new Date(episode.data.publishDate);
+  return publishDate <= now; // Only show if publishDate has passed
+});
 
 // Generate structured data for Organization
 const organizationSchema = {
@@ -26,8 +37,9 @@ const organizationSchema = {
 };
 
 // Create a guest roster with episode links, sorted by first appearance
+// Use filtered episodes (published only) for guest roster
 const guests = allGuests.map(guestEntry => {
-  // Find episodes where this guest appeared
+  // Find episodes where this guest appeared (only published episodes)
   const guestEpisodes = episodes.filter(ep => ep.data.guestId === guestEntry.id);
   
   // Find the earliest episode number for this guest

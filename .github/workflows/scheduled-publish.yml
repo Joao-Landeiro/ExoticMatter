@@ -1,0 +1,75 @@
+name: Scheduled Episode Publishing
+
+on:
+  schedule:
+    # Run every hour at :00 (UTC)
+    - cron: '0 * * * *'
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: write # Required to trigger workflow_dispatch
+
+jobs:
+  check-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check for episodes to publish
+        id: check-episodes
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          const episodesDir = 'src/content/episodes';
+          const now = new Date();
+          let needsBuild = false;
+          
+          console.log('Current UTC time:', now.toISOString());
+          
+          // Read all episode JSON files
+          const files = fs.readdirSync(episodesDir).filter(f => f.endsWith('.json'));
+          
+          for (const file of files) {
+            const filePath = path.join(episodesDir, file);
+            const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            
+            if (content.publishDate) {
+              const publishDate = new Date(content.publishDate);
+              
+              // Check if publishDate has passed (publishDate <= now)
+              if (publishDate <= now) {
+                console.log(\`Episode \${file} should be published (publishDate: \${content.publishDate})\`);
+                needsBuild = true;
+              }
+            }
+          }
+          
+          console.log(\`Should build: \${needsBuild}\`);
+          process.exit(needsBuild ? 0 : 1);
+          "
+        continue-on-error: true
+
+      - name: Trigger deployment
+        if: steps.check-episodes.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Trigger the deploy workflow
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy.yml',
+              ref: 'main'
+            });
+

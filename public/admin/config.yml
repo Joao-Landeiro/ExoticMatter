@@ -61,7 +61,7 @@ collections:
       - {label: "Episode Link", name: "episodeLink", widget: "string", required: false, hint: "Link to episode page (e.g., S1E1_Nick.html)"}
       - {label: "Spotify URL", name: "spotifyUrl", widget: "string", required: false, hint: "Spotify embed URL"}
       - {label: "Transcript (HTML)", name: "transcript", widget: "text", required: false, hint: "Full transcript with HTML formatting"}
-      - {label: "Publish Date", name: "publishDate", widget: "datetime", required: false, hint: "Schedule when this episode should be published"}
+      - {label: "Publish Date", name: "publishDate", widget: "datetime", required: false, hint: "Schedule when this episode should be published (UTC timezone)"}
       - label: "SEO Settings"
         name: "seo"
         widget: "object"

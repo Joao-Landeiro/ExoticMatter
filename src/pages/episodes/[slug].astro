@@ -26,6 +26,18 @@ if (!guest) {
   throw new Error(`Guest not found: ${episode.data.guestId}. Check that the guestId matches the guest filename (lowercase slugified).`);
 }
 
+// Check if episode is scheduled for future (prevent direct access)
+if (episode.data.publishDate) {
+  const publishDate = new Date(episode.data.publishDate);
+  const now = new Date();
+  if (publishDate > now) {
+    return new Response(null, {
+      status: 404,
+      statusText: 'Not Found',
+    });
+  }
+}
+
 // Generate plain text description from markdown (strip markdown formatting)
 const stripMarkdown = (text: string): string => {
   return text
