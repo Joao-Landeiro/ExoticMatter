@@ -1,11 +1,13 @@
 # GitHub Pages backend - log in with your GitHub account
 backend:
-  name: github
+  name: git-gateway
   repo: Joao-Landeiro/ExoticMatter
   branch: main
-  # base_url: https://exoticmatter.space
   auth_type: pkce
-  app_id: Ov23livJjebMeq2tFsTz
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/170591a9-1b03-478d-8e42-12e15c12ff84/pkce
+  auth_token_endpoint: /sites/170591a9-1b03-478d-8e42-12e15c12ff84/token
+  gateway_url: https://gateway.decapbridge.com
 
 # Local testing backend - use this for offline testing without GitHub auth
 # backend:
