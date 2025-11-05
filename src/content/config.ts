@@ -19,7 +19,10 @@ const episodesCollection = defineCollection({
     episodeLink: z.string().nullable().optional(),
     spotifyUrl: z.string().nullable().optional(),
     transcript: z.string().nullable().optional(),
-    publishDate: z.string().datetime().optional(), // ISO 8601 datetime string (UTC timezone)
+    publishDate: z.string().regex(
+      /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?(Z|[+-]\d{2}:\d{2})$/,
+      "Invalid datetime format"
+    ).optional(), // ISO 8601 datetime string (accepts timezone offsets)
     seo: z.object({
       metaDescription: z.string().max(160).optional(),
       ogImage: z.string().optional(),
