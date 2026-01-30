@@ -98,8 +98,8 @@ const pageUrl = url || (Astro.url ? Astro.url.pathname : '/');
         <div class="space-background"></div>
         <div class="wrapper-content">
             <slot />
-            <Footer site={site.data} />
         </div>
+        <Footer site={site.data} />
     </div>
 </body>
 </html>

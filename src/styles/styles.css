@@ -1108,15 +1108,21 @@ a {
 =============================================*/
 
 .site-footer {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: subgrid;
+    width: 100%;
     border-top: var(--border-default);
+    background-color: rgba(var(--dark-primary-rgb), 0.95);
     position: relative;
     z-index: 1;
-    margin-left: calc(-1 * var(--grid-gap));
-    margin-right: calc(-1 * var(--grid-gap));
-    background-color: rgba(var(--dark-primary-rgb), 0.95);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    gap: var(--grid-gap);
+    max-width: var(--grid-max-width);
+    margin: 0 auto;
+    padding: 0 var(--grid-gap);
+    width: 100%;
 }
 
 .footer-logo {
@@ -1199,9 +1205,12 @@ a {
 /* Mobile: Stack vertically */
 @media (max-width: 767px) {
     .site-footer {
+        width: 100%;
+    }
+
+    .footer-grid {
         gap: 2rem;
-        margin-left: calc(-1 * var(--grid-gap));
-        margin-right: calc(-1 * var(--grid-gap));
+        padding: 2rem var(--grid-gap);
     }
     
     .footer-logo {
