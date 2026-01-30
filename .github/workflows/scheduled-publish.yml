@@ -56,12 +56,13 @@ jobs:
           }
           
           console.log(\`Should build: \${needsBuild}\`);
-          process.exit(needsBuild ? 0 : 1);
+          
+          // Write to GITHUB_OUTPUT instead of exiting with 1
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, \`needs_build=\${needsBuild}\\n\`);
           "
-        continue-on-error: true
 
       - name: Trigger deployment
-        if: steps.check-episodes.outcome == 'success'
+        if: steps.check-episodes.outputs.needs_build == 'true'
         uses: actions/github-script@v7
         with:
           script: |
