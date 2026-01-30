@@ -1111,14 +1111,11 @@ a {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: subgrid;
-    padding: 3rem 0 2rem 0;
     border-top: var(--border-default);
     position: relative;
     z-index: 1;
     margin-left: calc(-1 * var(--grid-gap));
     margin-right: calc(-1 * var(--grid-gap));
-    padding-left: var(--grid-gap);
-    padding-right: var(--grid-gap);
     background-color: rgba(var(--dark-primary-rgb), 0.95);
 }
 
@@ -1197,7 +1194,6 @@ a {
 /* Mobile: Stack vertically */
 @media (max-width: 767px) {
     .site-footer {
-        padding: 2rem var(--grid-gap);
         gap: 2rem;
         margin-left: calc(-1 * var(--grid-gap));
         margin-right: calc(-1 * var(--grid-gap));
