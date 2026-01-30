@@ -1215,7 +1215,7 @@ a {
     
     .footer-logo {
         grid-column: 1 / -1;
-        justify-content: center;
+        justify-content: flex-start;
         padding: 2rem 1rem 0 1rem;
     }
     
@@ -1232,17 +1232,17 @@ a {
     }
     
     .footer-description p {
-        text-align: center;
+        text-align: left;
     }
     
     .footer-links {
         grid-column: 1 / -1;
-        align-items: center;
+        align-items: flex-start;
         padding: 0 1rem 2rem 1rem;
     }
 
     .footer-credit-bottom {
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
     }
 }
