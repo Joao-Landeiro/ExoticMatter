@@ -1177,12 +1177,14 @@ a {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    align-items: flex-start;
 }
 
 .footer-credit-text {
     font-family: var(--font-secondary);
     font-size: var(--font-size-small);
     color: var(--text-primary);
+    text-align: left;
 }
 
 .footer-copyright {
