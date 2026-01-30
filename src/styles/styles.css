@@ -197,6 +197,16 @@ p {
     padding-right: 1rem;
 }
 
+ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
 a {
     color: var(--accent);
     text-decoration: none;
@@ -604,6 +614,12 @@ a {
 
 .episode-description ul {
     margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.episode-description li {
+    margin-bottom: 0.5rem;
 }
 
 .sub-wrapper-episode-links {
