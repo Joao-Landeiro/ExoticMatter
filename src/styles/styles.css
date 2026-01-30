@@ -1171,6 +1171,13 @@ a {
     opacity: 0.7;
 }
 
+.footer-credit-inline {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
 .footer-credit {
     grid-column: 10 / -2;
     display: flex;
@@ -1221,6 +1228,11 @@ a {
     .footer-links {
         grid-column: 1 / -1;
         align-items: center;
+    }
+
+    .footer-credit-inline {
+        align-items: center;
+        text-align: center;
     }
     
     .footer-credit {
