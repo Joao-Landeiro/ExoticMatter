@@ -1171,19 +1171,10 @@ a {
     opacity: 0.7;
 }
 
-.footer-credit-inline {
-    margin-top: 1.5rem;
+.footer-credit-bottom {
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-}
-
-.footer-credit {
-    grid-column: 10 / -2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
     gap: 0.25rem;
 }
 
@@ -1230,14 +1221,7 @@ a {
         align-items: center;
     }
 
-    .footer-credit-inline {
-        align-items: center;
-        text-align: center;
-    }
-    
-    .footer-credit {
-        grid-column: 1 / -1;
-        justify-content: center;
+    .footer-credit-bottom {
         align-items: center;
         text-align: center;
     }
