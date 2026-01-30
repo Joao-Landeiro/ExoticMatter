@@ -1146,6 +1146,7 @@ a {
     font-size: var(--font-size-small);
     color: var(--text-primary);
     line-height: 1.5;
+    padding: 0;
 }
 
 .footer-links {
@@ -1185,6 +1186,7 @@ a {
     font-size: var(--font-size-small);
     color: var(--text-primary);
     text-align: left;
+    padding: 0;
 }
 
 .footer-copyright {
