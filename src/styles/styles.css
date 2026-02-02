@@ -1173,7 +1173,7 @@ a {
 }
 
 .footer-links {
-    grid-column: 8 / 11;
+    grid-column: 8 / 12;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
