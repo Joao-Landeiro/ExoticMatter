@@ -139,10 +139,23 @@ if (episode.data.spotifyUrl) {
   };
 }
 
-// Process transcript HTML to add speaker-line class
+// Process transcript HTML to add speaker-line class and identify João
 let processedTranscript = episode.data.transcript;
 if (processedTranscript) {
+    /* Old logic:
     processedTranscript = processedTranscript.replace(/<p class="text-body">(?= <span class="transcript-meta">)/g, '<p class="text-body speaker-line">');
+    */
+    
+    // Identify João's lines and add data-speaker="joao"
+    processedTranscript = processedTranscript.replace(
+        /<p class="text-body">(\s*<span class="transcript-meta">[^<]*João:[^<]*<\/span>)/g, 
+        '<p class="text-body speaker-line" data-speaker="joao">$1'
+    );
+    // Identify other speaker lines and add speaker-line class
+    processedTranscript = processedTranscript.replace(
+        /<p class="text-body">(\s*<span class="transcript-meta">)/g, 
+        '<p class="text-body speaker-line">$1'
+    );
 }
 ---
 <BaseLayout 
