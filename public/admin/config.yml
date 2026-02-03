@@ -26,6 +26,7 @@ collections:
     label_singular: "Episode"
     folder: "src/content/episodes"
     create: true
+    summary: "{{number}} - {{guestId}}"
     slug: "S{{season}}E{{number}}_{{fields.guest.name}}"
     extension: "json"
     format: "json"
