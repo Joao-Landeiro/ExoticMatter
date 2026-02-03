@@ -27,6 +27,20 @@ collections:
     folder: "src/content/episodes"
     create: true
     summary: "{{number}} - {{guestId}}"
+    view_columns:
+      - label: "#"
+        field: number
+      - label: Guest
+        field: guestId
+      - label: Status
+        field: status
+      - label: Title
+        field: title
+    view_groups:
+      - label: Status
+        field: status
+      - label: Guest
+        field: guestId
     slug: "S{{season}}E{{number}}_{{fields.guest.name}}"
     extension: "json"
     format: "json"
